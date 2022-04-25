@@ -55,12 +55,42 @@ export class Web3Service {
   }
 
   async connectAccount() {
-    this.provider = await this.web3Modal.connect(); // set provider
-    if (this.provider) {
-      this.web3js = new Web3(this.provider);
-    } // create web3 instance
+    try {
+      this.provider = await this.web3Modal.connect(); // set provider
+      if (this.provider) {
+        this.web3js = new Web3(this.provider);
+      } // create web3 instance
+      await this.fetchAccountData();
+      await this.addProviderListeners();
+      return this.accounts;
+    } catch (e) {
+      console.log('Could not get a wallet connection', e);
+      return;
+    }
+  }
+
+  async addProviderListeners() {
+    // Subscribe to accounts change
+    this.web3Modal.on('accountsChanged', (accounts) => {
+      console.log('Account changed');
+      this.fetchAccountData();
+    });
+
+    // Subscribe to chainId change
+    this.web3Modal.on('chainChanged', (chainId) => {
+      console.log('Chain changed');
+      this.fetchAccountData();
+    });
+
+    // Subscribe to networkId change
+    this.web3Modal.on('networkChanged', (networkId) => {
+      console.log('Network changed');
+      this.fetchAccountData();
+    });
+  }
+
+  async fetchAccountData() {
     this.accounts = await this.web3js.eth.getAccounts();
-    return this.accounts;
   }
 
   async accountInfo(account: any[]) {
@@ -71,7 +101,7 @@ export class Web3Service {
 
   async disconnectAccount() {
     if (this.provider) {
-      await this.web3Modal.clearCachedProvider();
+      this.web3Modal.clearCachedProvider();
       await this.web3js.setProvider(null);
       this.provider = null;
       console.log('Cleared account');
