@@ -1,7 +1,0 @@
-<ion-app >
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
-<ion-button *ngIf="!this.data" (click)="connect()">Connect Wallet</ion-button>
-<ion-button *ngIf="this.data" (click)="disconnect()">Disconnect Wallet</ion-button>
-
-<H2> {{ this.data }}</H2>
