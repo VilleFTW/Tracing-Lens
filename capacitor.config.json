@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Tracing Eye",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

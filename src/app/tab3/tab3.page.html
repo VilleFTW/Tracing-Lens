@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon slot="start" name="moon-outline"></ion-icon>
+      <ion-label>
+        Dark Mode
+      </ion-label>
+      <ion-toggle [checked]="prefersDark.matches" (ionChange)="toggleDarkTheme($event)" id="themeToggle"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
