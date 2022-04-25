@@ -52,6 +52,10 @@ export class Web3Service {
         hover: 'rgb(16, 26, 32)',
       },
     });
+    console.log(this.web3Modal.cachedProvider);
+    if (this.web3Modal.cachedProvider) {
+      this.connectAccount();
+    }
   }
 
   async connectAccount() {
@@ -59,6 +63,7 @@ export class Web3Service {
       this.provider = await this.web3Modal.connect(); // set provider
       if (this.provider) {
         this.web3js = new Web3(this.provider);
+        console.log(this.web3Modal.cachedProvider);
       } // create web3 instance
       await this.fetchAccountData();
       await this.addProviderListeners();
@@ -67,6 +72,16 @@ export class Web3Service {
       console.log('Could not get a wallet connection', e);
       return;
     }
+  }
+
+  async connectToCachedProvider() {
+    await this.web3Modal.connect();
+    await this.fetchAccountData();
+    return this.accounts;
+  }
+
+  getInjected() {
+    return this.web3Modal.cachedProvider;
   }
 
   async addProviderListeners() {
@@ -100,6 +115,9 @@ export class Web3Service {
   }
 
   async disconnectAccount() {
+    console.log(this.web3);
+    console.log(this.web3Modal);
+    console.log(this.web3js);
     if (this.provider) {
       this.web3Modal.clearCachedProvider();
       await this.web3js.setProvider(null);

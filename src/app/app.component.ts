@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Web3Service } from './services/web3.service';
 
 @Component({
@@ -6,9 +6,17 @@ import { Web3Service } from './services/web3.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   data: any;
   constructor(private web3: Web3Service) {}
+  ngOnInit(): void {
+    if (this.web3.getInjected()) {
+      this.web3.connectToCachedProvider().then((response) => {
+        console.log(response);
+        this.data = response;
+      });
+    }
+  }
 
   connect() {
     this.web3.connectAccount().then((response) => {
