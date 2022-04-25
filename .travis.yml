@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "16.14.2"
+  - '16.14.2'
 
 branches:
   only:
@@ -11,15 +11,18 @@ before_script:
   - npm ci
 
 script:
+  - npm run test-headless
   - ionic build --prod -- --base-href ./
 
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  github-token: $GITHUB_TOKEN # Set in travis-ci.org dashboard, marked secure
   keep-history: true
   on:
     branch: master
   local_dir: www
 
-
+notifications:
+  email: false
+  slack: rugbscproject-oub4317:5wwoJe0jTjpZzVjudQUBf3yn
