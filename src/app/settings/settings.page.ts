@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss'],
+  selector: 'app-settings',
+  templateUrl: 'settings.page.html',
+  styleUrls: ['settings.page.scss'],
 })
-export class Tab3Page implements OnInit {
+export class SettingsPage implements OnInit {
   // Query for the toggle that is used to change between themes
   toggle = document.querySelector('#themeToggle');
 
