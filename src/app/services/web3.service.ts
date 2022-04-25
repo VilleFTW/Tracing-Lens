@@ -52,10 +52,6 @@ export class Web3Service {
         hover: 'rgb(16, 26, 32)',
       },
     });
-    console.log(this.web3Modal.cachedProvider);
-    if (this.web3Modal.cachedProvider) {
-      this.connectAccount();
-    }
   }
 
   async connectAccount() {
@@ -63,7 +59,6 @@ export class Web3Service {
       this.provider = await this.web3Modal.connect(); // set provider
       if (this.provider) {
         this.web3js = new Web3(this.provider);
-        console.log(this.web3Modal.cachedProvider);
       } // create web3 instance
       await this.fetchAccountData();
       await this.addProviderListeners();

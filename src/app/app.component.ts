@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     if (this.web3.getInjected()) {
       this.web3.connectToCachedProvider().then((response) => {
-        console.log(response);
         this.data = response;
       });
     }
@@ -20,7 +19,6 @@ export class AppComponent implements OnInit {
 
   connect() {
     this.web3.connectAccount().then((response) => {
-      console.log(response);
       this.data = response;
     });
   }
