@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DarkModeToggleComponent } from '../components/dark-mode-toggle/dark-mode-toggle.component';
-import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-settings',
+  selector: 'app-settings-page',
   templateUrl: 'settings.page.html',
   styleUrls: ['settings.page.scss'],
 })

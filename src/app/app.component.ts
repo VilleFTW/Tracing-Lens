@@ -11,7 +11,6 @@ import { Web3Service } from './services/web3.service';
 })
 export class AppComponent implements OnInit {
   data: any;
-  isDark: boolean;
 
   constructor(
     private web3: Web3Service,
@@ -20,7 +19,6 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.isDark = true;
     if (this.web3.getInjected()) {
       this.web3.connectToCachedProvider().then((response) => {
         this.data = response;
@@ -28,12 +26,6 @@ export class AppComponent implements OnInit {
     }
     this.storageService.initialize();
     this.themeSwitcherService.initializeThemeSwitcherService();
-  }
-
-  changeTheme() {
-    this.themeSwitcherService.changeThemeMode(this.isDark);
-    this.isDark = !this.isDark;
-    console.log('Called');
   }
 
   connect() {

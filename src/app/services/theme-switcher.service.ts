@@ -9,6 +9,7 @@ import { StorageService } from './storage.service';
 export class ThemeSwitcherService {
   renderer: Renderer2;
   isDarkMode: boolean;
+  
   // Use matchMedia to check the user preference
   prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
   myService = appInjector.get(StorageService);
@@ -18,21 +19,18 @@ export class ThemeSwitcherService {
   }
 
   initializeThemeSwitcherService() {
+    this.myService.getStoredData('dark-theme').then((val) => {
+      if (val == null) {
+        //If there is no value in local storage
+        console.log('No value in local storage');
+        this.changeThemeMode(this.prefersDark.matches);
+      } else {
+        console.log('From local storage', val);
+        this.changeThemeMode(val);
+      }
+    });
+
     this.prefersDark.addEventListener('change', (mediaQueryListEvent) => this.changeThemeMode(mediaQueryListEvent));
-
-    if (this.myService.getStoredData) {
-      this.myService.getStoredData('dark-theme').then((val) => {
-        if (val == null) {
-          //If there is no value in local storage
-          console.log('No value in local storage');
-          this.changeThemeMode(this.prefersDark.matches);
-        } else {
-          console.log('From local storage', val);
-
-          this.changeThemeMode(val);
-        }
-      });
-    }
   }
 
   getDarkModeStatus(): boolean {
@@ -40,18 +38,26 @@ export class ThemeSwitcherService {
   }
 
   changeThemeMode(event: any) {
+    console.log('First', event);
+
     event ? this.toggleDarkTheme() : this.toggleLightTheme();
   }
 
   toggleDarkTheme() {
-    this.myService.storeData('dark-theme', true);
-    this.renderer.addClass(this.document.body, 'dark');
-    this.isDarkMode = true;
+    if (!this.isDarkMode) {
+      console.log('Dark theme toggled');
+      this.myService.storeData('dark-theme', true);
+      this.renderer.addClass(this.document.body, 'dark');
+      this.isDarkMode = true;
+    }
   }
 
   toggleLightTheme() {
-    this.myService.storeData('dark-theme', false);
-    this.renderer.removeClass(this.document.body, 'dark');
-    this.isDarkMode = false;
+    if (this.isDarkMode) {
+      console.log('Light theme toggled');
+      this.myService.storeData('dark-theme', false);
+      this.renderer.removeClass(this.document.body, 'dark');
+      this.isDarkMode = false;
+    }
   }
 }
