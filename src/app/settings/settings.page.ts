@@ -1,4 +1,5 @@
-import { ThemeSwitcherService } from 'src/app/services/theme-switcher.service';
+import { ThemeSwitcherService } from '../services/theme-switcher.service';
+import { LanguageService } from '../services/language.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['settings.page.scss'],
 })
 export class SettingsPage {
-  constructor(private themeSwitcher: ThemeSwitcherService) {}
+  constructor(private themeSwitcher: ThemeSwitcherService, private languageService: LanguageService) {}
 }

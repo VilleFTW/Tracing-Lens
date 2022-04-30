@@ -3,6 +3,7 @@ import { ThemeSwitcherService } from './services/theme-switcher.service';
 import { StorageService } from './services/storage.service';
 import { Component, OnInit } from '@angular/core';
 import { Web3Service } from './services/web3.service';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ export class AppComponent implements OnInit {
     private web3: Web3Service,
     private themeSwitcherService: ThemeSwitcherService,
     private storageService: StorageService,
+    private languageService: LanguageService,
   ) {}
 
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class AppComponent implements OnInit {
     }
     this.storageService.initialize();
     this.themeSwitcherService.initializeThemeSwitcherService();
+    this.languageService.initializeLanguageService();
   }
 
   connect() {

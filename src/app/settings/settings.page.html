@@ -16,9 +16,17 @@
       <ion-label>
         Dark Mode
       </ion-label>
-      <app-dark-mode-toggle></app-dark-mode-toggle>
+      <app-dark-mode-toggle slot="end"></app-dark-mode-toggle>
       <!-- <ion-toggle [checked]="prefersDarkSubject" | async" (ionChange)="toggleDarkTheme($event)" id="themeToggle"></ion-toggle> -->
     </ion-item>
+    <app-language-selector></app-language-selector>
+
+    <!-- <ion-item>
+      <ion-icon slot="start" name="language-outline"></ion-icon>
+      <ion-label>Language</ion-label>
+
+
+    </ion-item> -->
   </ion-list>
 
 </ion-content>
