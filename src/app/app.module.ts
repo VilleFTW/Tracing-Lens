@@ -33,7 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
       },
     }),
     IonicStorageModule.forRoot(),
-
+    IonicModule.forRoot(),
     AppRoutingModule,
   ],
   providers: [
