@@ -1,19 +1,17 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
-import { Subject } from 'rxjs/internal/Subject';
-import { StorageService } from './storage.service';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { StorageService } from '../storage/storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeSwitcherService {
   renderer: Renderer2;
-  isDarkMode: Subject<boolean> = new Subject<boolean>();
+  isDarkMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
 
   // Use matchMedia to check the user preference
   prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-  isDarkModeObservable = this.isDarkMode.asObservable();
 
   constructor(
     private rendererFactory: RendererFactory2,
@@ -23,13 +21,16 @@ export class ThemeSwitcherService {
     this.renderer = this.rendererFactory.createRenderer(null, null);
   }
 
+  getDarkModePreference(): BehaviorSubject<boolean> {
+    return this.isDarkMode;
+  }
+
   initializeThemeSwitcherService() {
     this.storageService.getStoredData('dark-theme').then((val) => {
-      if (val == null) {
+      if (val === null) {
         //If there is no value in local storage
         this.changeThemeMode(this.prefersDark.matches);
       } else {
-        console.log('From local storage', val);
         this.changeThemeMode(val);
       }
     });
@@ -42,10 +43,10 @@ export class ThemeSwitcherService {
   changeThemeMode(event: boolean) {
     this.isDarkMode.next(event);
     if (event) {
-      this.storageService.storeData('dark-theme', true);
+      this.storageService.storeData('dark-theme', event);
       this.renderer.addClass(this.document.body, 'dark');
     } else {
-      this.storageService.storeData('dark-theme', false);
+      this.storageService.storeData('dark-theme', event);
       this.renderer.removeClass(this.document.body, 'dark');
     }
   }

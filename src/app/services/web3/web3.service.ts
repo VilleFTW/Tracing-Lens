@@ -1,4 +1,3 @@
-import { Utils } from './../../../node_modules/web3-utils/types/index.d';
 import Web3Modal from 'web3modal';
 import { Inject, Injectable } from '@angular/core';
 import { WEB3 } from './web3';

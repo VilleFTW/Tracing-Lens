@@ -1,5 +1,5 @@
-import { StorageService } from './storage.service';
 import { TestBed } from '@angular/core/testing';
+import { StorageService } from '../storage/storage.service';
 
 import { ThemeSwitcherService } from './theme-switcher.service';
 

@@ -1,4 +1,4 @@
-import { StorageService } from './storage.service';
+import { StorageService } from '../storage/storage.service';
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 

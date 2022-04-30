@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponentModule } from '../components/explore-container/explore-container.module';
+import { ExploreContainerComponentModule } from 'src/app/components/explore-container/explore-container.module';
 
 import { SearchPage } from './search.page';
 

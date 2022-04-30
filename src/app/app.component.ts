@@ -1,8 +1,8 @@
-import { ThemeSwitcherService } from './services/theme-switcher.service';
-import { StorageService } from './services/storage.service';
 import { Component, OnInit } from '@angular/core';
-import { Web3Service } from './services/web3.service';
-import { LanguageService } from './services/language.service';
+import { LanguageService } from './services/language/language.service';
+import { StorageService } from './services/storage/storage.service';
+import { ThemeSwitcherService } from './services/theme-switcher/theme-switcher.service';
+import { Web3Service } from './services/web3/web3.service';
 
 @Component({
   selector: 'app-root',
