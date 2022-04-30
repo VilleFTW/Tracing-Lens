@@ -9,15 +9,15 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadChildren: () => import('../pages/home/home.module').then((m) => m.HomePageModule),
+        loadChildren: () => import('../../pages/home/home.module').then((m) => m.HomePageModule),
       },
       {
         path: 'search',
-        loadChildren: () => import('../pages/search/search.module').then((m) => m.SearchPageModule),
+        loadChildren: () => import('../../pages/search/search.module').then((m) => m.SearchPageModule),
       },
       {
         path: 'settings',
-        loadChildren: () => import('../pages/settings/settings.module').then((m) => m.SettingsPageModule),
+        loadChildren: () => import('../../pages/settings/settings.module').then((m) => m.SettingsPageModule),
       },
       {
         path: '',
