@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Settings
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,8 +16,11 @@
       <ion-label>
         Dark Mode
       </ion-label>
-      <ion-toggle [checked]="prefersDark.matches" (ionChange)="toggleDarkTheme($event)" id="themeToggle"></ion-toggle>
+      <app-dark-mode-toggle slot="end"></app-dark-mode-toggle>
+      <!-- <ion-toggle [checked]="prefersDarkSubject" | async" (ionChange)="toggleDarkTheme($event)" id="themeToggle"></ion-toggle> -->
     </ion-item>
+    <app-language-selector></app-language-selector>
+
   </ion-list>
 
 </ion-content>

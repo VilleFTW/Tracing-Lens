@@ -1,5 +1,8 @@
+import { ThemeSwitcherService } from './services/theme-switcher.service';
+import { StorageService } from './services/storage.service';
 import { Component, OnInit } from '@angular/core';
 import { Web3Service } from './services/web3.service';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +11,23 @@ import { Web3Service } from './services/web3.service';
 })
 export class AppComponent implements OnInit {
   data: any;
-  constructor(private web3: Web3Service) {}
+
+  constructor(
+    private web3: Web3Service,
+    private themeSwitcherService: ThemeSwitcherService,
+    private storageService: StorageService,
+    private languageService: LanguageService,
+  ) {}
+
   ngOnInit(): void {
     if (this.web3.getInjected()) {
       this.web3.connectToCachedProvider().then((response) => {
         this.data = response;
       });
     }
+    this.storageService.initialize();
+    this.themeSwitcherService.initializeThemeSwitcherService();
+    this.languageService.initializeLanguageService();
   }
 
   connect() {
@@ -25,7 +38,6 @@ export class AppComponent implements OnInit {
 
   disconnect() {
     this.web3.disconnectAccount().then((response) => {
-      console.log(response);
       this.data = null;
     });
   }

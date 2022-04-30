@@ -1,28 +1,26 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { StorageService } from '../services/storage.service';
 
-import { TabsPage } from './tabs.page';
+import { SettingsPage } from './settings.page';
 
-describe('TabsPage', () => {
-  let component: TabsPage;
-  let fixture: ComponentFixture<TabsPage>;
+describe('settingsPage', () => {
+  let component: SettingsPage;
+  let fixture: ComponentFixture<SettingsPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [TranslateModule.forRoot()],
-      declarations: [TabsPage],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [ExploreContainerComponentModule, TranslateModule.forRoot()],
+      declarations: [SettingsPage],
       providers: [{ provide: StorageService, useValue: {} }],
     }).compileComponents();
-  }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TabsPage);
+    fixture = TestBed.createComponent(SettingsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();

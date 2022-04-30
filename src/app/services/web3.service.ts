@@ -52,6 +52,10 @@ export class Web3Service {
         hover: 'rgb(16, 26, 32)',
       },
     });
+
+    if (this.web3Modal.cachedProvider) {
+      this.connectAccount();
+    }
   }
 
   async connectAccount() {
@@ -110,9 +114,6 @@ export class Web3Service {
   }
 
   async disconnectAccount() {
-    console.log(this.web3);
-    console.log(this.web3Modal);
-    console.log(this.web3js);
     if (this.provider) {
       this.web3Modal.clearCachedProvider();
       await this.web3js.setProvider(null);
