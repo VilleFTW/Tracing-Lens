@@ -53,7 +53,6 @@ export class Web3Service {
       },
     });
 
-    console.log(this.getInjected());
     if (this.web3Modal.cachedProvider) {
       this.connectAccount();
     }

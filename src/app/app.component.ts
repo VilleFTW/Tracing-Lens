@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
 
   disconnect() {
     this.web3.disconnectAccount().then((response) => {
-      console.log(response);
       this.data = null;
     });
   }

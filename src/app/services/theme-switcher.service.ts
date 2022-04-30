@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
-import { appInjector } from '../app.module';
+import { Observable } from 'rxjs/internal/Observable';
+import { Subject } from 'rxjs/internal/Subject';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -8,21 +9,25 @@ import { StorageService } from './storage.service';
 })
 export class ThemeSwitcherService {
   renderer: Renderer2;
-  isDarkMode: boolean;
-  
+  isDarkMode: Subject<boolean> = new Subject<boolean>();
+
   // Use matchMedia to check the user preference
   prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  myService = appInjector.get(StorageService);
 
-  constructor(private rendererFactory: RendererFactory2, @Inject(DOCUMENT) private document: Document) {
+  isDarkModeObservable = this.isDarkMode.asObservable();
+
+  constructor(
+    private rendererFactory: RendererFactory2,
+    @Inject(DOCUMENT) private document: Document,
+    private storageService: StorageService,
+  ) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
   }
 
   initializeThemeSwitcherService() {
-    this.myService.getStoredData('dark-theme').then((val) => {
+    this.storageService.getStoredData('dark-theme').then((val) => {
       if (val == null) {
         //If there is no value in local storage
-        console.log('No value in local storage');
         this.changeThemeMode(this.prefersDark.matches);
       } else {
         console.log('From local storage', val);
@@ -30,34 +35,19 @@ export class ThemeSwitcherService {
       }
     });
 
-    this.prefersDark.addEventListener('change', (mediaQueryListEvent) => this.changeThemeMode(mediaQueryListEvent));
+    this.prefersDark.addEventListener('change', (mediaQueryListEvent) =>
+      this.changeThemeMode(mediaQueryListEvent.matches),
+    );
   }
 
-  getDarkModeStatus(): boolean {
-    return this.isDarkMode;
-  }
-
-  changeThemeMode(event: any) {
-    console.log('First', event);
-
-    event ? this.toggleDarkTheme() : this.toggleLightTheme();
-  }
-
-  toggleDarkTheme() {
-    if (!this.isDarkMode) {
-      console.log('Dark theme toggled');
-      this.myService.storeData('dark-theme', true);
+  changeThemeMode(event: boolean) {
+    this.isDarkMode.next(event);
+    if (event) {
+      this.storageService.storeData('dark-theme', true);
       this.renderer.addClass(this.document.body, 'dark');
-      this.isDarkMode = true;
-    }
-  }
-
-  toggleLightTheme() {
-    if (this.isDarkMode) {
-      console.log('Light theme toggled');
-      this.myService.storeData('dark-theme', false);
+    } else {
+      this.storageService.storeData('dark-theme', false);
       this.renderer.removeClass(this.document.body, 'dark');
-      this.isDarkMode = false;
     }
   }
 }
