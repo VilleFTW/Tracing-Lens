@@ -1,5 +1,5 @@
-import { ThemeSwitcherService } from '../services/theme-switcher.service';
-import { LanguageService } from '../services/language.service';
+import { ThemeSwitcherService } from '../../services/theme-switcher.service';
+import { LanguageService } from '../../services/language.service';
 import { Component } from '@angular/core';
 
 @Component({

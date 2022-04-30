@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-dark-mode-toggle',
   template: `
     <!-- todo fix checked toggle initialized incorectly -->
-    <ion-toggle [checked]="isDarkMode | async" (ionChange)="toggleDarkTheme($event)">Test</ion-toggle>
+    <ion-toggle [checked]="isDarkMode | async" (ionChange)="toggleDarkTheme($event)"></ion-toggle>
   `,
   styles: [],
 })
