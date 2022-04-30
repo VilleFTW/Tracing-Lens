@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { StorageService } from 'src/app/services/storage.service';
 
 import { LanguageSelectorComponent } from './language-selector.component';
 
@@ -8,9 +10,10 @@ describe('LanguageSelectorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LanguageSelectorComponent ]
-    })
-    .compileComponents();
+      imports: [TranslateModule.forRoot()],
+      declarations: [LanguageSelectorComponent],
+      providers: [{ provide: StorageService, useValue: {} }],
+    }).compileComponents();
   });
 
   beforeEach(() => {

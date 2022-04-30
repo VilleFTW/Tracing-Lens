@@ -1,4 +1,3 @@
-import { Storage } from '@ionic/storage-angular';
 import { ThemeSwitcherService } from './services/theme-switcher.service';
 import { StorageService } from './services/storage.service';
 import { Component, OnInit } from '@angular/core';

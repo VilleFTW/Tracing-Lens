@@ -1,3 +1,4 @@
+import { StorageService } from './storage.service';
 import { TestBed } from '@angular/core/testing';
 
 import { ThemeSwitcherService } from './theme-switcher.service';
@@ -6,7 +7,9 @@ describe('ThemeSwitcherService', () => {
   let service: ThemeSwitcherService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [StorageService, { provide: StorageService, useValue: {} }],
+    });
     service = TestBed.inject(ThemeSwitcherService);
   });
 

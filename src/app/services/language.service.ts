@@ -1,8 +1,6 @@
-import { browser } from 'protractor';
 import { StorageService } from './storage.service';
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Platform } from '@ionic/angular';
 
 const LANGUAGE_KEY = 'selected_language';
 
@@ -13,8 +11,7 @@ export class LanguageService {
   // Setting the default language in case its not already set in storage service
   selectedLanguage = 'en';
 
-  constructor(private translate: TranslateService, private storageService: StorageService, private plt: Platform) {
-  }
+  constructor(private translate: TranslateService, private storageService: StorageService) {}
 
   async initializeLanguageService() {
     const language = this.translate.getBrowserLang();
