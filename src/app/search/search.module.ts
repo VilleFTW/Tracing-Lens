@@ -1,5 +1,4 @@
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,13 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { SearchPageRoutingModule } from './search-routing.module';
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    ExploreContainerComponentModule,
-    SearchPageRoutingModule
-  ],
-  declarations: [SearchPage]
+  imports: [IonicModule, CommonModule, FormsModule, ExploreContainerComponentModule, SearchPageRoutingModule],
+  declarations: [SearchPage],
 })
 export class SearchPageModule {}

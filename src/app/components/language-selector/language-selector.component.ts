@@ -19,11 +19,9 @@ export class LanguageSelectorComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedLanguage = this.languageService.selectedLanguage;
-    console.log(this.selectedLanguage);
   }
 
-  changeLanguage(language: string) {
-    console.log(language);
-    this.languageService.setLanguage(language);
+  changeLanguage(languageEvent: any) {
+    this.languageService.setLanguage(languageEvent.target.value);
   }
 }
