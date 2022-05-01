@@ -1,3 +1,4 @@
+import { FontSizeChangerComponent } from './../../components/font-size-changer/font-size-changer.component';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
@@ -16,6 +17,6 @@ import { SettingsPageRoutingModule } from './settings-routing.module';
     RouterModule.forChild([{ path: '', component: SettingsPage }]),
     SettingsPageRoutingModule,
   ],
-  declarations: [SettingsPage, DarkModeToggleComponent, LanguageSelectorComponent],
+  declarations: [SettingsPage, DarkModeToggleComponent, LanguageSelectorComponent, FontSizeChangerComponent],
 })
 export class SettingsPageModule {}

@@ -233,3 +233,130 @@
 
     --ion-card-background: #1e1e1e;
   }
+
+  // Font Family
+body.font-size-10 {
+  ion-button{
+    size: small;
+    width: 300px;
+  }
+
+  ion-title.large-title,
+  ion-title,
+  ion-label,
+  ion-input,
+  ion-item,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div {
+    font-size: 10px;
+  }
+}
+
+body.font-size-12 {
+  ion-button{
+    size: small;
+  }
+
+  ion-title.large-title,
+  ion-title,
+  ion-label,
+  ion-input,
+  ion-item,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div {
+    font-size: 12px;
+  }
+}
+
+body.font-size-14 {
+  ion-title.large-title,
+  ion-title,
+  ion-label,
+  ion-input,
+  ion-item,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div {
+    font-size: 14px;
+  }
+}
+
+body.font-size-16 {
+  ion-title.large-title,
+  ion-title,
+  ion-label,
+  ion-input,
+  ion-item,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div {
+    font-size: 16px;
+  }
+}
+
+body.font-size-18 {
+  ion-button{
+    size: large;
+  }
+
+  ion-title.large-title,
+  ion-title,
+  ion-label,
+  ion-input,
+  ion-item,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div {
+    font-size: 18px;
+  }
+}
+
+body.font-size-20 {
+  ion-button{
+    size: large;
+  }
+
+  ion-title.large-title,
+  ion-title,
+  ion-label,
+  ion-input,
+  ion-item,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div {
+    font-size: 20px;
+  }
+}
+

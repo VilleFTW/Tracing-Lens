@@ -13,7 +13,7 @@ export class StorageService {
     await this.storage.create();
   }
 
-  storeData(key: string, value: string | boolean) {
+  storeData(key: string, value: string | boolean | number) {
     try {
       this.storage.set(key, value);
     } catch (err) {

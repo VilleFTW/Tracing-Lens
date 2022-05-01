@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+/* eslint-disable no-underscore-dangle */
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { LanguageService } from './services/language/language.service';
 import { StorageService } from './services/storage/storage.service';
 import { ThemeSwitcherService } from './services/theme-switcher/theme-switcher.service';
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit {
     private storageService: StorageService,
     private languageService: LanguageService,
   ) {}
+
 
   ngOnInit(): void {
     if (this.web3.getInjected()) {
