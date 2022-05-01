@@ -33,27 +33,28 @@ export class ThemeSwitcherService {
   }
 
   initializeThemeSwitcherService() {
-    this.storageService.getStoredData('dark-theme').then((val) => {
-      if (val === null) {
+    this.storageService.getStoredData('dark-theme').then((value) => {
+      if (value === null) {
         //If there is no value in local storage
         this.changeThemeMode(this.prefersDark.matches);
       } else {
-        this.changeThemeMode(val);
+        this.changeThemeMode(value);
       }
     });
 
-    this.storageService.getStoredData('font-size').then((val) => {
-      if (val === null) {
-        console.log('In local storage false', val);
-
+    this.storageService.getStoredData('font-size').then((value) => {
+      console.log(value);
+      if (value === null || isNaN(value)) {
         //Getting the original font-size
-        this.setFontBySize(
-          parseInt(window.getComputedStyle(this.document.body, null).getPropertyValue('font-size'), 10),
-        );
+        const computedStyle = window.getComputedStyle(this.document.body, null).getPropertyValue('font-size');
+        //Converting into decimal number
+        const computedStyleNumber = parseInt(computedStyle, 10);
+
+        this.setFontBySize(computedStyleNumber);
       } else {
-        console.log('In local storage true', val);
         //Initializing the font size
-        this.setFontBySize(val);
+        console.log('Goes here');
+        this.setFontBySize(value);
       }
     });
 
@@ -69,8 +70,11 @@ export class ThemeSwitcherService {
     this.renderer.addClass(this.document.body, `font-size-${fontSize}`);
     this.storageService.storeData('font-size', fontSize);
 
+    //TODO: Change sizes of buttons icons
+    // if (fontSize >= 18) {
+    //   this.renderer.setAttribute('ion-button', 'size', 'large');
+    // }
     this.fontSize = fontSize;
-    console.log(this.fontSize);
   }
 
   changeThemeMode(event: boolean) {

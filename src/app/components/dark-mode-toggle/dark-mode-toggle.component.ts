@@ -4,7 +4,13 @@ import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-dark-mode-toggle',
-  template: `<ion-toggle [checked]="isDarkMode | async" (ionChange)="toggleDarkTheme($event)"></ion-toggle> `,
+  template: `
+    <ion-item>
+      <ion-icon slot="start" name="moon-outline"></ion-icon>
+      <ion-label> Dark Mode </ion-label>
+      <ion-toggle [checked]="isDarkMode | async" (ionChange)="toggleDarkTheme($event)"></ion-toggle>
+    </ion-item>
+  `,
   styles: [],
 })
 export class DarkModeToggleComponent implements OnInit {

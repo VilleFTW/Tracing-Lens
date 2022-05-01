@@ -21,6 +21,11 @@ export class StorageService {
     }
   }
 
+  reset() {
+    this.storage.clear();
+    window.location.reload();
+  }
+
   async getStoredData(key: string) {
     try {
       return this.storage.get(key);
