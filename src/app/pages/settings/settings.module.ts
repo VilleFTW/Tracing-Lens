@@ -1,3 +1,4 @@
+import { Web3AuthButtonComponent } from './../../components/web3-auth-button/web3-auth-button.component';
 import { ResetPreferencesComponent } from './../../components/reset-preferences/reset-preferences.component';
 import { FontSizeChangerComponent } from './../../components/font-size-changer/font-size-changer.component';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
@@ -18,6 +19,13 @@ import { SettingsPageRoutingModule } from './settings-routing.module';
     RouterModule.forChild([{ path: '', component: SettingsPage }]),
     SettingsPageRoutingModule,
   ],
-  declarations: [SettingsPage, DarkModeToggleComponent, LanguageSelectorComponent, FontSizeChangerComponent, ResetPreferencesComponent],
+  declarations: [
+    SettingsPage,
+    DarkModeToggleComponent,
+    LanguageSelectorComponent,
+    FontSizeChangerComponent,
+    ResetPreferencesComponent,
+    Web3AuthButtonComponent,
+  ],
 })
 export class SettingsPageModule {}

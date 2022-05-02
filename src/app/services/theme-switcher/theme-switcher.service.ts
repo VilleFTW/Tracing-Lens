@@ -43,7 +43,6 @@ export class ThemeSwitcherService {
     });
 
     this.storageService.getStoredData('font-size').then((value) => {
-      console.log(value);
       if (value === null || isNaN(value)) {
         //Getting the original font-size
         const computedStyle = window.getComputedStyle(this.document.body, null).getPropertyValue('font-size');
@@ -53,7 +52,6 @@ export class ThemeSwitcherService {
         this.setFontBySize(computedStyleNumber);
       } else {
         //Initializing the font size
-        console.log('Goes here');
         this.setFontBySize(value);
       }
     });

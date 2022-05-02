@@ -22,25 +22,9 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if (this.web3.getInjected()) {
-      this.web3.connectToCachedProvider().then((response) => {
-        this.data = response;
-      });
-    }
+
     this.storageService.initialize();
     this.themeSwitcherService.initializeThemeSwitcherService();
     this.languageService.initializeLanguageService();
-  }
-
-  connect() {
-    this.web3.connectAccount().then((response) => {
-      this.data = response;
-    });
-  }
-
-  disconnect() {
-    this.web3.disconnectAccount().then((response) => {
-      this.data = null;
-    });
   }
 }

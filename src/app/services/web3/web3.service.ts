@@ -1,7 +1,7 @@
 import Web3Modal from 'web3modal';
 import { Inject, Injectable } from '@angular/core';
 import { WEB3 } from './web3';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import Web3 from 'web3';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { provider } from 'web3-core';
@@ -10,7 +10,8 @@ import { provider } from 'web3-core';
   providedIn: 'root',
 })
 export class Web3Service {
-  public accountsObservable = new Subject<string[]>();
+  isAuthenticated$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  isAuth: boolean;
   web3Modal: Web3Modal;
   web3js: any;
   provider: provider | undefined;
@@ -53,6 +54,7 @@ export class Web3Service {
     });
 
     if (this.web3Modal.cachedProvider) {
+      console.log('Provider starting from cache');
       this.connectAccount();
     }
   }
@@ -65,6 +67,10 @@ export class Web3Service {
       } // create web3 instance
       await this.fetchAccountData();
       await this.addProviderListeners();
+      this.isAuth = true;
+      this.isAuthenticated$.next(this.isAuth);
+      console.log(this.isAuthenticated$);
+
       return this.accounts;
     } catch (e) {
       console.log('Could not get a wallet connection', e);
@@ -72,14 +78,13 @@ export class Web3Service {
     }
   }
 
+  getIsAuthenticatedObs(): Observable<boolean> {
+    return this.isAuthenticated$.asObservable();
+  }
+
   async connectToCachedProvider() {
     await this.web3Modal.connect();
     await this.fetchAccountData();
-    return this.accounts;
-  }
-
-  getInjected() {
-    return this.web3Modal.cachedProvider;
   }
 
   async addProviderListeners() {
@@ -104,6 +109,8 @@ export class Web3Service {
 
   async fetchAccountData() {
     this.accounts = await this.web3js.eth.getAccounts();
+
+    return this.accounts;
   }
 
   async accountInfo(account: any[]) {
@@ -117,6 +124,9 @@ export class Web3Service {
       this.web3Modal.clearCachedProvider();
       await this.web3js.setProvider(null);
       this.provider = null;
+      this.isAuth = false;
+      this.isAuthenticated$.next(this.isAuth);
+      console.log(this.isAuthenticated$);
       console.log('Cleared account');
     } else {
       console.log('NOT cleared account');
