@@ -13,10 +13,10 @@ export class Web3Service {
   isAuthenticated$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   isAuth: boolean;
   web3Modal: Web3Modal;
-  web3js: any;
-  provider: provider | undefined;
-  accounts: string[] | undefined;
-  balance: string | undefined;
+  web3js: Web3;
+  provider: provider;
+  accounts: string[];
+  balance: string;
 
   constructor(@Inject(WEB3) private web3: Web3) {
     const providerOptions = {
@@ -41,7 +41,7 @@ export class Web3Service {
     };
 
     this.web3Modal = new Web3Modal({
-      network: 'mainnet', // optional change this with the net you want to use like rinkeby etc
+      network: 'rinkeby', // optional change this with the net you want to use like rinkeby etc
       cacheProvider: true, // optional
       providerOptions, // required
       theme: {
@@ -57,6 +57,10 @@ export class Web3Service {
       console.log('Provider starting from cache');
       this.connectAccount();
     }
+  }
+
+  async changeChain() {
+    // this.web3js.eth.
   }
 
   async connectAccount() {
@@ -109,11 +113,10 @@ export class Web3Service {
 
   async fetchAccountData() {
     this.accounts = await this.web3js.eth.getAccounts();
-
     return this.accounts;
   }
 
-  async accountInfo(account: any[]) {
+  async accountInfo(account: any) {
     const initialvalue = await this.web3js.eth.getBalance(account);
     this.balance = this.web3js.utils.fromWei(initialvalue, 'ether');
     return this.balance;
@@ -122,7 +125,7 @@ export class Web3Service {
   async disconnectAccount() {
     if (this.provider) {
       this.web3Modal.clearCachedProvider();
-      await this.web3js.setProvider(null);
+      this.web3js.setProvider(null);
       this.provider = null;
       this.isAuth = false;
       this.isAuthenticated$.next(this.isAuth);
