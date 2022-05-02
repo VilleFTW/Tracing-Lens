@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { Web3AuthButtonComponent } from './../../components/web3-auth-button/web3-auth-button.component';
 import { ResetPreferencesComponent } from './../../components/reset-preferences/reset-preferences.component';
 import { FontSizeChangerComponent } from './../../components/font-size-changer/font-size-changer.component';
@@ -15,6 +16,7 @@ import { SettingsPageRoutingModule } from './settings-routing.module';
   imports: [
     IonicModule,
     CommonModule,
+    TranslateModule,
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: SettingsPage }]),
     SettingsPageRoutingModule,
