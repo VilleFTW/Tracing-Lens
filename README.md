@@ -23,10 +23,57 @@
 [![Slack Channel](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white
 )](https://join.slack.com/t/rugbscproject-oub4317/shared_invite/zt-17ug9ohdg-9fqYpnBgNeBVY8fKtZ3ZAQ)
   
-Technology Stack: <br>
+</div>
+
+<hr>
+
+### Table of Contents
+
+  - [Quick Start](#quick-start)
+  - [Deploying](#deploying)
+  - [Technology Stack:](#technology-stack)
+  - [Continuous Testing, Integration and Deployment](#continuous-testing-integration-and-deployment)
+
+<hr>
+
+
+## Quick Start
+<br>
+
+First, [download](https://nodejs.org/en/download/) the latest version of Node.js.
+
+Install the Ionic CLI globally: `npm install -g ionic`
+
+Clone this repository through 
+- GitHub CLI `gh repo clone VilleFTW/Tracing-Eye` 
+- or, if you have git installed `git clone https://github.com/VilleFTW/Tracing-Eye.git`
+
+Run `npm install` to install the required dependencies
+
+Run `ionic serve` to launch the application 
+
+_Note: See [How to Prevent Permissions Errors](https://github.com/ionic-team/ionic-conference-app#:~:text=Note%3A%20See%20How%20to%20Prevent%20Permissions%20Errors%20if%20you%20are%20running%20into%20issues%20when%20trying%20to%20install%20packages%20globally.) if you are running into issues when trying to install packages globally._
+
+<hr>
+
+## Deploying
+1. Run `ionic build --prod`
+2. Push the `
+www` to the hosting service
+
+<hr>
+
+## Technology Stack:
+<br>
+
 ![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white) +
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 
- Continuous Testing, Integration and Deployment <br>
+<hr>
+
+ ## Continuous Testing, Integration and Deployment 
+ <br>
+
  ![TravisCI](https://img.shields.io/badge/travis_CI-3EAAAF?style=for-the-badge&logo=travisci&logoColor=white)
-</div>
+
+<hr>
