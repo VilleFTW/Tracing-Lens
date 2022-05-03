@@ -6,7 +6,7 @@ import Web3 from 'web3';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { provider } from 'web3-core';
 import { ethers } from 'ethers';
-import { NotificationsService } from '../notifications/notifications.service';
+// import { NotificationsService } from '../notifications/notifications.service';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +21,9 @@ export class Web3Service {
   accounts: string[];
   balance: string;
 
-  constructor(@Inject(WEB3) private web3: Web3, private notificationService: NotificationsService) {
+  constructor(@Inject(WEB3) private web3: Web3,
+  // private notificationService: NotificationsService
+  ) {
     const providerOptions = {
       walletconnect: {
         package: WalletConnectProvider, // required
@@ -63,31 +65,31 @@ export class Web3Service {
   }
 
   async changeChain() {
-    try {
-      await this.library.provider.request({
-        method: 'wallet_switchEthereumChain',
-        params: [{ chainId: toHex(137) }],
-      });
-    } catch (switchError) {
-      // This error code indicates that the chain has not been added to MetaMask.
-      if (switchError.code === 4902) {
-        try {
-          await library.provider.request({
-            method: 'wallet_addEthereumChain',
-            params: [
-              {
-                chainId: toHex(137),
-                chainName: 'Polygon',
-                rpcUrls: ['https://polygon-rpc.com/'],
-                blockExplorerUrls: ['https://polygonscan.com/'],
-              },
-            ],
-          });
-        } catch (addError) {
-          throw addError;
-        }
-      }
-    }
+    // try {
+    //   await this.library.provider.request({
+    //     method: 'wallet_switchEthereumChain',
+    //     params: [{ chainId: toHex(137) }],
+    //   });
+    // } catch (switchError) {
+    //   // This error code indicates that the chain has not been added to MetaMask.
+    //   if (switchError.code === 4902) {
+    //     try {
+    //       await library.provider.request({
+    //         method: 'wallet_addEthereumChain',
+    //         params: [
+    //           {
+    //             chainId: toHex(137),
+    //             chainName: 'Polygon',
+    //             rpcUrls: ['https://polygon-rpc.com/'],
+    //             blockExplorerUrls: ['https://polygonscan.com/'],
+    //           },
+    //         ],
+    //       });
+    //     } catch (addError) {
+    //       throw addError;
+    //     }
+    //   }
+    // }
   }
 
   async connectAccount() {
@@ -95,7 +97,7 @@ export class Web3Service {
       this.provider = await this.web3Modal.connect(); // set provider
       if (this.provider) {
         this.web3js = new Web3(this.provider);
-        this.library = new ethers.providers.Web3Provider(this.provider);
+        // this.library = new ethers.providers.Web3Provider(this.provider);
       } // create web3 instance
       await this.fetchAccountData();
       await this.addProviderListeners();
@@ -104,7 +106,7 @@ export class Web3Service {
       if ((await this.web3js.eth.getChainId()) === 4) {
         console.log('On Rinkeby');
       } else {
-        this.notificationService.showWrongChainNotification();
+        // this.notificationService.showWrongChainNotification();
       }
       console.log(await this.web3js.eth.getChainId());
       return this.accounts;
@@ -168,6 +170,6 @@ export class Web3Service {
     }
   }
 }
-function toHex(arg0: number) {
-  throw new Error('Function not implemented.');
-}
+// function toHex(arg0: number) {
+//   throw new Error('Function not implemented.');
+// }

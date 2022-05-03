@@ -11,6 +11,7 @@ import { SearchPageRoutingModule } from './search-routing.module';
   imports: [
     IonicModule,
     CommonModule,
+    TranslateModule,
     FormsModule,
     ExploreContainerComponentModule,
     SearchPageRoutingModule,

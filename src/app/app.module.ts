@@ -12,6 +12,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from './services/language/language.service';
+import { NotificationsService } from './services/notifications/notifications.service';
 
 // exported translations loader function that fetches JSON files from the assets folder
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
@@ -41,6 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     ThemeSwitcherService,
     StorageService,
     LanguageService,
+    NotificationsService
   ],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 import { ExploreContainerComponentModule } from 'src/app/components/explore-container/explore-container.module';
 
 import { SearchPage } from './search.page';
@@ -10,7 +11,7 @@ describe('SearchPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [SearchPage],
-      imports: [ExploreContainerComponentModule],
+      imports: [ExploreContainerComponentModule, TranslateModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SearchPage);

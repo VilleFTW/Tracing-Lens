@@ -13,6 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
     IonicModule,
     CommonModule,
     FormsModule,
+    TranslateModule,
     ExploreContainerComponentModule,
     HomePageRoutingModule,
     TranslateModule
