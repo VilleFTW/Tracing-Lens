@@ -7,7 +7,14 @@
 [![Build Status](https://app.travis-ci.com/VilleFTW/tracing-eye.svg?token=HmAKdxYwy5bzcgZz7Jov&branch=master)](https://app.travis-ci.com/VilleFTW/tracing-eye)
 [![codecov.io](https://codecov.io/github/VilleFTW/tracing-eye/coverage.svg?branch=master)](https://codecov.io/github/VilleFTW/tracing-eye?branch=master)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-[![Issues](https://img.shields.io/github/issues-pr/VilleFTW/tracing-eye.svg)](https://test.com)
+![Commits Since](https://img.shields.io/github/commits-since/VilleFTW/tracing-eye}/v1.0.svg)
+
+  
+[![PR](https://img.shields.io/github/issues-pr/VilleFTW/tracing-eye.svg)](https://test.com)
+[![PR Closed](https://img.shields.io/github/issues-pr-closed/VilleFTW/tracing-eye.svg)](https://test.com)
+[![Issues](https://img.shields.io/github/issues/VilleFTW/tracing-eye.svg)](https://test.com)
+[![Issues closed](https://img.shields.io/github/issues-closed/VilleFTW/tracing-eye.svg)](https://test.com)
+
   
 [![Made with Node](https://img.shields.io/badge/dynamic/json?label=node&query=%24.engines%5B%22node%22%5D&url=https%3A%2F%2Fraw.githubusercontent.com%2FVilleFTW%2Ftracing-eye%2Fmaster%2Fpackage.json)](https://nodejs.org "Go to Node.js homepage")
   
