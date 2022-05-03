@@ -1,4 +1,4 @@
-import { LanguageService } from './../../services/language.service';
+import { LanguageService } from '../../services/language/language.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -21,7 +21,7 @@ export class LanguageSelectorComponent implements OnInit {
     this.selectedLanguage = this.languageService.selectedLanguage;
   }
 
-  changeLanguage(languageEvent: any) {
-    this.languageService.setLanguage(languageEvent.target.value);
+  changeLanguage(event: Event) {
+    this.languageService.setLanguage((event.target as any).value);
   }
 }

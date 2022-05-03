@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StorageService } from 'src/app/services/storage/storage.service';
+import { ThemeSwitcherService } from 'src/app/services/theme-switcher/theme-switcher.service';
 import { DarkModeToggleComponent } from './dark-mode-toggle.component';
-import { ThemeSwitcherService } from 'src/app/services/theme-switcher.service';
-import { StorageService } from 'src/app/services/storage.service';
 
 describe('DarkModeToggleComponent', () => {
   let component: DarkModeToggleComponent;

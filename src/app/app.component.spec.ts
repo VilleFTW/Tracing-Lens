@@ -2,7 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
-import { StorageService } from './services/storage.service';
+import { StorageService } from './services/storage/storage.service';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {

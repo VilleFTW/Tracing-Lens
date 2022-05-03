@@ -16,7 +16,7 @@ script:
 
 deploy:
   provider: pages
-  skip-cleanup: true
+  skip-cleanup: false
   github-token: $GITHUB_TOKEN # Set in travis-ci.org dashboard, marked secure
   keep-history: true
   on:
@@ -25,4 +25,5 @@ deploy:
 
 notifications:
   email: false
-  slack: rugbscproject-oub4317:5wwoJe0jTjpZzVjudQUBf3yn
+  slack:
+    secure: I4hL6gbhWqQDuQ0a4tJ7aJ4Hsn9QsQOqkojvUWfMwVUVOSrhUsg0ZurulHGkWbWMrIcZGDjuZ19kNL1Ct85xE+8V53ZOVnJ3nKHpquPUbdNIldivf+HzH1mQc088v612VQ977qUI1qqo+GHU1/W7Jx4T9Mi6u4G1CToeFAUYsWJsDoF6CesQZ6j4isAshwBWZ2rvH8JRUwoROS7QivhI8cz9GKWJU6E7/U7b0AFliOEEJRY0O/zUFw9aXDNJo2ZrUzShOo9pZO7MLweY+GKgdz+pJ2gZZaLqrU3HKgLrmTq5a9oOrk86tEL6OBnpxRTclk3j0775REgKjNahr1YUctH8zqWngu8F6pNit09OAy/M1+h1Wchtlmry1CyKGRvSOY94sa24KkBP1b4YXdzUXIdg1M88M4ZYE3iHg6UkmQcnwg3ldKDhwY79XQSpJ8bfBuo4mtB7JV8EqTR1cAacJ5Hi0nykpzV43rlOexoe1aIPUHXnEhHBUmImj+BTKTBwhX+tXxyi3ZhdPVVLX2HaQ18FCizUU8uIsr+Git7oNDUC1KrxKZ/4Q3LanGNHG29AIj10+h95SPj05F/yeddhSfoYsUh15qdO3Mvgb+WsFRH8bOZBzd4wl7xEbyLQflk70dwknva2qSET+hHgJoOZtLcUzPtzp/A+zSKn71UU3Oc=
