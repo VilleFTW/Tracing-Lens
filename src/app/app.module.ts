@@ -42,7 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     ThemeSwitcherService,
     StorageService,
     LanguageService,
-    NotificationsService
+    NotificationsService,
   ],
   bootstrap: [AppComponent],
 })

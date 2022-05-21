@@ -6,7 +6,7 @@ import Web3 from 'web3';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { provider } from 'web3-core';
 import { ethers } from 'ethers';
-// import { NotificationsService } from '../notifications/notifications.service';
+import { NotificationsService } from '../notifications/notifications.service';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +22,7 @@ export class Web3Service {
   balance: string;
 
   constructor(@Inject(WEB3) private web3: Web3,
-  // private notificationService: NotificationsService
+  private notificationService: NotificationsService
   ) {
     const providerOptions = {
       walletconnect: {
@@ -105,8 +105,9 @@ export class Web3Service {
 
       if ((await this.web3js.eth.getChainId()) === 4) {
         console.log('On Rinkeby');
+        this.notificationService.showCorrectChainNotification();
       } else {
-        // this.notificationService.showWrongChainNotification();
+        this.notificationService.showWrongChainNotification();
       }
       console.log(await this.web3js.eth.getChainId());
       return this.accounts;
@@ -170,6 +171,3 @@ export class Web3Service {
     }
   }
 }
-// function toHex(arg0: number) {
-//   throw new Error('Function not implemented.');
-// }

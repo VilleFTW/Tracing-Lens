@@ -7,8 +7,32 @@ import { ToastController } from '@ionic/angular';
 })
 export class NotificationsService {
   // private notification;
-  constructor(private toastController: ToastController, private web3: Web3Service) {
+  constructor(private toastController: ToastController) {
     console.log('Notification Service injected');
+  }
+
+  showCorrectChainNotification(){
+    this.toastController
+      .create({
+        header: 'Success',
+        message: 'Connected to Rinkeby',
+        position: 'top',
+        color: 'success',
+        cssClass: 'toast-custom-class',
+        buttons: [
+          {
+            side: 'end',
+            text: 'Close',
+            role: 'cancel',
+            handler: () => {
+              console.log('');
+            },
+          },
+        ],
+      })
+      .then((toast) => {
+        toast.present();
+      });
   }
 
   showWrongChainNotification() {

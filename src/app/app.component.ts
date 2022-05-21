@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   data: any;
 
   constructor(
-    private web3: Web3Service,
     private themeSwitcherService: ThemeSwitcherService,
     private storageService: StorageService,
     private languageService: LanguageService,
