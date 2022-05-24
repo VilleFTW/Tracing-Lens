@@ -13,10 +13,8 @@ import { AlertController } from '@ionic/angular';
   `,
   styles: [],
 })
-export class ResetPreferencesComponent implements OnInit {
+export class ResetPreferencesComponent {
   constructor(private storageService: StorageService, private allertController: AlertController) {}
-
-  ngOnInit(): void {}
 
   action() {
     this.allertController

@@ -8,9 +8,8 @@ describe('Web3AuthButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Web3AuthButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [Web3AuthButtonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

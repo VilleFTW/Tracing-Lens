@@ -16,8 +16,8 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule,
     ExploreContainerComponentModule,
     HomePageRoutingModule,
-    TranslateModule
+    TranslateModule,
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
 })
 export class HomePageModule {}

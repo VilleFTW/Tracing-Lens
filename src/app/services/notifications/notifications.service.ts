@@ -11,7 +11,7 @@ export class NotificationsService {
     console.log('Notification Service injected');
   }
 
-  showCorrectChainNotification(){
+  showCorrectChainNotification() {
     this.toastController
       .create({
         header: 'Success',

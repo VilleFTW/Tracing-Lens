@@ -9,10 +9,9 @@ describe('FontSizeChangerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FontSizeChangerComponent ],
-      providers: [{ provide: StorageService, useValue: {} }]
-    })
-    .compileComponents();
+      declarations: [FontSizeChangerComponent],
+      providers: [{ provide: StorageService, useValue: {} }],
+    }).compileComponents();
   });
 
   beforeEach(() => {
