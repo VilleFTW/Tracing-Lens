@@ -21,9 +21,7 @@ export class Web3Service {
   accounts: string[];
   balance: string;
 
-  constructor(@Inject(WEB3) private web3: Web3,
-  private notificationService: NotificationsService
-  ) {
+  constructor(@Inject(WEB3) private web3: Web3, private notificationService: NotificationsService) {
     const providerOptions = {
       walletconnect: {
         package: WalletConnectProvider, // required

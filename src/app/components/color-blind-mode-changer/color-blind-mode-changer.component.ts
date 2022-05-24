@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ColorBlindMode } from '../../../assets/config/ThemeSwitcherConfig';
+import { ThemeSwitcherService } from '../../services/theme-switcher/theme-switcher.service';
 @Component({
   selector: 'app-color-blind-mode-changer',
   template: `
@@ -7,21 +8,33 @@ import { Component, OnInit } from '@angular/core';
       <ion-icon slot="start" name="eye-outline"></ion-icon>
       <ion-label> Color Blind Mode </ion-label>
 
-
-      <ion-select slot="end"        ok-text="Okay" cancel-text="Dismiss">
-       <!-- (ionChange)="changeLanguage($event)" -->
-    <!-- <ion-select-option *ngFor="let c of countries" value="{{ c.value }}" > {{c.flag + ' ' + c.name}}</ion-select-option> -->
-  </ion-select>
+      <ion-select
+        slot="end"
+        ok-text="Okay"
+        cancel-text="Dismiss"
+        (ionChange)="changeColorBlindMode($event)"
+        [value]="selectedColorBlindMode"
+      >
+        <!-- (ionChange)="changeLanguage($event)" -->
+        <ion-select-option *ngFor="let colorBlindModeType of colorBlindModeArray" [value]="colorBlindModeType">
+          {{ colorBlindModeType | titlecase }}</ion-select-option
+        >
+      </ion-select>
     </ion-item>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class ColorBlindModeChangerComponent implements OnInit {
-
-  constructor() { }
+  //Getting the values of our ColorBlindEnum as string
+  colorBlindModeArray = Object.values(ColorBlindMode).map((item) => String(item));
+  selectedColorBlindMode: string;
+  constructor(private themeSwitcherService: ThemeSwitcherService) {}
 
   ngOnInit(): void {
+    this.selectedColorBlindMode = this.themeSwitcherService.getColorBlindMode();
   }
 
+  changeColorBlindMode(event: Event) {
+    this.themeSwitcherService.changeColorBlindMode((event.target as any).value);
+  }
 }

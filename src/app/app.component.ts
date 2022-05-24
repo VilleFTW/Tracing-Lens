@@ -17,8 +17,7 @@ export class AppComponent implements OnInit {
   constructor(
     private themeSwitcherService: ThemeSwitcherService,
     private storageService: StorageService,
-    private languageService: LanguageService,
-    // private notificationService: NotificationsService,
+    private languageService: LanguageService, // private notificationService: NotificationsService,
   ) {}
 
   ngOnInit(): void {

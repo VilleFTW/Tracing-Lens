@@ -15,8 +15,8 @@ import { SearchPageRoutingModule } from './search-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
     SearchPageRoutingModule,
-    TranslateModule
+    TranslateModule,
   ],
-  declarations: [SearchPage]
+  declarations: [SearchPage],
 })
 export class SearchPageModule {}

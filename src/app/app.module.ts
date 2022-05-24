@@ -15,7 +15,6 @@ import { LanguageService } from './services/language/language.service';
 import { NotificationsService } from './services/notifications/notifications.service';
 
 // exported translations loader function that fetches JSON files from the assets folder
-// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
