@@ -1,10 +1,16 @@
-
-
 <ion-item>
   <ion-icon slot="start" name="language-outline"></ion-icon>
   <ion-label>Language</ion-label>
 
-  <ion-select slot="end" (ionChange)="changeLanguage($event)" ok-text="Okay" cancel-text="Dismiss">
-    <ion-select-option *ngFor="let c of countries" value="{{ c.value }}" > {{c.flag + ' ' + c.name}}</ion-select-option>
+  <ion-select
+    slot="end"
+    (ionChange)="changeLanguage($event)"
+    ok-text="Okay"
+    cancel-text="Dismiss"
+    [value]="selectedLanguage"
+  >
+    <ion-select-option *ngFor="let country of countries" value="{{ country.value }}">
+      {{ country.flag + ' ' + country.name }}</ion-select-option
+    >
   </ion-select>
 </ion-item>

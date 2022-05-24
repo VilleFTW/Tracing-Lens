@@ -2,11 +2,10 @@
   <ion-icon slot="start" name="wallet-outline"></ion-icon>
   <ion-label>Wallet Connection</ion-label>
 
-  <ion-button *ngIf="!this.isAuth else disconnectTemplate" (click)="connect()">Connect Wallet</ion-button>
-<!-- <h2 *ngIf="this.data"> {{ this.data }}</h2> -->
+  <ion-button *ngIf="!this.isAuth; else disconnectTemplate" (click)="connect()">Connect Wallet</ion-button>
+  <!-- <h2 *ngIf="this.data"> {{ this.data }}</h2> -->
 
-<ng-template #disconnectTemplate>
-  <ion-button (click)="disconnect()">Disconnect Wallet</ion-button>
-</ng-template>
-
+  <ng-template #disconnectTemplate>
+    <ion-button (click)="disconnect()">Disconnect Wallet</ion-button>
+  </ng-template>
 </ion-item>

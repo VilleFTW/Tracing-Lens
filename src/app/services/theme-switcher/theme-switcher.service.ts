@@ -2,15 +2,18 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { StorageService } from '../storage/storage.service';
-
+import { ColorBlindMode } from '../../../assets/config/ThemeSwitcherConfig';
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeSwitcherService {
   renderer: Renderer2;
   isDarkMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
-  fontSize: number;
+  colorBlindMode: ColorBlindMode;
+  //Getting the values of our ColorBlindEnum as string
+  colorBlindModeArray = Object.values(ColorBlindMode).map((item) => String(item));
 
+  fontSize: number;
   font: Array<number> = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
 
   // Use matchMedia to check the user preference
@@ -32,6 +35,10 @@ export class ThemeSwitcherService {
     return this.fontSize;
   }
 
+  getColorBlindMode() {
+    return this.colorBlindMode;
+  }
+
   initializeThemeSwitcherService() {
     this.storageService.getStoredData('dark-theme').then((value) => {
       if (value === null) {
@@ -46,13 +53,22 @@ export class ThemeSwitcherService {
       if (value === null || isNaN(value)) {
         //Getting the original font-size
         const computedStyle = window.getComputedStyle(this.document.body, null).getPropertyValue('font-size');
-        //Converting into decimal number
+
+        //Converting into decimal number (base 10)
         const computedStyleNumber = parseInt(computedStyle, 10);
 
         this.setFontBySize(computedStyleNumber);
       } else {
         //Initializing the font size
         this.setFontBySize(value);
+      }
+    });
+
+    this.storageService.getStoredData('color-blind-mode').then((value) => {
+      if (value === null) {
+        this.changeColorBlindMode(ColorBlindMode.NORMAL);
+      } else {
+        this.changeColorBlindMode(value);
       }
     });
 
@@ -84,5 +100,20 @@ export class ThemeSwitcherService {
       this.storageService.storeData('dark-theme', event);
       this.renderer.removeClass(this.document.body, 'dark');
     }
+  }
+
+  changeColorBlindMode(newColorBlindMode: ColorBlindMode) {
+    this.colorBlindMode = newColorBlindMode;
+
+    // First we remove each EnumType of ColorBlindMode
+    this.colorBlindModeArray.forEach((element) => {
+      if (element != this.colorBlindMode) {
+        this.renderer.removeClass(this.document.body, element);
+      }
+    });
+
+    this.renderer.addClass(this.document.body, this.colorBlindMode);
+    this.storageService.storeData('color-blind-mode', this.colorBlindMode);
+    console.log('Stored:', this.colorBlindMode);
   }
 }
