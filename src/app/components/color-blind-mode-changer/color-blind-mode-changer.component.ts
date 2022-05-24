@@ -6,7 +6,7 @@ import { ThemeSwitcherService } from '../../services/theme-switcher/theme-switch
   template: `
     <ion-item>
       <ion-icon slot="start" name="eye-outline"></ion-icon>
-      <ion-label> Color Blind Mode </ion-label>
+      <ion-label> {{ 'SETTINGS.color-blind-mode' | translate }} </ion-label>
 
       <ion-select
         slot="end"
