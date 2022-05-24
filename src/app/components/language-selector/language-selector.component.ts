@@ -1,19 +1,14 @@
 import { LanguageService } from '../../services/language/language.service';
 import { Component, OnInit } from '@angular/core';
-
+import { countries } from '../../../assets/config/ThemeSwitcherConfig';
 @Component({
   selector: 'app-language-selector',
   templateUrl: './language-selector.component.html',
   styleUrls: ['./language-selector.component.css'],
 })
 export class LanguageSelectorComponent implements OnInit {
-  public selectedLanguage: string;
-
-  //todo add this somewhere else
-  countries = [
-    { name: 'English', flag: '🇬🇧', value: 'en' },
-    { name: 'Spanish', flag: '🇪🇸', value: 'es' },
-  ];
+  selectedLanguage: string;
+  countries = countries;
 
   constructor(private languageService: LanguageService) {}
 
