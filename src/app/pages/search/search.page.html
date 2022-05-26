@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      {{ 'MENU.search-tab' | translate }}
-    </ion-title>
+    <ion-title> {{ 'MENU.search-tab' | translate }} </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,5 +11,6 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-button (click)="hello()"></ion-button>
   <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>

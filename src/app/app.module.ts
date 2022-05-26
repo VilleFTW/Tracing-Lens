@@ -1,4 +1,5 @@
 import { FormsModule } from '@angular/forms';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { StorageService } from './services/storage/storage.service';
 import { ThemeSwitcherService } from './services/theme-switcher/theme-switcher.service';
 import { NgModule } from '@angular/core';
@@ -39,6 +40,7 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ThemeSwitcherService,
+    QRScanner,
     StorageService,
     LanguageService,
     NotificationsService,
