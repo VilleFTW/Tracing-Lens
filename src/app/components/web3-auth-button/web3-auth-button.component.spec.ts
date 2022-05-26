@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { Web3AuthButtonComponent } from './web3-auth-button.component';
 
@@ -8,6 +9,7 @@ describe('Web3AuthButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [TranslateModule.forRoot()],
       declarations: [Web3AuthButtonComponent],
     }).compileComponents();
   });
