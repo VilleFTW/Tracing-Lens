@@ -6,8 +6,10 @@ import { SearchPage } from './search.page';
 import { ExploreContainerComponentModule } from '../../components/explore-container/explore-container.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { SearchPageRoutingModule } from './search-routing.module';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 
 @NgModule({
+  providers: [BarcodeScanner],
   imports: [
     IonicModule,
     CommonModule,

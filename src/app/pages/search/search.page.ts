@@ -1,4 +1,5 @@
 import { Component, Inject, Injectable, Injector } from '@angular/core';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 
 @Component({
   selector: 'app-search-page',
@@ -8,7 +9,16 @@ import { Component, Inject, Injectable, Injector } from '@angular/core';
 
 // eslint-disable-next-line @angular-eslint/component-class-suffix
 export class SearchPage {
-  constructor() {}
+  constructor(private barcodeScanner: BarcodeScanner) {}
 
-  hello() {}
+  async startScan() {
+    this.barcodeScanner
+      .scan()
+      .then((barcodeData) => {
+        console.log('Barcode data', barcodeData);
+      })
+      .catch((err) => {
+        console.log('Error', err);
+      });
+  }
 }

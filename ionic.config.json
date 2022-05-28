@@ -1,7 +1,8 @@
 {
   "name": "Tracing Eye",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular",
   "id": "dbed2f4b"

@@ -20,20 +20,17 @@
     "@angular/platform-browser": "~13.3.4",
     "@angular/platform-browser-dynamic": "~13.3.4",
     "@angular/router": "~13.3.4",
-    "@capacitor/android": "3.5.0",
-    "@capacitor/app": "1.1.1",
-    "@capacitor/core": "3.5.0",
-    "@capacitor/haptics": "1.1.4",
-    "@capacitor/ios": "3.5.0",
-    "@capacitor/keyboard": "1.2.2",
-    "@capacitor/status-bar": "1.0.8",
+    "@awesome-cordova-plugins/barcode-scanner": "^5.43.0",
     "@ionic/angular": "^6.1.2",
+    "@ionic/cordova-builders": "^6.1.0",
     "@ionic/storage-angular": "^3.0.6",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "@walletconnect/web3-provider": "^1.7.7",
     "buffer": "^6.0.3",
+    "cordova-browser": "6.0.0",
     "ethers": "^5.6.4",
+    "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "~7.5.5",
     "tslib": "^2.4.0",
     "url": "^0.11.0",
@@ -54,7 +51,7 @@
     "@angular/compiler-cli": "~13.3.4",
     "@angular/language-service": "~13.3.4",
     "@capacitor/cli": "3.5.0",
-    "@ionic/angular-toolkit": "^6.1.0",
+    "@ionic/angular-toolkit": "2.3.0",
     "@ionic/cli": "6.19.1",
     "@types/jasmine": "~4.0.3",
     "@types/jasminewd2": "~2.0.10",
@@ -64,6 +61,11 @@
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
     "assert": "^2.0.0",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^5.0.0",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
     "crypto-browserify": "^3.12.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
@@ -91,5 +93,18 @@
     "ts-node": "~10.7.0",
     "typescript": "~4.6.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "phonegap-plugin-barcodescanner": {}
+    },
+    "platforms": [
+      "browser"
+    ]
+  }
 }
