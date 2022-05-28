@@ -1,5 +1,20 @@
-{"MENU":{
-  "home-tab": "Home",
-  "search-tab": "Search",
-  "settings-tab": "Settings"
-}}
+{
+  "MENU": {
+    "home-tab": "Home",
+    "search-tab": "Search",
+    "settings-tab": "Settings"
+  },
+  "HOME": {},
+  "SEARCH": {},
+  "SETTINGS": {
+    "dark-mode": "Dark Mode",
+    "color-blind-mode": "Color Blind Mode",
+    "language": "Language",
+    "font-size": "Font Size",
+    "reset-preferences": "Reset Preferences",
+    "reset-preferences-button": "Reset",
+    "wallet-connection": "Wallet Connection",
+    "auth-button-connect": "Connect",
+    "auth-button-disconnect": "Disconnect"
+  }
+}
