@@ -10,7 +10,12 @@
       <ion-title size="large">{{ 'MENU.search-tab' | translate }} </ion-title>
     </ion-toolbar>
   </ion-header>
+  <video #video [hidden]="!this.isScanActive" width="100%"></video>
+  <canvas #canvas></canvas>
 
-  <ion-button (click)="hello()"></ion-button>
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-button (click)="startScan()" [hidden]="this.isScanActive">Start Scan</ion-button>
+  <ion-button (click)="stopScan()" [hidden]="!this.isScanActive">Stop Scan</ion-button>
+
+  <ion-card *ngIf="this.scanResult"> {{ this.scanResult }} </ion-card>
+  <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
 </ion-content>
