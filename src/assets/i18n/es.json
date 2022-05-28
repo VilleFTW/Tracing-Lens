@@ -1,5 +1,19 @@
-{"MENU":{
-  "home-tab": "Casa",
-  "search-tab": "Búsqueda",
-  "settings-tab": "Ajustes"
-}}
+{
+  "MENU": {
+    "home-tab": "Casa",
+    "search-tab": "Búsqueda",
+    "settings-tab": "Ajustes"
+  },
+  "SEARCH": {},
+  "SETTINGS": {
+    "dark-mode": "Modo oscuro",
+    "color-blind-mode": "Modo daltónico",
+    "language": "Idioma",
+    "font-size": "Tamaño de fuente",
+    "reset-preferences": "Reiniciar preferencias",
+    "reset-preferences-button": "Reiniciar",
+    "wallet-connection": "Conexión de billetera",
+    "auth-button-connect": "Conectar",
+    "auth-button-disconnect": "Desconectar"
+  }
+}

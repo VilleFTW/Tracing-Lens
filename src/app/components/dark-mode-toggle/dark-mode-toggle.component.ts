@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   template: `
     <ion-item>
       <ion-icon slot="start" name="moon-outline"></ion-icon>
-      <ion-label> Dark Mode </ion-label>
+      <ion-label> {{ 'SETTINGS.dark-mode' | translate }}</ion-label>
       <ion-toggle slot="end" [checked]="isDarkMode | async" (ionChange)="toggleDarkTheme($event)"></ion-toggle>
     </ion-item>
   `,

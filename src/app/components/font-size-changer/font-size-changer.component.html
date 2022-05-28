@@ -1,6 +1,6 @@
 <ion-item>
   <ion-icon slot="start" name="accessibility-outline"></ion-icon>
-  <ion-label>Font Size</ion-label>
+  <ion-label> {{ 'SETTINGS.font-size' | translate }}</ion-label>
   <span slot="end"
     ><ion-button [disabled]="fontSize <= 10" (click)="decrement()"
       ><ion-icon name="remove-outline"></ion-icon></ion-button

@@ -7,8 +7,8 @@ import { AlertController } from '@ionic/angular';
   template: `
     <ion-item>
       <ion-icon slot="start" name="trash-outline"></ion-icon>
-      <ion-label>Reset Preferences</ion-label>
-      <ion-button slot="end" (click)="action()">Reset</ion-button>
+      <ion-label> {{ 'SETTINGS.reset-preferences' | translate }}</ion-label>
+      <ion-button slot="end" (click)="action()"> {{ 'SETTINGS.reset-preferences-button' | translate }}</ion-button>
     </ion-item>
   `,
   styles: [],
