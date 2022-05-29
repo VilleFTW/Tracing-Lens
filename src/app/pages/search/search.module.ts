@@ -6,6 +6,8 @@ import { SearchPage } from './search.page';
 import { ExploreContainerComponentModule } from '../../components/explore-container/explore-container.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { SearchPageRoutingModule } from './search-routing.module';
+import { ScanQrButtonComponent } from 'src/app/components/scan-qr-button/scan-qr-button.component';
+import { QrScannerModalComponent } from 'src/app/components/qr-scanner-modal/qr-scanner-modal.component';
 
 @NgModule({
   imports: [
@@ -17,6 +19,6 @@ import { SearchPageRoutingModule } from './search-routing.module';
     SearchPageRoutingModule,
     TranslateModule,
   ],
-  declarations: [SearchPage],
+  declarations: [SearchPage, ScanQrButtonComponent, QrScannerModalComponent],
 })
 export class SearchPageModule {}
