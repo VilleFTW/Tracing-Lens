@@ -13,6 +13,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from './services/language/language.service';
 import { NotificationsService } from './services/notifications/notifications.service';
+import { QrScannerModalComponent } from './components/qr-scanner-modal/qr-scanner-modal.component';
 
 // exported translations loader function that fetches JSON files from the assets folder
 export function createTranslateLoader(http: HttpClient) {
@@ -42,6 +43,7 @@ export function createTranslateLoader(http: HttpClient) {
     StorageService,
     LanguageService,
     NotificationsService,
+    // QrScannerModalComponent,
   ],
   bootstrap: [AppComponent],
 })

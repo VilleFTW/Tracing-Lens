@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> {{ 'MENU.search-tab' | translate }} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="this.dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<video #video [hidden]="!this.isScanActive"></video>
+<canvas #canvas hidden></canvas>
+
+<ion-button (click)="startScan()" [hidden]="this.isScanActive">Enable Camera</ion-button>
+<ion-button (click)="reset()" [hidden]="!this.isScanActive">Disable Camera</ion-button>
+
+<ion-card *ngIf="this.scanResult"> {{ this.scanResult }} </ion-card>
