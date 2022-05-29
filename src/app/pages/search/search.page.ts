@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 
 // eslint-disable-next-line @angular-eslint/component-class-suffix
-export class SearchPage {}
+export class SearchPage {
+  hello(event) {
+    console.log(event);
+  }
+}
