@@ -8,6 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SearchPageRoutingModule } from './search-routing.module';
 import { ScanQrButtonComponent } from 'src/app/components/scan-qr-button/scan-qr-button.component';
 import { QrScannerModalComponent } from 'src/app/components/qr-scanner-modal/qr-scanner-modal.component';
+import { TestLivestockComponent } from 'src/app/components/test-livestock/test-livestock.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { QrScannerModalComponent } from 'src/app/components/qr-scanner-modal/qr-
     SearchPageRoutingModule,
     TranslateModule,
   ],
-  declarations: [SearchPage, ScanQrButtonComponent, QrScannerModalComponent],
+  declarations: [SearchPage, ScanQrButtonComponent, QrScannerModalComponent, TestLivestockComponent],
 })
 export class SearchPageModule {}

@@ -5,9 +5,7 @@ import { Storage } from '@ionic/storage-angular';
   providedIn: 'root',
 })
 export class StorageService {
-  constructor(private storage: Storage) {
-    console.log('Storage Service injected');
-  }
+  constructor(private storage: Storage) {}
 
   async initialize() {
     await this.storage.create();

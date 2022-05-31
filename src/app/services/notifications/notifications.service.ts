@@ -7,9 +7,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class NotificationsService {
   // private notification;
-  constructor(private toastController: ToastController) {
-    console.log('Notification Service injected');
-  }
+  constructor(private toastController: ToastController) {}
 
   showCorrectChainNotification() {
     this.toastController
@@ -24,9 +22,7 @@ export class NotificationsService {
             side: 'end',
             text: 'Close',
             role: 'cancel',
-            handler: () => {
-              console.log('');
-            },
+            handler: () => {},
           },
         ],
       })
