@@ -14,9 +14,9 @@ jobs:
       - name: Installing Ionic CLI
       - run: npm install -g ionic
       - name: Installing dependencies
-      - uses: npm ci
+      - run: npm ci
       - name: Creating production build
-      - uses: ionic build --prod
+      - run: ionic build --prod
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
