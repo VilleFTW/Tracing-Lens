@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable, of, take, tap } from 'rxjs';
-import { Livestock } from 'src/app/model/livestock.model';
-import { FirestoreDatabaseService } from 'src/app/services/firestore/firestore-database.service';
+import { Livestock } from '../../../model/livestock.model';
+import { FirestoreDatabaseService } from '../../../services/firestore/firestore-database.service';
 
 @Injectable({
   providedIn: 'root',
