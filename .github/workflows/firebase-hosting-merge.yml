@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Installing Ionic CLI
       - run: npm install -g ionic
       - run: npm ci
       - run: ionic build --prod
