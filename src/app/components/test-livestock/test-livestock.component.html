@@ -1,0 +1,12 @@
+<div *ngIf="livestock; else noLivestock">
+  <p>
+    {{ livestock.id }}
+  </p>
+  <p>
+    {{ livestock.category_type }}
+  </p>
+  <p>
+    {{ livestock.weight }}
+  </p>
+</div>
+<ng-template #noLivestock>No livestock found, please return to <a>homepage</a></ng-template>

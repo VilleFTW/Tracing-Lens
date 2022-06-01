@@ -30,7 +30,6 @@ export class ResetPreferencesComponent {
           {
             text: 'Yes',
             handler: () => {
-              console.log('done');
               this.storageService.reset();
             },
           },

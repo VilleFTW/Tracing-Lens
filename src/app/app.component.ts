@@ -11,8 +11,6 @@ import { ThemeSwitcherService } from './services/theme-switcher/theme-switcher.s
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  data: any;
-
   constructor(
     private themeSwitcherService: ThemeSwitcherService,
     private storageService: StorageService,

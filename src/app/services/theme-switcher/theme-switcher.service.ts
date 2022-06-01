@@ -114,6 +114,5 @@ export class ThemeSwitcherService {
 
     this.renderer.addClass(this.document.body, this.colorBlindMode);
     this.storageService.storeData('color-blind-mode', this.colorBlindMode);
-    console.log('Stored:', this.colorBlindMode);
   }
 }

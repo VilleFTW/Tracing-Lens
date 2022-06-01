@@ -7,14 +7,16 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { AppRoutingModule } from './app-routing.module';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from './services/language/language.service';
 import { NotificationsService } from './services/notifications/notifications.service';
-import { QrScannerModalComponent } from './components/qr-scanner-modal/qr-scanner-modal.component';
-
+import { environment } from 'src/environments/environment';
+import { CommonModule } from '@angular/common';
 // exported translations loader function that fetches JSON files from the assets folder
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -24,6 +26,7 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -36,6 +39,8 @@ export function createTranslateLoader(http: HttpClient) {
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(),
     AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
@@ -43,7 +48,6 @@ export function createTranslateLoader(http: HttpClient) {
     StorageService,
     LanguageService,
     NotificationsService,
-    // QrScannerModalComponent,
   ],
   bootstrap: [AppComponent],
 })
