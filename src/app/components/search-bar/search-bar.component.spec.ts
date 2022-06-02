@@ -9,8 +9,8 @@ describe('SearchBarComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchBarComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [SearchBarComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SearchBarComponent);
