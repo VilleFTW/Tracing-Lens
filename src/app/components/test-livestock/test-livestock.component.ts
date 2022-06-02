@@ -8,6 +8,7 @@ import { Livestock } from '../../model/livestock.model';
   styleUrls: ['./test-livestock.component.scss'],
 })
 export class TestLivestockComponent implements OnInit {
+  selectedSegment: string = 'productInformation';
   @Input() livestock: Livestock | undefined;
   constructor(private route: ActivatedRoute) {}
 
@@ -16,5 +17,9 @@ export class TestLivestockComponent implements OnInit {
       console.log('LIVESTOCK FETCHING', response);
       this.livestock = response.livestock;
     });
+  }
+
+  segmentedChanged(event: any) {
+    this.selectedSegment = event.target.value;
   }
 }

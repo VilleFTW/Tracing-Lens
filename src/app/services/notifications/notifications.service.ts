@@ -9,6 +9,34 @@ export class NotificationsService {
   // private notification;
   constructor(private toastController: ToastController) {}
 
+  showSuccesfullQRCodeScan() {
+    console.log('Called Success');
+
+    this.toastController
+      .create({
+        header: 'Success',
+        message: 'Successfull scan. Navigating to a new page',
+        color: 'success',
+        position: 'top',
+        duration: 1000,
+      })
+      .then((toast) => toast.present());
+  }
+
+  showNotFoundQRCodeScan() {
+    console.log('Called Error');
+
+    this.toastController
+      .create({
+        header: 'Error',
+        message: 'Not found. Please scan a compatible QR Code',
+        color: 'danger',
+        position: 'top',
+        duration: 3000,
+      })
+      .then((toast) => toast.present());
+  }
+
   showCorrectChainNotification() {
     this.toastController
       .create({

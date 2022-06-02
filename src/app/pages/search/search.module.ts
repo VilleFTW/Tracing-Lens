@@ -6,9 +6,10 @@ import { SearchPage } from './search.page';
 import { ExploreContainerComponentModule } from '../../components/explore-container/explore-container.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { SearchPageRoutingModule } from './search-routing.module';
-import { ScanQrButtonComponent } from 'src/app/components/scan-qr-button/scan-qr-button.component';
-import { QrScannerModalComponent } from 'src/app/components/qr-scanner-modal/qr-scanner-modal.component';
-import { TestLivestockComponent } from 'src/app/components/test-livestock/test-livestock.component';
+import { ScanQrButtonComponent } from '../../components/scan-qr-button/scan-qr-button.component';
+import { QrScannerModalComponent } from '../../components/qr-scanner-modal/qr-scanner-modal.component';
+import { TestLivestockComponent } from '../../components/test-livestock/test-livestock.component';
+import { SearchBarComponent } from 'src/app/components/search-bar/search-bar.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,12 @@ import { TestLivestockComponent } from 'src/app/components/test-livestock/test-l
     SearchPageRoutingModule,
     TranslateModule,
   ],
-  declarations: [SearchPage, ScanQrButtonComponent, QrScannerModalComponent, TestLivestockComponent],
+  declarations: [
+    SearchPage,
+    SearchBarComponent,
+    ScanQrButtonComponent,
+    QrScannerModalComponent,
+    TestLivestockComponent,
+  ],
 })
 export class SearchPageModule {}

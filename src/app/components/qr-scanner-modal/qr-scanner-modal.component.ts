@@ -1,6 +1,9 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import jsQR from 'jsqr';
+import { FirestoreDatabaseService } from 'src/app/services/firestore/firestore-database.service';
+import { NotificationsService } from 'src/app/services/notifications/notifications.service';
 import { Stream } from 'stream';
 
 @Component({
@@ -18,7 +21,12 @@ export class QrScannerModalComponent implements AfterViewInit {
 
   @ViewChild('video') video: ElementRef;
   @ViewChild('canvas') canvas: ElementRef;
-  constructor(public modalController: ModalController) {}
+  constructor(
+    public modalController: ModalController,
+    private firestore: FirestoreDatabaseService,
+    private router: Router,
+    private notificationService: NotificationsService,
+  ) {}
 
   ngAfterViewInit() {
     this.videoElement = this.video.nativeElement;
@@ -54,6 +62,17 @@ export class QrScannerModalComponent implements AfterViewInit {
       const code = jsQR(imageData.data, imageData.width, imageData.height);
 
       if (code) {
+        this.firestore.getLivestockById(code.data).subscribe((data) => {
+          if (data) {
+            this.dismiss();
+            this.notificationService.showSuccesfullQRCodeScan();
+            this.router.navigate(['search', 'livestock', data.id]);
+          } else {
+            console.log('Null data');
+            this.notificationService.showNotFoundQRCodeScan();
+          }
+        });
+
         //TODO Refactor this so it first checks whether the value is contained
         // within Firebase
         this.isScanActive = false;

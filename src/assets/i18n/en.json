@@ -16,5 +16,9 @@
     "wallet-connection": "Wallet Connection",
     "auth-button-connect": "Connect",
     "auth-button-disconnect": "Disconnect"
+  },
+  "QR-SCANNER-MODAL": {
+    "SUCCESS-MESSAGE": "Successfully scanned. Navigating to a new page",
+    "NOT-FOUND-MESSAGE": "Not found. Please scan a compatible QR Code"
   }
 }
