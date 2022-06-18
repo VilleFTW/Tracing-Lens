@@ -16,7 +16,6 @@ export class Web3AuthButtonComponent implements OnInit {
   ngOnInit(): void {
     this.web3.getIsAuthenticatedObs().subscribe((isAuth) => {
       this.isAuth = isAuth;
-      console.log(this.isAuth);
     });
   }
 

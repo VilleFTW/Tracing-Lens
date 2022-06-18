@@ -1,7 +1,9 @@
 {
   "name": "Tracing Eye",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    }
   },
   "type": "angular",
   "id": "dbed2f4b"

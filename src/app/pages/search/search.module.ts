@@ -9,7 +9,11 @@ import { SearchPageRoutingModule } from './search-routing.module';
 import { ScanQrButtonComponent } from '../../components/scan-qr-button/scan-qr-button.component';
 import { QrScannerModalComponent } from '../../components/qr-scanner-modal/qr-scanner-modal.component';
 import { TestLivestockComponent } from '../../components/test-livestock/test-livestock.component';
-import { SearchBarComponent } from 'src/app/components/search-bar/search-bar.component';
+import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { TimelineViewerComponent } from 'src/app/components/timeline-viewer/timeline-viewer.component';
+import { MapsTimelineItemComponent } from 'src/app/components/maps-timeline-item/maps-timeline-item.component';
 
 @NgModule({
   imports: [
@@ -20,6 +24,9 @@ import { SearchBarComponent } from 'src/app/components/search-bar/search-bar.com
     ExploreContainerComponentModule,
     SearchPageRoutingModule,
     TranslateModule,
+    GoogleMapsModule,
+    HttpClientJsonpModule,
+    HttpClientModule,
   ],
   declarations: [
     SearchPage,
@@ -27,6 +34,8 @@ import { SearchBarComponent } from 'src/app/components/search-bar/search-bar.com
     ScanQrButtonComponent,
     QrScannerModalComponent,
     TestLivestockComponent,
+    TimelineViewerComponent,
+    MapsTimelineItemComponent,
   ],
 })
 export class SearchPageModule {}

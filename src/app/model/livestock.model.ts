@@ -1,3 +1,5 @@
+import { GeoPoint } from 'firebase/firestore';
+
 export class Livestock {
   producer_name: string;
   producer_description: string;
@@ -10,4 +12,5 @@ export class Livestock {
   category_type: string;
   weight: string;
   id: string;
+  timeline: any[];
 }

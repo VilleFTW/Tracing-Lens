@@ -10,8 +10,6 @@ export class NotificationsService {
   constructor(private toastController: ToastController) {}
 
   showSuccesfullQRCodeScan() {
-    console.log('Called Success');
-
     this.toastController
       .create({
         header: 'Success',
@@ -24,8 +22,6 @@ export class NotificationsService {
   }
 
   showNotFoundQRCodeScan() {
-    console.log('Called Error');
-
     this.toastController
       .create({
         header: 'Error',

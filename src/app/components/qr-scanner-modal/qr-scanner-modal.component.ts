@@ -68,7 +68,6 @@ export class QrScannerModalComponent implements AfterViewInit {
             this.notificationService.showSuccesfullQRCodeScan();
             this.router.navigate(['search', 'livestock', data.id]);
           } else {
-            console.log('Null data');
             this.notificationService.showNotFoundQRCodeScan();
           }
         });
@@ -93,8 +92,6 @@ export class QrScannerModalComponent implements AfterViewInit {
   }
 
   async stopScan() {
-    console.log(this.isScanActive);
-
     this.isScanActive = false;
 
     const stream = this.videoElement.srcObject;

@@ -18,12 +18,10 @@ export class SearchBarComponent {
   search(event: Event) {
     this.firestore.getLivestockById((event.target as any).value).subscribe((data) => {
       if (data) {
-        console.log(data);
         this.notificationService.showSuccesfullQRCodeScan();
         this.router.navigate(['search', 'livestock', data.id]);
       } else {
         this.notificationService.showNotFoundQRCodeScan();
-        console.log('Null data');
       }
     });
   }

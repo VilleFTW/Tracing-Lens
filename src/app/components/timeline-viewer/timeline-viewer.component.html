@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <ion-segment scrollable (ionChange)="this.changeTimeline($event)" [value]="this.selectedTimelineIndex">
+    <ion-segment-button
+      *ngFor="let timelineItem of timelineCollection; let selectedTimelineIndex = index"
+      [value]="selectedTimelineIndex"
+    >
+      <ion-label> {{ timelineItem.type }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <app-maps-timeline-item
+    *ngIf="isMapsApiLoaded$ | async"
+    [timelineInstance]="this.selectedTimeline"
+    [currentHeight]="this.currentHeight"
+    [currentWidth]="this.currentWidth"
+  >
+  </app-maps-timeline-item>
+
+  More stuff
+  <hr />
+  Moreeeee
+  <hr />
+  And more
+</div>
