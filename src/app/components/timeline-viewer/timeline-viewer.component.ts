@@ -67,4 +67,6 @@ export interface TimelineInstance {
   type: string;
   production_location: google.maps.LatLngLiteral | null;
   date: Timestamp;
+  temperature: number;
+  humidity: number;
 }

@@ -20,9 +20,66 @@
   >
   </app-maps-timeline-item>
 
-  More stuff
-  <hr />
-  Moreeeee
-  <hr />
-  And more
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label><ion-icon name="book-outline"></ion-icon> Note</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label> {{ this.timelineCollection[this.selectedTimelineIndex].name }} </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label> <ion-icon name="thermometer-outline"></ion-icon> Temperature</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label> {{ this.timelineCollection[this.selectedTimelineIndex].temperature }} &#8451; </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label> <ion-icon name="water-outline"></ion-icon> Humidity</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label> {{ this.timelineCollection[this.selectedTimelineIndex].humidity }} &#37; </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label> <ion-icon name="calendar-outline"></ion-icon> Date</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>
+          {{
+            this.timelineCollection[this.selectedTimelineIndex].date.toDate() | date: 'HH:mm:ss  dd/MM/yyyy'
+          }}</ion-label
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label><ion-icon name="location-outline"></ion-icon> Location</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>
+          {{ this.timelineCollection[this.selectedTimelineIndex].production_location.lat }}
+          {{ this.timelineCollection[this.selectedTimelineIndex].production_location.lng }}</ion-label
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label> <ion-icon slot="start" name="calendar-outline"></ion-icon> Date</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label
+          >{{ this.timelineCollection[this.selectedTimelineIndex].date.toDate() | date: 'HH:mm:ss  dd/MM/yyyy' }}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
 </div>

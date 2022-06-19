@@ -2,6 +2,7 @@
   <google-map
     #googleMap
     [zoom]="14"
+    [options]="options"
     [center]="timelineInstance.production_location"
     [height]="this.currentHeight"
     [width]="this.currentWidth"
@@ -15,9 +16,9 @@
     <map-marker
       #marker="mapMarker"
       [position]="timelineInstance.production_location"
+      [options]="markerOptions"
       (mapClick)="openInfoWindow(marker, infoWindow)"
     >
-      >
       <map-info-window #infoWindow="mapInfoWindow">
         {{ timelineInstance.name }}
       </map-info-window>

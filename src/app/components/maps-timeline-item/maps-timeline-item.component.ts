@@ -34,8 +34,11 @@ export class MapsTimelineItemComponent implements OnChanges, OnInit {
   @Input() shouldCalculateJourney: boolean;
 
   directionsResults$: Observable<google.maps.DirectionsResult | undefined>;
-
-  options: google.maps.MapOptions;
+  markerOptions: google.maps.MarkerOptions = {
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+  };
+  options: google.maps.MapOptions = { scrollwheel: false, mapId: '64c11fc0d12653f9' };
 
   public openInfoWindow(marker: MapMarker, infoWindow: MapInfoWindow) {
     infoWindow.open(marker);
