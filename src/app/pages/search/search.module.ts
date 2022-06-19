@@ -10,7 +10,7 @@ import { ScanQrButtonComponent } from '../../components/scan-qr-button/scan-qr-b
 import { QrScannerModalComponent } from '../../components/qr-scanner-modal/qr-scanner-modal.component';
 import { TestLivestockComponent } from '../../components/test-livestock/test-livestock.component';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
-import { GoogleMapsModule } from '@angular/google-maps';
+import { GoogleMap, GoogleMapsModule, MapDirectionsRenderer, MapDirectionsService } from '@angular/google-maps';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { TimelineViewerComponent } from 'src/app/components/timeline-viewer/timeline-viewer.component';
 import { MapsTimelineItemComponent } from 'src/app/components/maps-timeline-item/maps-timeline-item.component';
@@ -37,5 +37,6 @@ import { MapsTimelineItemComponent } from 'src/app/components/maps-timeline-item
     TimelineViewerComponent,
     MapsTimelineItemComponent,
   ],
+  providers: [MapDirectionsRenderer, MapDirectionsService, GoogleMap],
 })
 export class SearchPageModule {}

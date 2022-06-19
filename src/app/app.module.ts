@@ -15,9 +15,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from './services/language/language.service';
 import { NotificationsService } from './services/notifications/notifications.service';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
-import { GoogleMapsModule } from '@angular/google-maps';
 // exported translations loader function that fetches JSON files from the assets folder
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');

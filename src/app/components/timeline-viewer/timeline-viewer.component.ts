@@ -15,12 +15,13 @@ export class TimelineViewerComponent implements OnInit {
 
   currentWidth: number = window.innerWidth - 50; // Subtracting 50 so that it fits as a whole
   currentHeight: number = window.innerHeight / 2;
+  shouldCalculateJourney: boolean = false;
   selectedTimeline: TimelineInstance;
   selectedTimelineIndex: number;
 
   constructor(private httpClient: HttpClient) {
     this.isMapsApiLoaded$ = this.httpClient
-      .jsonp('https://maps.googleapis.com/maps/api/js?key=' + environment.googleMapsAPIKey, 'callback')
+      .jsonp('https://maps.googleapis.com/maps/api/js?key=' + environment.directionsAPIKey, 'callback')
       .pipe(
         map(() => true),
         catchError(() => of(false)),
@@ -31,6 +32,8 @@ export class TimelineViewerComponent implements OnInit {
     this.timelineCollection.sort((a, b) => {
       return +a.date - +b.date;
     });
+
+    const copyArray = this.timelineCollection;
     this.selectedTimelineIndex = 0;
     this.selectedTimeline = this.timelineCollection[this.selectedTimelineIndex];
   }
@@ -42,20 +45,26 @@ export class TimelineViewerComponent implements OnInit {
   }
 
   changeTimeline(event: any) {
-    if (event.cancelable) {
-      event.preventDefault();
+    // if (event.cancelable) {
+    // event.preventDefault();
+    if (event.target.value == this.timelineCollection.length) {
+      console.log('Should be called from change timeline');
+
+      this.shouldCalculateJourney = true;
+    } else {
+      this.shouldCalculateJourney = false;
       this.selectedTimelineIndex = event.target.value;
       this.selectedTimeline = this.timelineCollection[this.selectedTimelineIndex];
-      // var newLng = this.center.lng;
-      // var newLat = this.center.lat;
-      // this.center = { lat: newLat, lng: newLng };
+      console.log(event.target.value);
     }
+    // }
   }
+  // }
 }
 
 export interface TimelineInstance {
   name: string;
   type: string;
-  production_location: google.maps.LatLngLiteral;
+  production_location: google.maps.LatLngLiteral | null;
   date: Timestamp;
 }

@@ -6,12 +6,17 @@
     >
       <ion-label> {{ timelineItem.type }}</ion-label>
     </ion-segment-button>
+    <ion-segment-button [value]="this.timelineCollection.length">
+      <ion-label>Track Journey</ion-label>
+    </ion-segment-button>
   </ion-segment>
   <app-maps-timeline-item
     *ngIf="isMapsApiLoaded$ | async"
     [timelineInstance]="this.selectedTimeline"
+    [timelineCollection]="this.timelineCollection"
     [currentHeight]="this.currentHeight"
     [currentWidth]="this.currentWidth"
+    [shouldCalculateJourney]="this.shouldCalculateJourney"
   >
   </app-maps-timeline-item>
 

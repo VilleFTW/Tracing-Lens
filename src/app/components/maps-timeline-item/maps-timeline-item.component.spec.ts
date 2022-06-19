@@ -9,8 +9,8 @@ describe('MapsTimelineItemComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapsTimelineItemComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [MapsTimelineItemComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MapsTimelineItemComponent);
