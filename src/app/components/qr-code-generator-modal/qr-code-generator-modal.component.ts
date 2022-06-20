@@ -26,8 +26,7 @@ export class QrCodeGeneratorModalComponent implements OnInit {
   }
 
   saveAsImage(parent: any) {
-    let parentElement = null;
-    parentElement = parent.qrcElement.nativeElement.querySelector('canvas').toDataURL('image/png');
+    let parentElement = parent.qrcElement.nativeElement.querySelector('canvas').toDataURL('image/png');
 
     if (parentElement) {
       // converts base 64 encoded image to blobData
