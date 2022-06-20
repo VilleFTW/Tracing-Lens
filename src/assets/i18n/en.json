@@ -4,6 +4,14 @@
     "search-tab": "Search",
     "settings-tab": "Settings"
   },
+  "NOT-FOUND": {
+    "not-found-message": "We can't seem to find the page you are looking for",
+    "redirect-message": "You will be redirected in"
+  },
+  "LIVESTOCK-NOT-FOUND": {
+    "livestock-not-found-message": "This item hasn't been found in our database",
+    "livestock-not-found-tip": "Please check the URL and try again"
+  },
   "HOME": {},
   "SEARCH": {},
   "SETTINGS": {

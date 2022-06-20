@@ -17,6 +17,15 @@ import { LanguageService } from './services/language/language.service';
 import { NotificationsService } from './services/notifications/notifications.service';
 import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
+import { LottieCacheModule, LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+
+// Note we need a separate function as it's required
+// by the AOT compiler.
+export function playerFactory() {
+  return player;
+}
+
 // exported translations loader function that fetches JSON files from the assets folder
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -29,6 +38,8 @@ export function createTranslateLoader(http: HttpClient) {
     CommonModule,
     FormsModule,
     HttpClientModule,
+    LottieModule.forRoot({ player: playerFactory }),
+    LottieCacheModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

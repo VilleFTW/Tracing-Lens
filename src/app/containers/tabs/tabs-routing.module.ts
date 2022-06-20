@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TestLivestockComponent } from 'src/app/components/test-livestock/test-livestock.component';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [

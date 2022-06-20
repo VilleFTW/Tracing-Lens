@@ -6,71 +6,76 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" *ngIf="livestock; else noLivestock">
-  <ion-grid>
-    <ion-segment value="productInformation" (ionChange)="this.segmentedChanged($event)">
-      <ion-segment-button value="productInformation"><ion-label>Product Information</ion-label></ion-segment-button>
-      <ion-segment-button value="aboutProducer"><ion-label>About Producer </ion-label></ion-segment-button>
-    </ion-segment>
+<ion-content [fullscreen]="true">
+  <div *ngIf="livestock; else noLivestock">
+    <ion-grid>
+      <ion-segment value="productInformation" (ionChange)="this.segmentedChanged($event)">
+        <ion-segment-button value="productInformation"><ion-label>Product Information</ion-label></ion-segment-button>
+        <ion-segment-button value="aboutProducer"><ion-label>About Producer </ion-label></ion-segment-button>
+      </ion-segment>
 
-    <ion-card *ngIf="this.selectedSegment === 'productInformation'; else aboutProducer">
-      <ion-row>
-        <ion-col size="12" size-sm="12" size-md="6"
-          ><ion-img src="../../../assets/images/cow.jpg"> </ion-img>
-          <ion-fab vertical="bottom" horizontal="center">
-            <ion-fab-button closeIcon="close-outline">
-              <ion-icon name="share-social-outline"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-list side="bottom">
-              <ion-fab-button cdkCopyToClipboard="{{ this.copyLinkValue }}" (click)="copyToClipboard()"
-                ><ion-icon name="link-outline"></ion-icon
-              ></ion-fab-button>
-            </ion-fab-list>
-            <ion-fab-list side="start">
-              <ion-fab-button (click)="openGenerateQRModal()"
-                ><ion-icon name="qr-code-outline"></ion-icon
-              ></ion-fab-button>
-            </ion-fab-list>
-            <ion-fab-list side="end">
-              <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
-            </ion-fab-list>
-          </ion-fab>
-        </ion-col>
-        <ion-col>
-          <ion-card-header>
-            <ion-row>
-              <ion-card-title>{{ livestock.product_name }}</ion-card-title>
-              <ion-card-subtitle>
-                {{ livestock.product_description }}
-              </ion-card-subtitle>
-            </ion-row>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-chip color="primary">
-              <ion-icon name="pin"></ion-icon>
-              <ion-label>Category Type: {{ livestock.category_type }}</ion-label>
-            </ion-chip>
-            <ion-chip color="danger">
-              <ion-icon name="pin"></ion-icon>
-              <ion-label>Product ID: {{ livestock.id }}</ion-label>
-            </ion-chip>
-            <ion-chip color="success">
-              <ion-icon name="pin"></ion-icon>
-              <ion-label>Weight: {{ livestock.weight }}</ion-label>
-            </ion-chip>
-          </ion-card-content>
-        </ion-col>
-      </ion-row>
-      <ion-row size="12" size-sm="12" size-md="12">
-        <ion-col>
-          <app-timeline-viewer [timelineCollection]="livestock.timeline"></app-timeline-viewer>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-  </ion-grid>
+      <ion-card *ngIf="this.selectedSegment === 'productInformation'; else aboutProducer">
+        <ion-row>
+          <ion-col size="12" size-sm="12" size-md="6"
+            ><ion-img src="../../../assets/images/cow.jpg"> </ion-img>
+            <ion-fab vertical="bottom" horizontal="center">
+              <ion-fab-button closeIcon="close-outline">
+                <ion-icon name="share-social-outline"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-list side="bottom">
+                <ion-fab-button cdkCopyToClipboard="{{ this.copyLinkValue }}" (click)="copyToClipboard()"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></ion-fab-button>
+              </ion-fab-list>
+              <ion-fab-list side="start">
+                <ion-fab-button (click)="openGenerateQRModal()"
+                  ><ion-icon name="qr-code-outline"></ion-icon
+                ></ion-fab-button>
+              </ion-fab-list>
+              <ion-fab-list side="end">
+                <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-col>
+          <ion-col>
+            <ion-card-header>
+              <ion-row>
+                <ion-card-title>{{ livestock.product_name }}</ion-card-title>
+                <ion-card-subtitle>
+                  {{ livestock.product_description }}
+                </ion-card-subtitle>
+              </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-chip color="primary">
+                <ion-icon name="folder-outline"></ion-icon>
+                <ion-label>Category Type: {{ livestock.category_type }}</ion-label>
+              </ion-chip>
+              <ion-chip color="danger">
+                <ion-icon name="pin"></ion-icon>
+                <ion-label>Product ID: {{ livestock.id }}</ion-label>
+              </ion-chip>
+              <ion-chip color="success">
+                <ion-icon name="folder-outline"></ion-icon>
+                <ion-label>Weight: {{ livestock.weight }}</ion-label>
+              </ion-chip>
+              <ion-chip color="secondary">
+                <ion-icon name="ticket-outline"></ion-icon>
+                <ion-label>Lot: {{ livestock.lot_number }}</ion-label>
+              </ion-chip>
+            </ion-card-content>
+          </ion-col>
+        </ion-row>
+        <ion-row size="12" size-sm="12" size-md="12">
+          <ion-col>
+            <app-timeline-viewer [timelineCollection]="livestock.timeline"></app-timeline-viewer>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-grid>
+  </div>
 </ion-content>
 
-<ng-template #noLivestock>No livestock found, please return to <a>homepage</a></ng-template>
 <ng-template #aboutProducer>
   <ion-row>
     <ion-col size="12" size-sm="12" size-md="6"><ion-img src="../../../assets/images/farm.jpg"></ion-img></ion-col>
@@ -84,4 +89,8 @@
       <ion-card-content> </ion-card-content>
     </ion-col>
   </ion-row>
+</ng-template>
+
+<ng-template #noLivestock>
+  <app-livestock-not-found></app-livestock-not-found>
 </ng-template>

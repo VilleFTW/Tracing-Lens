@@ -17,11 +17,16 @@ import { TimelineViewerComponent } from '../../components/timeline-viewer/timeli
 import { MapsTimelineItemComponent } from '../../components/maps-timeline-item/maps-timeline-item.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { QrCodeGeneratorModalComponent } from '../../components/qr-code-generator-modal/qr-code-generator-modal.component';
+import { LivestockNotFoundComponent } from '../../components/livestock-not-found/livestock-not-found.component';
+import { LottieModule, LottieCacheModule } from 'ngx-lottie';
+import { playerFactory } from '../../app.module';
 
 @NgModule({
   imports: [
     IonicModule,
     ClipboardModule,
+    LottieModule.forRoot({ player: playerFactory }),
+    LottieCacheModule.forRoot(),
     CommonModule,
     TranslateModule,
     FormsModule,
@@ -40,6 +45,7 @@ import { QrCodeGeneratorModalComponent } from '../../components/qr-code-generato
     QrScannerModalComponent,
     QrCodeGeneratorModalComponent,
     TestLivestockComponent,
+    LivestockNotFoundComponent,
     TimelineViewerComponent,
     MapsTimelineItemComponent,
   ],
