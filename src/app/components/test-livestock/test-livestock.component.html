@@ -27,7 +27,9 @@
               ></ion-fab-button>
             </ion-fab-list>
             <ion-fab-list side="start">
-              <ion-fab-button><ion-icon name="qr-code-outline"></ion-icon></ion-fab-button>
+              <ion-fab-button (click)="openGenerateQRModal()"
+                ><ion-icon name="qr-code-outline"></ion-icon
+              ></ion-fab-button>
             </ion-fab-list>
             <ion-fab-list side="end">
               <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
@@ -63,9 +65,6 @@
         <ion-col>
           <app-timeline-viewer [timelineCollection]="livestock.timeline"></app-timeline-viewer>
         </ion-col>
-      </ion-row>
-      <ion-row>
-        <qrcode [qrdata]="'Your data string'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
       </ion-row>
     </ion-card>
   </ion-grid>

@@ -26,7 +26,7 @@ import { TimelineInstance } from '../timeline-viewer/timeline-viewer.component';
   templateUrl: './maps-timeline-item.component.html',
   styleUrls: ['./maps-timeline-item.component.scss'],
 })
-export class MapsTimelineItemComponent implements OnChanges, OnInit {
+export class MapsTimelineItemComponent implements OnChanges {
   @Input() timelineInstance: TimelineInstance;
   @Input() timelineCollection: Array<TimelineInstance>;
   @Input() currentWidth: number;
@@ -45,8 +45,6 @@ export class MapsTimelineItemComponent implements OnChanges, OnInit {
   }
 
   constructor(private mapDirectionsService: MapDirectionsService) {}
-
-  ngOnInit(): void {}
 
   calculateAndDisplayRoute() {
     const waypoints: google.maps.DirectionsWaypoint[] = [];

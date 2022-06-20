@@ -1,10 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catchError, map, Observable, of } from 'rxjs';
 import { Livestock } from '../../model/livestock.model';
-import { environment } from '../../../environments/environment';
 import { NotificationsService } from '../../services/notifications/notifications.service';
+import { QrCodeGeneratorModalComponent } from '../qr-code-generator-modal/qr-code-generator-modal.component';
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-test-livestock',
   templateUrl: './test-livestock.component.html',
@@ -16,7 +15,19 @@ export class TestLivestockComponent implements OnInit {
   copyLinkValue: string;
 
   @Input() livestock: Livestock | undefined;
-  constructor(private route: ActivatedRoute, private notificationService: NotificationsService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private notificationService: NotificationsService,
+    private modalCtrl: ModalController,
+  ) {}
+
+  async openGenerateQRModal() {
+    const modal = await this.modalCtrl.create({
+      component: QrCodeGeneratorModalComponent,
+    });
+
+    await modal.present();
+  }
 
   ngOnInit(): void {
     this.route.data.subscribe((response: any) => {

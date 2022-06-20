@@ -20,5 +20,8 @@
   "QR-SCANNER-MODAL": {
     "SUCCESS-MESSAGE": "Successfully scanned. Navigating to a new page",
     "NOT-FOUND-MESSAGE": "Not found. Please scan a compatible QR Code"
+  },
+  "QR-GENERATOR-MODAL": {
+    "DOWNLOAD-QR-CODE-IMAGE": "Download QR Code Image"
   }
 }

@@ -4,7 +4,6 @@ import { ModalController } from '@ionic/angular';
 import jsQR from 'jsqr';
 import { FirestoreDatabaseService } from 'src/app/services/firestore/firestore-database.service';
 import { NotificationsService } from 'src/app/services/notifications/notifications.service';
-import { Stream } from 'stream';
 
 @Component({
   selector: 'app-qr-scanner-modal',

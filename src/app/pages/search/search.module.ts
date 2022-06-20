@@ -18,6 +18,7 @@ import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { QRCodeModule } from 'angularx-qrcode';
+import { QrCodeGeneratorModalComponent } from 'src/app/components/qr-code-generator-modal/qr-code-generator-modal.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     SearchBarComponent,
     ScanQrButtonComponent,
     QrScannerModalComponent,
+    QrCodeGeneratorModalComponent,
     TestLivestockComponent,
     TimelineViewerComponent,
     MapsTimelineItemComponent,
