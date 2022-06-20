@@ -25,6 +25,7 @@ export class QrCodeGeneratorModalComponent implements OnInit {
     this.modalController.dismiss();
   }
 
+  // This function has been taken from https://github.com/cordobo/angularx-qrcode demo section
   saveAsImage(parent: any) {
     let parentElement = parent.qrcElement.nativeElement.querySelector('canvas').toDataURL('image/png');
 
@@ -37,11 +38,12 @@ export class QrCodeGeneratorModalComponent implements OnInit {
       const link = document.createElement('a');
       link.href = url;
       // name of the file
-      link.download = 'Qrcode';
+      link.download = 'TracingLens-QRCode';
       link.click();
     }
   }
 
+  // This function has been taken from https://github.com/cordobo/angularx-qrcode demo section
   private convertBase64ToBlob(Base64Image: string) {
     // split into two parts
     const parts = Base64Image.split(';base64,');
