@@ -18,14 +18,16 @@
         <ion-col size="12" size-sm="12" size-md="6"
           ><ion-img src="../../../assets/images/cow.jpg"> </ion-img>
           <ion-fab vertical="bottom" horizontal="center">
-            <ion-fab-button>
+            <ion-fab-button closeIcon="close-outline">
               <ion-icon name="share-social-outline"></ion-icon>
             </ion-fab-button>
             <ion-fab-list side="bottom">
-              <ion-fab-button><ion-icon name="link-outline"></ion-icon></ion-fab-button>
+              <ion-fab-button cdkCopyToClipboard="{{ this.copyLinkValue }}" (click)="copyToClipboard()"
+                ><ion-icon name="link-outline"></ion-icon
+              ></ion-fab-button>
             </ion-fab-list>
             <ion-fab-list side="start">
-              <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+              <ion-fab-button><ion-icon name="qr-code-outline"></ion-icon></ion-fab-button>
             </ion-fab-list>
             <ion-fab-list side="end">
               <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
@@ -61,6 +63,9 @@
         <ion-col>
           <app-timeline-viewer [timelineCollection]="livestock.timeline"></app-timeline-viewer>
         </ion-col>
+      </ion-row>
+      <ion-row>
+        <qrcode [qrdata]="'Your data string'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
       </ion-row>
     </ion-card>
   </ion-grid>

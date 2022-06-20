@@ -14,10 +14,17 @@ import { GoogleMap, GoogleMapsModule, MapDirectionsRenderer, MapDirectionsServic
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { TimelineViewerComponent } from 'src/app/components/timeline-viewer/timeline-viewer.component';
 import { MapsTimelineItemComponent } from 'src/app/components/maps-timeline-item/maps-timeline-item.component';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   imports: [
     IonicModule,
+    ClipboardModule,
+    ShareButtonsModule,
+    ShareIconsModule,
     CommonModule,
     TranslateModule,
     FormsModule,
@@ -27,6 +34,7 @@ import { MapsTimelineItemComponent } from 'src/app/components/maps-timeline-item
     GoogleMapsModule,
     HttpClientJsonpModule,
     HttpClientModule,
+    QRCodeModule,
   ],
   declarations: [
     SearchPage,

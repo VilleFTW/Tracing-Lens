@@ -1,11 +1,24 @@
 import { Web3Service } from 'src/app/services/web3/web3.service';
 import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { CSSProperties } from 'react';
+import { CssClassMap } from '@ionic/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NotificationsService {
+  showCopiedToClipboardNotification() {
+    this.toastController
+      .create({
+        message: 'Copied to clipboard',
+        color: 'success',
+        position: 'bottom',
+        icon: 'checkmark-circle-outline',
+        duration: 1000,
+      })
+      .then((toast) => toast.present());
+  }
   // private notification;
   constructor(private toastController: ToastController) {}
 
@@ -117,4 +130,7 @@ export class NotificationsService {
         toast.present();
       });
   }
+}
+function translateY(arg0: number, px: any): import('csstype').Property.Transform {
+  throw new Error('Function not implemented.');
 }
