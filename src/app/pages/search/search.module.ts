@@ -2,6 +2,7 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 import { SearchPage } from './search.page';
 import { ExploreContainerComponentModule } from '../../components/explore-container/explore-container.module';
 import { TranslateModule } from '@ngx-translate/core';
@@ -12,20 +13,15 @@ import { TestLivestockComponent } from '../../components/test-livestock/test-liv
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { GoogleMap, GoogleMapsModule, MapDirectionsRenderer, MapDirectionsService } from '@angular/google-maps';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
-import { TimelineViewerComponent } from 'src/app/components/timeline-viewer/timeline-viewer.component';
-import { MapsTimelineItemComponent } from 'src/app/components/maps-timeline-item/maps-timeline-item.component';
-import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
-import { ShareIconsModule } from 'ngx-sharebuttons/icons';
-import { ClipboardModule } from '@angular/cdk/clipboard';
+import { TimelineViewerComponent } from '../../components/timeline-viewer/timeline-viewer.component';
+import { MapsTimelineItemComponent } from '../../components/maps-timeline-item/maps-timeline-item.component';
 import { QRCodeModule } from 'angularx-qrcode';
-import { QrCodeGeneratorModalComponent } from 'src/app/components/qr-code-generator-modal/qr-code-generator-modal.component';
+import { QrCodeGeneratorModalComponent } from '../../components/qr-code-generator-modal/qr-code-generator-modal.component';
 
 @NgModule({
   imports: [
     IonicModule,
     ClipboardModule,
-    ShareButtonsModule,
-    ShareIconsModule,
     CommonModule,
     TranslateModule,
     FormsModule,
