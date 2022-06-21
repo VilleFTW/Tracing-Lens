@@ -1,0 +1,11 @@
+<ion-grid>
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <ng-lottie [options]="options" width="500px" (animationCreated)="animationCreated($event)"> </ng-lottie>
+  </ion-row>
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <h1 primary>{{ 'LIVESTOCK-NOT-FOUND.livestock-not-found-message' | translate }}</h1>
+  </ion-row>
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <p>{{ 'LIVESTOCK-NOT-FOUND.livestock-not-found-tip' | translate }}</p>
+  </ion-row>
+</ion-grid>

@@ -1,8 +1,5 @@
-import { Web3Service } from 'src/app/services/web3/web3.service';
 import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
-import { CSSProperties } from 'react';
-import { CssClassMap } from '@ionic/core';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +25,8 @@ export class NotificationsService {
         header: 'Success',
         message: 'Successfull scan. Navigating to a new page',
         color: 'success',
-        position: 'top',
+        icon: 'checkmark-circle-outline',
+        position: 'bottom',
         duration: 1000,
       })
       .then((toast) => toast.present());
@@ -40,7 +38,8 @@ export class NotificationsService {
         header: 'Error',
         message: 'Not found. Please scan a compatible QR Code',
         color: 'danger',
-        position: 'top',
+        icon: 'close-circle-outline',
+        position: 'bottom',
         duration: 3000,
       })
       .then((toast) => toast.present());
@@ -51,8 +50,10 @@ export class NotificationsService {
       .create({
         header: 'Success',
         message: 'Connected to Rinkeby',
-        position: 'top',
+        position: 'bottom',
         color: 'success',
+        icon: 'checkmark-circle-outline',
+
         cssClass: 'toast-custom-class',
         buttons: [
           {
@@ -73,8 +74,9 @@ export class NotificationsService {
       .create({
         header: 'Error',
         message: 'Wrong Chain. Please connect to Rinkeby',
-        position: 'top',
+        position: 'bottom',
         color: 'danger',
+        icon: 'close-circle-outline',
         cssClass: 'toast-custom-class',
         buttons: [
           {
@@ -130,7 +132,4 @@ export class NotificationsService {
         toast.present();
       });
   }
-}
-function translateY(arg0: number, px: any): import('csstype').Property.Transform {
-  throw new Error('Function not implemented.');
 }

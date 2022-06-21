@@ -32,18 +32,18 @@ export class TestLivestockComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe((response: any) => {
       this.livestock = response.livestock;
-      this.livestock.timeline.forEach((data) => {
-        // Doing some conversion from Geopoint to google.maps.LatLngLiteral
-        this.latLngLiteral = { lat: data.production_location.latitude, lng: data.production_location.longitude };
-        data.production_location = this.latLngLiteral;
-      });
+      if (this.livestock)
+        this.livestock.timeline.forEach((data) => {
+          // Doing some conversion from Geopoint to google.maps.LatLngLiteral
+          this.latLngLiteral = { lat: data.production_location.latitude, lng: data.production_location.longitude };
+          data.production_location = this.latLngLiteral;
+        });
     });
     this.copyLinkValue = window.location.href;
   }
 
   copyToClipboard() {
     this.notificationService.showCopiedToClipboardNotification();
-    console.log('Called');
   }
 
   segmentedChanged(event: any) {
