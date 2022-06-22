@@ -29,7 +29,16 @@ export class TestLivestockComponent implements OnInit {
 
     await modal.present();
   }
+
   async openBlockchainInfoModal() {
+    const modal = await this.modalCtrl.create({
+      component: BlockchainInfoComponent,
+    });
+
+    await modal.present();
+  }
+
+  async openProducerCertificationsModal() {
     const modal = await this.modalCtrl.create({
       component: BlockchainInfoComponent,
     });

@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <div *ngIf="livestock; else noLivestock">
     <ion-grid>
-      <ion-segment value="productInformation" (ionChange)="this.segmentedChanged($event)">
+      <ion-segment mode="md" value="productInformation" (ionChange)="this.segmentedChanged($event)">
         <ion-segment-button value="productInformation"><ion-label>Product Information</ion-label></ion-segment-button>
         <ion-segment-button value="aboutProducer"><ion-label>About Producer </ion-label></ion-segment-button>
       </ion-segment>
@@ -66,7 +66,11 @@
                 </ion-chip>
               </ion-row>
               <ion-row>
-                <ion-button (click)="openBlockchainInfoModal()">View Blockchain Info</ion-button>
+                <ion-col>
+                  <ion-button fill="clear" expand="full" (click)="openBlockchainInfoModal()">
+                    <ion-icon slot="start" name="open-outline"></ion-icon>View Blockchain Info</ion-button
+                  >
+                </ion-col>
               </ion-row>
             </ion-card-content>
           </ion-col>
@@ -76,25 +80,51 @@
             <app-timeline-viewer [timelineCollection]="livestock.timeline"></app-timeline-viewer>
           </ion-col>
         </ion-row>
-        <ion-row> Blockchain data</ion-row>
       </ion-card>
     </ion-grid>
   </div>
 </ion-content>
 
 <ng-template #aboutProducer>
-  <ion-row>
-    <ion-col size="12" size-sm="12" size-md="6"><ion-img src="../../../assets/images/farm.jpg"></ion-img></ion-col>
-    <ion-col>
-      <ion-card-header>
-        <ion-card-title>{{ livestock.producer_name }}</ion-card-title>
-        <ion-card-subtitle>
-          {{ livestock.producer_description }}
-        </ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content> </ion-card-content>
-    </ion-col>
-  </ion-row>
+  <ion-card>
+    <ion-row>
+      <ion-col size="12" size-sm="12" size-md="6"><ion-img src="../../../assets/images/farm.jpg"></ion-img></ion-col>
+      <ion-col>
+        <ion-card-header>
+          <ion-card-title>{{ livestock.producer_name }}</ion-card-title>
+          <ion-card-subtitle>
+            {{ livestock.producer_description }}
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-text color="primary"><h1>Certifications</h1></ion-text>
+
+          <ion-chip color="success">
+            <ion-avatar>
+              <img src="../../../assets/certifications/vegeterian.svg" />
+            </ion-avatar>
+            <ion-label>Vegeterian</ion-label>
+          </ion-chip>
+          <ion-chip color="warning">
+            <ion-avatar>
+              <img src="../../../assets/certifications/halal.svg" />
+            </ion-avatar>
+            <ion-label>Halal</ion-label>
+          </ion-chip>
+          <ion-chip color="success">
+            <ion-avatar>
+              <img src="../../../assets/certifications/vegan.svg" />
+            </ion-avatar>
+            <ion-label>Vegan</ion-label>
+          </ion-chip>
+          <ion-button fill="clear" expand="full" (click)="openProducerCertificationsModal()">
+            <ion-icon slot="start" name="open-outline"></ion-icon>
+            View Certifications
+          </ion-button>
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ng-template>
 
 <ng-template #noLivestock>
