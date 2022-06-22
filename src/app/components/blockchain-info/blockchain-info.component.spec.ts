@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { NotfoundPage } from './notfound.page';
+import { BlockchainInfoComponent } from './blockchain-info.component';
 
-describe('NotfoundPage', () => {
-  let component: NotfoundPage;
-  let fixture: ComponentFixture<NotfoundPage>;
+describe('BlockchainInfoComponent', () => {
+  let component: BlockchainInfoComponent;
+  let fixture: ComponentFixture<BlockchainInfoComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [NotfoundPage],
+      declarations: [BlockchainInfoComponent],
       imports: [IonicModule.forRoot()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NotfoundPage);
+    fixture = TestBed.createComponent(BlockchainInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

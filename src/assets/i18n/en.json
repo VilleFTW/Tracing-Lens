@@ -13,7 +13,9 @@
     "livestock-not-found-tip": "Please check the URL and try again"
   },
   "HOME": {},
-  "SEARCH": {},
+  "SEARCH": {
+    "search-card-title": "Want to know more?"
+  },
   "SETTINGS": {
     "dark-mode": "Dark Mode",
     "color-blind-mode": "Color Blind Mode",
@@ -31,5 +33,13 @@
   },
   "QR-GENERATOR-MODAL": {
     "DOWNLOAD-QR-CODE-IMAGE": "Download QR Code Image"
+  },
+  "BLOCKCHAIN-INFO-MODAL": {
+    "title": "Blockchain Information",
+    "status": "Status",
+    "transaction-hash": "Transaction Hash",
+    "date": "Date",
+    "from": "From",
+    "to": "To"
   }
 }

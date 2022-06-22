@@ -78,17 +78,16 @@ export class ThemeSwitcherService {
   }
 
   setFontBySize(fontSize: number) {
-    this.font.forEach((font) => {
-      this.renderer.removeClass(this.document.body, `font-size-${font}`);
-    });
-    this.renderer.addClass(this.document.body, `font-size-${fontSize}`);
-    this.storageService.storeData('font-size', fontSize);
-
-    //TODO: Change sizes of buttons icons
-    // if (fontSize >= 18) {
-    //   this.renderer.setAttribute('ion-button', 'size', 'large');
-    // }
-    this.fontSize = fontSize;
+    // this.font.forEach((font) => {
+    //   this.renderer.removeClass(this.document.body, `font-size-${font}`);
+    // });
+    // this.renderer.addClass(this.document.body, `font-size-${fontSize}`);
+    // this.storageService.storeData('font-size', fontSize);
+    // //TODO: Change sizes of buttons icons
+    // // if (fontSize >= 18) {
+    // //   this.renderer.setAttribute('ion-button', 'size', 'large');
+    // // }
+    // this.fontSize = fontSize;
   }
 
   changeThemeMode(event: boolean) {

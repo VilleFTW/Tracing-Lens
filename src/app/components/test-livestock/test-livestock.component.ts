@@ -4,6 +4,7 @@ import { Livestock } from '../../model/livestock.model';
 import { NotificationsService } from '../../services/notifications/notifications.service';
 import { QrCodeGeneratorModalComponent } from '../qr-code-generator-modal/qr-code-generator-modal.component';
 import { ModalController } from '@ionic/angular';
+import { BlockchainInfoComponent } from '../blockchain-info/blockchain-info.component';
 @Component({
   selector: 'app-test-livestock',
   templateUrl: './test-livestock.component.html',
@@ -24,6 +25,13 @@ export class TestLivestockComponent implements OnInit {
   async openGenerateQRModal() {
     const modal = await this.modalCtrl.create({
       component: QrCodeGeneratorModalComponent,
+    });
+
+    await modal.present();
+  }
+  async openBlockchainInfoModal() {
+    const modal = await this.modalCtrl.create({
+      component: BlockchainInfoComponent,
     });
 
     await modal.present();

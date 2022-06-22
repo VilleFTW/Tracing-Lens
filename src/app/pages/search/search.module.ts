@@ -20,6 +20,7 @@ import { QrCodeGeneratorModalComponent } from '../../components/qr-code-generato
 import { LivestockNotFoundComponent } from '../../components/livestock-not-found/livestock-not-found.component';
 import { LottieModule, LottieCacheModule } from 'ngx-lottie';
 import { playerFactory } from '../../app.module';
+import { BlockchainInfoComponent } from 'src/app/components/blockchain-info/blockchain-info.component';
 
 @NgModule({
   imports: [
@@ -48,6 +49,7 @@ import { playerFactory } from '../../app.module';
     LivestockNotFoundComponent,
     TimelineViewerComponent,
     MapsTimelineItemComponent,
+    BlockchainInfoComponent,
   ],
   providers: [MapDirectionsRenderer, MapDirectionsService, GoogleMap],
 })

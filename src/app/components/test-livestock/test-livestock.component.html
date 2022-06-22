@@ -47,22 +47,27 @@
               </ion-row>
             </ion-card-header>
             <ion-card-content>
-              <ion-chip color="primary">
-                <ion-icon name="folder-outline"></ion-icon>
-                <ion-label>Category Type: {{ livestock.category_type }}</ion-label>
-              </ion-chip>
-              <ion-chip color="danger">
-                <ion-icon name="pin"></ion-icon>
-                <ion-label>Product ID: {{ livestock.id }}</ion-label>
-              </ion-chip>
-              <ion-chip color="success">
-                <ion-icon name="folder-outline"></ion-icon>
-                <ion-label>Weight: {{ livestock.weight }}</ion-label>
-              </ion-chip>
-              <ion-chip color="secondary">
-                <ion-icon name="ticket-outline"></ion-icon>
-                <ion-label>Lot: {{ livestock.lot_number }}</ion-label>
-              </ion-chip>
+              <ion-row>
+                <ion-chip color="primary">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <ion-label>Category Type: {{ livestock.category_type }}</ion-label>
+                </ion-chip>
+                <ion-chip color="danger">
+                  <ion-icon name="pin"></ion-icon>
+                  <ion-label>Product ID: {{ livestock.id }}</ion-label>
+                </ion-chip>
+                <ion-chip color="success">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <ion-label>Weight: {{ livestock.weight }}</ion-label>
+                </ion-chip>
+                <ion-chip color="secondary">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                  <ion-label>Lot: {{ livestock.lot_number }}</ion-label>
+                </ion-chip>
+              </ion-row>
+              <ion-row>
+                <ion-button (click)="openBlockchainInfoModal()">View Blockchain Info</ion-button>
+              </ion-row>
             </ion-card-content>
           </ion-col>
         </ion-row>
@@ -71,6 +76,7 @@
             <app-timeline-viewer [timelineCollection]="livestock.timeline"></app-timeline-viewer>
           </ion-col>
         </ion-row>
+        <ion-row> Blockchain data</ion-row>
       </ion-card>
     </ion-grid>
   </div>

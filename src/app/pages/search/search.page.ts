@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-search-page',
@@ -8,4 +10,12 @@ import { Component } from '@angular/core';
 // eslint-disable-next-line @angular-eslint/component-class-suffix
 export class SearchPage {
   constructor() {}
+
+  options: AnimationOptions = {
+    path: '/assets/animations/search.json',
+  };
+
+  animationCreated(animationItem: AnimationItem): void {
+    console.log(animationItem);
+  }
 }
