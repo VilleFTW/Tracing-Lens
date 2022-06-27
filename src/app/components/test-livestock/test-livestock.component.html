@@ -10,8 +10,12 @@
   <div *ngIf="livestock; else noLivestock">
     <ion-grid>
       <ion-segment mode="md" value="productInformation" (ionChange)="this.segmentedChanged($event)">
-        <ion-segment-button value="productInformation"><ion-label>Product Information</ion-label></ion-segment-button>
-        <ion-segment-button value="aboutProducer"><ion-label>About Producer </ion-label></ion-segment-button>
+        <ion-segment-button value="productInformation"
+          ><ion-label>{{ 'LIVESTOCK-COMPONENT.product-information' | translate }}</ion-label></ion-segment-button
+        >
+        <ion-segment-button value="aboutProducer"
+          ><ion-label>{{ 'LIVESTOCK-COMPONENT.about-producer' | translate }}</ion-label></ion-segment-button
+        >
       </ion-segment>
 
       <ion-card *ngIf="this.selectedSegment === 'productInformation'; else aboutProducer">
@@ -32,9 +36,6 @@
                   ><ion-icon name="qr-code-outline"></ion-icon
                 ></ion-fab-button>
               </ion-fab-list>
-              <ion-fab-list side="end">
-                <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
-              </ion-fab-list>
             </ion-fab>
           </ion-col>
           <ion-col>
@@ -50,25 +51,28 @@
               <ion-row>
                 <ion-chip color="primary">
                   <ion-icon name="folder-outline"></ion-icon>
-                  <ion-label>Category Type: {{ livestock.category_type }}</ion-label>
+                  <ion-label
+                    >{{ 'LIVESTOCK-COMPONENT.category-type' | translate }}: {{ livestock.category_type }}</ion-label
+                  >
                 </ion-chip>
                 <ion-chip color="danger">
                   <ion-icon name="pin"></ion-icon>
-                  <ion-label>Product ID: {{ livestock.id }}</ion-label>
+                  <ion-label>{{ 'LIVESTOCK-COMPONENT.product-id' | translate }}: {{ livestock.id }}</ion-label>
                 </ion-chip>
                 <ion-chip color="success">
                   <ion-icon name="folder-outline"></ion-icon>
-                  <ion-label>Weight: {{ livestock.weight }}</ion-label>
+                  <ion-label>{{ 'LIVESTOCK-COMPONENT.weight' | translate }}: {{ livestock.weight }}</ion-label>
                 </ion-chip>
                 <ion-chip color="secondary">
                   <ion-icon name="ticket-outline"></ion-icon>
-                  <ion-label>Lot: {{ livestock.lot_number }}</ion-label>
+                  <ion-label>{{ 'LIVESTOCK-COMPONENT.lot' | translate }}: {{ livestock.lot_number }}</ion-label>
                 </ion-chip>
               </ion-row>
               <ion-row>
                 <ion-col>
                   <ion-button fill="clear" expand="full" (click)="openBlockchainInfoModal()">
-                    <ion-icon slot="start" name="open-outline"></ion-icon>View Blockchain Info</ion-button
+                    <ion-icon slot="start" name="open-outline"></ion-icon
+                    >{{ 'LIVESTOCK-COMPONENT.view-blockchain-information' | translate }}</ion-button
                   >
                 </ion-col>
               </ion-row>
@@ -97,29 +101,31 @@
           </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-          <ion-text color="primary"><h1>Certifications</h1></ion-text>
+          <ion-text color="primary"
+            ><h1>{{ 'LIVESTOCK-COMPONENT.certifications' | translate }}</h1></ion-text
+          >
 
           <ion-chip color="success">
             <ion-avatar>
               <img src="../../../assets/certifications/vegeterian.svg" />
             </ion-avatar>
-            <ion-label>Vegeterian</ion-label>
+            <ion-label>{{ 'LIVESTOCK-COMPONENT.vegetarian' | translate }}</ion-label>
           </ion-chip>
           <ion-chip color="warning">
             <ion-avatar>
               <img src="../../../assets/certifications/halal.svg" />
             </ion-avatar>
-            <ion-label>Halal</ion-label>
+            <ion-label>{{ 'LIVESTOCK-COMPONENT.halal' | translate }}</ion-label>
           </ion-chip>
           <ion-chip color="success">
             <ion-avatar>
               <img src="../../../assets/certifications/vegan.svg" />
             </ion-avatar>
-            <ion-label>Vegan</ion-label>
+            <ion-label>{{ 'LIVESTOCK-COMPONENT.vegan' | translate }}</ion-label>
           </ion-chip>
           <ion-button fill="clear" expand="full" (click)="openProducerCertificationsModal()">
             <ion-icon slot="start" name="open-outline"></ion-icon>
-            View Certifications
+            {{ 'LIVESTOCK-COMPONENT.view-producer-certifications' | translate }}
           </ion-button>
         </ion-card-content>
       </ion-col>

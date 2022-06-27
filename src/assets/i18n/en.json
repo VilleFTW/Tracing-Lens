@@ -41,5 +41,19 @@
     "date": "Date",
     "from": "From",
     "to": "To"
+  },
+  "LIVESTOCK-COMPONENT": {
+    "product-information": "Production Information",
+    "about-producer": "About Producer",
+    "category-type": "Category Type",
+    "product-id": "Product ID",
+    "weight": "Weight",
+    "lot": "Lot",
+    "view-blockchain-information": "View Blockchain Information",
+    "certifications": "Certifications",
+    "vegan": "Vegan",
+    "vegetarian": "Vegetarian",
+    "halal": "Halal",
+    "view-producer-certifications": "View Producer Certifications"
   }
 }
