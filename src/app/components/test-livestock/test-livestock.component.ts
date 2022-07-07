@@ -5,6 +5,7 @@ import { NotificationsService } from '../../services/notifications/notifications
 import { QrCodeGeneratorModalComponent } from '../qr-code-generator-modal/qr-code-generator-modal.component';
 import { ModalController } from '@ionic/angular';
 import { BlockchainInfoComponent } from '../blockchain-info/blockchain-info.component';
+import { LanguageService } from 'src/app/services/language/language.service';
 @Component({
   selector: 'app-test-livestock',
   templateUrl: './test-livestock.component.html',
@@ -20,6 +21,7 @@ export class TestLivestockComponent implements OnInit {
     private route: ActivatedRoute,
     private notificationService: NotificationsService,
     private modalCtrl: ModalController,
+    private languageService: LanguageService,
   ) {}
 
   async openGenerateQRModal() {
@@ -47,6 +49,14 @@ export class TestLivestockComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // console.log;
+    if (this.languageService.getSelectedLanguage() != 'en') {
+      console.log('Not English');
+      // this.livestock = this.fir
+    } else {
+      console.log('English');
+    }
+
     this.route.data.subscribe((response: any) => {
       this.livestock = response.livestock;
       if (this.livestock)
