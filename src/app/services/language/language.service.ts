@@ -36,10 +36,8 @@ export class LanguageService {
   }
 
   setLanguage(language: string) {
-    console.log(countries);
-
+    //Finding in the array the country object of the selected language
     const country = countries.find((country) => country.value == language);
-    console.log(country);
 
     this.translate.use(language);
     this.selectedLanguage = language;

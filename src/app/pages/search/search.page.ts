@@ -14,8 +14,4 @@ export class SearchPage {
   options: AnimationOptions = {
     path: '/assets/animations/search.json',
   };
-
-  animationCreated(animationItem: AnimationItem): void {
-    console.log(animationItem);
-  }
 }
