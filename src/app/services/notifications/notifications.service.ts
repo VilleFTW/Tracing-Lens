@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { TranslatePipe } from '@ngx-translate/core';
+import { ErrorMessages } from 'src/app/util/enums/error-messages.enum';
+import { SuccessMessages } from 'src/app/util/enums/success-messages.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -17,13 +20,13 @@ export class NotificationsService {
       .then((toast) => toast.present());
   }
   // private notification;
-  constructor(private toastController: ToastController) {}
+  constructor(private toastController: ToastController, private translatePipe: TranslatePipe) {}
 
   showSuccesfullQRCodeScan() {
     this.toastController
       .create({
-        header: 'Success',
-        message: 'Successfull scan. Navigating to a new page',
+        header: this.translatePipe.transform('NOTIFICATIONS.SUCCESS.SUCCESS-MESSAGE'),
+        message: this.translatePipe.transform('NOTIFICATIONS.SUCCESS.SCANNING-MESSAGE'),
         color: 'success',
         icon: 'checkmark-circle-outline',
         position: 'bottom',
@@ -35,8 +38,8 @@ export class NotificationsService {
   showNotFoundQRCodeScan() {
     this.toastController
       .create({
-        header: 'Error',
-        message: 'Not found. Please scan a compatible QR Code',
+        header: this.translatePipe.transform('NOTIFICATIONS.ERROR.ERROR-HEADER'),
+        message: this.translatePipe.transform('NOTIFICATIONS.ERROR.NOT-FOUND-ERROR'),
         color: 'danger',
         icon: 'close-circle-outline',
         position: 'bottom',
@@ -48,8 +51,8 @@ export class NotificationsService {
   showCorrectChainNotification() {
     this.toastController
       .create({
-        header: 'Success',
-        message: 'Connected to Rinkeby',
+        header: this.translatePipe.transform('NOTIFICATIONS.SUCCESS.SUCCESS-HEADER'),
+        message: this.translatePipe.transform('NOTIFICATIONS.SUCCESS.CONNECTION-MESSAGE'),
         position: 'bottom',
         color: 'success',
         icon: 'checkmark-circle-outline',
@@ -72,8 +75,8 @@ export class NotificationsService {
   showWrongChainNotification() {
     this.toastController
       .create({
-        header: 'Error',
-        message: 'Wrong Chain. Please connect to Rinkeby',
+        header: this.translatePipe.transform('NOTIFICATIONS.ERROR.ERROR-HEADER'),
+        message: this.translatePipe.transform('NOTIFICATIONS.ERROR.WRONG-CHAIN-ERROR'),
         position: 'bottom',
         color: 'danger',
         icon: 'close-circle-outline',

@@ -22,8 +22,12 @@
     <canvas #canvas hidden></canvas>
   </ion-row>
   <ion-row>
-    <ion-button (click)="startScan()" [hidden]="this.isScanActive">Enable Camera</ion-button>
-    <ion-button (click)="reset()" [hidden]="!this.isScanActive">Disable Camera</ion-button>
+    <ion-button (click)="startScan()" [hidden]="this.isScanActive">{{
+      'QR-SCANNER-MODAL.ENABLE-CAMERA' | translate
+    }}</ion-button>
+    <ion-button (click)="reset()" [hidden]="!this.isScanActive">{{
+      'QR-SCANNER-MODAL.DISABLE-CAMERA' | translate
+    }}</ion-button>
   </ion-row>
   <ion-row>
     <ion-card *ngIf="this.scanResult"> {{ this.scanResult }} </ion-card>

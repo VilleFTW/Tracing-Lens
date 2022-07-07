@@ -32,7 +32,9 @@
   },
   "QR-SCANNER-MODAL": {
     "SUCCESS-MESSAGE": "Scanatul a fost efectuat cu succes. Te navigăm la noua pagină",
-    "NOT-FOUND-MESSAGE": "Nu a putut fi găsit. Te rugăm scanează un QR compatibil"
+    "NOT-FOUND-MESSAGE": "Nu a putut fi găsit. Te rugăm scanează un QR compatibil",
+    "ENABLE-CAMERA": "Deschide Camera",
+    "DISABLE-CAMERA": "Închide Camera"
   },
   "QR-GENERATOR-MODAL": {
     "DOWNLOAD-QR-CODE-IMAGE": "Descarcă imagine QR"
@@ -63,5 +65,9 @@
     "note": "Notă",
     "date": "Dată",
     "location": "Locație"
+  },
+  "LANGUAGE-SELECTOR": {
+    "CHANGE": "Schimbă",
+    "DISMISS": "Anulează"
   }
 }

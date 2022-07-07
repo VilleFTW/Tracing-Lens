@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AppComponent } from './app.component';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from './services/language/language.service';
@@ -59,6 +59,7 @@ export function createTranslateLoader(http: HttpClient) {
     StorageService,
     LanguageService,
     NotificationsService,
+    TranslatePipe,
   ],
   bootstrap: [AppComponent],
 })

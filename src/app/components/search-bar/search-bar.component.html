@@ -1,6 +1,6 @@
 <ion-searchbar
   (search)="this.search($event)"
   enterkeyhint="search"
-  placeholder="Enter product ID"
+  [placeholder]="'SEARCH.enter-product-id' | translate"
   inputmode="numeric"
 ></ion-searchbar>
