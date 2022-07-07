@@ -57,6 +57,11 @@
     "vegan": "Vegan",
     "vegetarian": "Vegetarian",
     "halal": "Halal",
-    "view-producer-certifications": "View Producer Certifications"
+    "view-producer-certifications": "View Producer Certifications",
+    "humidity": "Humidity",
+    "temperature": "Temperature",
+    "note": "Note",
+    "date": "Date",
+    "location": "Location"
   }
 }

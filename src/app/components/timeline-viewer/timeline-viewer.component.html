@@ -22,7 +22,7 @@
 <ion-grid>
   <ion-row>
     <ion-col size="6">
-      <ion-label><ion-icon name="book-outline"></ion-icon> Note</ion-label>
+      <ion-label><ion-icon name="book-outline"></ion-icon> {{ 'LIVESTOCK-COMPONENT.note' | translate }}</ion-label>
     </ion-col>
     <ion-col size="6">
       <ion-label> {{ this.timelineCollection[this.selectedTimelineIndex].name }} </ion-label>
@@ -30,7 +30,9 @@
   </ion-row>
   <ion-row>
     <ion-col size="6">
-      <ion-label> <ion-icon name="thermometer-outline"></ion-icon> Temperature</ion-label>
+      <ion-label>
+        <ion-icon name="thermometer-outline"></ion-icon> {{ 'LIVESTOCK-COMPONENT.temperature' | translate }}</ion-label
+      >
     </ion-col>
     <ion-col size="6">
       <ion-label> {{ this.timelineCollection[this.selectedTimelineIndex].temperature }} &#8451; </ion-label>
@@ -38,7 +40,9 @@
   </ion-row>
   <ion-row>
     <ion-col size="6">
-      <ion-label> <ion-icon name="water-outline"></ion-icon> Humidity</ion-label>
+      <ion-label>
+        <ion-icon name="water-outline"></ion-icon> {{ 'LIVESTOCK-COMPONENT.humidity' | translate }}</ion-label
+      >
     </ion-col>
     <ion-col size="6">
       <ion-label> {{ this.timelineCollection[this.selectedTimelineIndex].humidity }} &#37; </ion-label>
@@ -46,7 +50,7 @@
   </ion-row>
   <ion-row>
     <ion-col size="6">
-      <ion-label> <ion-icon name="calendar-outline"></ion-icon> Date</ion-label>
+      <ion-label> <ion-icon name="calendar-outline"></ion-icon> {{ 'LIVESTOCK-COMPONENT.date' | translate }}</ion-label>
     </ion-col>
     <ion-col size="6">
       <ion-label>
@@ -58,7 +62,9 @@
   </ion-row>
   <ion-row>
     <ion-col size="6">
-      <ion-label><ion-icon name="location-outline"></ion-icon> Location</ion-label>
+      <ion-label
+        ><ion-icon name="location-outline"></ion-icon> {{ 'LIVESTOCK-COMPONENT.location' | translate }}</ion-label
+      >
     </ion-col>
     <ion-col size="6">
       <ion-label>

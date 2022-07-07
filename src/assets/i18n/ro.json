@@ -57,6 +57,11 @@
     "vegan": "Vegan",
     "vegetarian": "Vegetarian",
     "halal": "Halal",
-    "view-producer-certifications": "Vezi certificările producătorului"
+    "view-producer-certifications": "Vezi certificările producătorului",
+    "humidity": "Umiditate",
+    "temperature": "Temperatură",
+    "note": "Notă",
+    "date": "Dată",
+    "location": "Locație"
   }
 }
