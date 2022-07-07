@@ -14,7 +14,10 @@
   },
   "HOME": {},
   "SEARCH": {
-    "search-card-title": "Want to know more?"
+    "search-card-title": "Want to know more?",
+    "enter-product-id": "Enter product ID",
+    "or": "or",
+    "scan-qr-code-button": "Scan QR Code"
   },
   "SETTINGS": {
     "dark-mode": "Dark Mode",

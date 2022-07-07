@@ -1,0 +1,62 @@
+{
+  "MENU": {
+    "home-tab": "Acasă",
+    "search-tab": "Caută",
+    "settings-tab": "Setări"
+  },
+  "NOT-FOUND": {
+    "not-found-message": "Nu putem găsi pagina căutată",
+    "redirect-message": "Vei fi redirecționat"
+  },
+  "LIVESTOCK-NOT-FOUND": {
+    "livestock-not-found-message": "Acest produs nu a putut fi găsit in baza noastră de date",
+    "livestock-not-found-tip": "Verifică adresa și încearcă din nou"
+  },
+  "HOME": {},
+  "SEARCH": {
+    "search-card-title": "Vrei să știi mai mult?",
+    "enter-product-id": "Introdu ID-ul produsului",
+    "or": "sau",
+    "scan-qr-code-button": "Scanează codul QR"
+  },
+  "SETTINGS": {
+    "dark-mode": "Mod întunecat",
+    "color-blind-mode": "Mod daltonism",
+    "language": "Limba aplicației",
+    "font-size": "Mărimea textului",
+    "reset-preferences": "Resetează preferințele",
+    "reset-preferences-button": "Resetează",
+    "wallet-connection": "Conexiune portofel",
+    "auth-button-connect": "Conectează-te",
+    "auth-button-disconnect": "Deconectează-te"
+  },
+  "QR-SCANNER-MODAL": {
+    "SUCCESS-MESSAGE": "Scanatul a fost efectuat cu succes. Te navigăm la noua pagină",
+    "NOT-FOUND-MESSAGE": "Nu a putut fi găsit. Te rugăm scanează un QR compatibil"
+  },
+  "QR-GENERATOR-MODAL": {
+    "DOWNLOAD-QR-CODE-IMAGE": "Descarcă imagine QR"
+  },
+  "BLOCKCHAIN-INFO-MODAL": {
+    "title": "Informații Blockchain",
+    "status": "Status",
+    "transaction-hash": "Hash-ul tranzacției",
+    "date": "Dată",
+    "from": "De la",
+    "to": "Către"
+  },
+  "LIVESTOCK-COMPONENT": {
+    "product-information": "Informații produs",
+    "about-producer": "Despre producător",
+    "category-type": "Categoria",
+    "product-id": "ID-ul produsului",
+    "weight": "Greutate",
+    "lot": "Lot",
+    "view-blockchain-information": "Vezi informații de pe Blockchain",
+    "certifications": "Certificări",
+    "vegan": "Vegan",
+    "vegetarian": "Vegetarian",
+    "halal": "Halal",
+    "view-producer-certifications": "Vezi certificările producătorului"
+  }
+}
