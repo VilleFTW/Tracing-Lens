@@ -3,12 +3,15 @@ import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { StorageService } from '../storage/storage.service';
 import { ColorBlindMode } from '../../../assets/config/ThemeSwitcherConfig';
+import { countries } from '../../../assets/config/ThemeSwitcherConfig';
+
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeSwitcherService {
   renderer: Renderer2;
   isDarkMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
+  directionOfText: string;
   colorBlindMode: ColorBlindMode;
   //Getting the values of our ColorBlindEnum as string
   colorBlindModeArray = Object.values(ColorBlindMode).map((item) => String(item));
@@ -99,6 +102,10 @@ export class ThemeSwitcherService {
       this.storageService.storeData('dark-theme', event);
       this.renderer.removeClass(this.document.body, 'dark');
     }
+  }
+
+  changeDirectionOfText(direction: string) {
+    this.renderer.setAttribute(this.document.body, 'dir', direction);
   }
 
   changeColorBlindMode(newColorBlindMode: ColorBlindMode) {

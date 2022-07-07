@@ -17,6 +17,8 @@ export class LanguageSelectorComponent implements OnInit {
   }
 
   changeLanguage(event: Event) {
+    console.log(event.target);
+
     this.languageService.setLanguage((event.target as any).value);
   }
 }
