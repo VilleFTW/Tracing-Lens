@@ -1,4 +1,35 @@
-.card {
-  background-color: red;
-  padding: 15px;
+ngx-charts-pie-chart .chart-legend {
+  .legend-labels {
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    background: none;
+    float: none;
+    padding: 0;
+    margin-left: -13%;
+    margin-top: -13%;
+  }
+}
+
+ngx-charts-pie-chart.ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
+  .tooltip-caret.position-top {
+    border-top-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  background-color: white;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+ngx-charts-legend {
+  width: auto;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  background: none;
+  float: none;
+  padding: 0;
+  margin-left: -13%;
+  margin-top: -13%;
 }

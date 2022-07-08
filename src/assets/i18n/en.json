@@ -12,7 +12,17 @@
     "livestock-not-found-message": "This item hasn't been found in our database",
     "livestock-not-found-tip": "Please check the URL and try again"
   },
-  "HOME": {},
+  "HOME": {
+    "alimentation-events": "Alimentation Events",
+    "pharmaceutical-events": "Pharmaceutical Events",
+    "shipping-events": "Logistical Events",
+    "textile-events": "Textile Events",
+    "all-time-events": "All Time Events",
+    "24hrs-events": "Events in the last 24hrs",
+    "statistics-message": "Statistics",
+    "distribution-of-events": "Distribution of Events",
+    "legend-title": "Legend"
+  },
   "SEARCH": {
     "search-card-title": "Want to know more?",
     "enter-product-id": "Enter product ID",

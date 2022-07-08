@@ -85,7 +85,7 @@
     "SUCCESS": {
       "SUCCESS-HEADER": "Succes",
       "CONNECTION-MESSAGE": "Conexiunea a fost efectuată cu succes",
-      "SCANNING-MESSAGE": "Vei fi redirecționat la noua pagină"
+      "SCANNING-MESSAGE": "Vei fi redirecționat către noua pagină"
     },
     "ERROR": {
       "ERROR-HEADER": "Eroare",
@@ -93,7 +93,7 @@
       "SCANNING-ERROR": "Eroare la scanare",
       "CAMERA-NOT-FOUND-MESSAGE": "Camera nu a putut fi găsită",
       "NOT-FOUND-ERROR": "Nu a putut fi găsit. Te rugăm scanează un cod QR compatibil",
-      "WRONG-CHAIN-ERROR": "Chain-ul greșit. Schimbă pe Rinkeby"
+      "WRONG-CHAIN-ERROR": "Chain-ul ales este greșit. Schimbă pe Rinkeby"
     },
     "CLOSE": "Închide",
     "CHANGE-NETWORK": "Schimbă rețeaua"
