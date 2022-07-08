@@ -81,7 +81,7 @@
       ></ion-row
     >
     <ion-row class="ion-align-items-center"
-      ><ion-col size="12" sizeSm="12" sizeXs="12" sizeMd="12" sizeXl="12" sizeLg="12">
+      ><ion-col size="12">
         <ion-card>
           <ion-card-header>
             <ion-card-subtitle>{{ 'HOME.statistics-message' | translate }}</ion-card-subtitle>
@@ -97,8 +97,15 @@
               [legendPosition]="legendPosition"
               [view]="view"
             >
+              <ng-template #tooltipTemplate let-model="model">
+                <p>{{ model.name }}</p>
+                <h5>{{ model.value }}</h5>
+                <!-- <h5 color="primary"></h5> -->
+              </ng-template>
             </ngx-charts-pie-chart>
-          </ion-card-content> </ion-card></ion-col
-    ></ion-row>
+          </ion-card-content>
+        </ion-card></ion-col
+      ></ion-row
+    >
   </ion-grid>
 </ion-content>
