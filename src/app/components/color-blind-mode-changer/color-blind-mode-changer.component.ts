@@ -10,8 +10,8 @@ import { ThemeSwitcherService } from '../../services/theme-switcher/theme-switch
 
       <ion-select
         slot="end"
-        ok-text="Okay"
-        cancel-text="Dismiss"
+        [okText]="'COLOR-BLIND-MODE-CHANGER.CHANGE' | translate"
+        [cancelText]="'COLOR-BLIND-MODE-CHANGER.DISMISS' | translate"
         (ionChange)="changeColorBlindMode($event)"
         [value]="selectedColorBlindMode"
       >

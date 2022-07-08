@@ -70,16 +70,28 @@
     "CHANGE": "Change",
     "DISMISS": "Cancel"
   },
+  "COLOR-BLIND-MODE-CHANGER": {
+    "CHANGE": "Change",
+    "DISMISS": "Cancel"
+  },
+  "RESET-PREFERENCES-MODAL": {
+    "HEADER": "Warning",
+    "SUBHEADER": "Your preferences will be reseted",
+    "MESSAGE": "This action can not be undone",
+    "CANCEL-BUTTON-MESSAGE": "Cancel",
+    "RESET-PREFERENCES-CONFIRM-MESSAGE": "Confirm"
+  },
   "NOTIFICATIONS": {
     "SUCCESS": {
       "SUCCESS-HEADER": "Success",
       "CONNECTION-MESSAGE": "Connection succesful",
-      "SCANNING-MESSAGE": "Scanning succesful"
+      "SCANNING-MESSAGE": "Navigating you to a new page"
     },
     "ERROR": {
       "ERROR-HEADER": "Error",
       "CONNECTION-ERROR": "Connection error",
       "SCANNING-ERROR": "Scanning error",
+      "CAMERA-NOT-FOUND-MESSAGE": "A camera could not be found",
       "NOT-FOUND-ERROR": "Not found. Please scan a compatible QR Code",
       "WRONG-CHAIN-ERROR": "Wrong Chain. Please connect to Rinkeby"
     },

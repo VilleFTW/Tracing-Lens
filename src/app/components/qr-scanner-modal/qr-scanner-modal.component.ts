@@ -55,6 +55,7 @@ export class QrScannerModalComponent implements AfterViewInit {
         this.scan();
       })
       .catch((error) => {
+        this.notificationService.showNotFoundCamera();
         console.error(error);
       });
   }
@@ -75,15 +76,20 @@ export class QrScannerModalComponent implements AfterViewInit {
         const codeManipulated = code.data.replace(window.location.href + '/livestock/', '');
         console.log(codeManipulated);
 
-        this.firestore.getLivestockById(codeManipulated).subscribe((data) => {
-          if (data) {
-            this.dismiss();
-            this.notificationService.showSuccesfullQRCodeScan();
-            this.router.navigate(['search', 'livestock', data.id]);
-          } else {
-            this.notificationService.showNotFoundQRCodeScan();
-          }
-        });
+        try {
+          this.firestore.getLivestockById(codeManipulated).subscribe((data) => {
+            if (data) {
+              this.dismiss();
+              this.notificationService.showSuccesfullQRCodeScan();
+              this.router.navigate(['search', 'livestock', data.id]);
+            } else {
+              this.notificationService.showNotFoundQRCodeScan();
+            }
+          });
+        } catch (error) {
+          this.notificationService.showNotFoundQRCodeScan();
+          this.reset();
+        }
 
         this.isScanActive = false;
         this.scanResult = code.data;

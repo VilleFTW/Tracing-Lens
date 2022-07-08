@@ -28,6 +28,7 @@
     "@ionic/storage-angular": "^3.0.6",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "@swimlane/ngx-charts": "^20.1.0",
     "@walletconnect/web3-provider": "^1.7.8",
     "angularx-qrcode": "^14.0.0",
     "buffer": "^6.0.3",

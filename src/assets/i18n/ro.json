@@ -69,5 +69,33 @@
   "LANGUAGE-SELECTOR": {
     "CHANGE": "Schimbă",
     "DISMISS": "Anulează"
+  },
+  "COLOR-BLIND-MODE-CHANGER": {
+    "CHANGE": "Schimbă",
+    "DISMISS": "Anulează"
+  },
+  "RESET-PREFERENCES-MODAL": {
+    "HEADER": "Avertisment",
+    "SUBHEADER": "Preferințele tale vor fi resetate",
+    "MESSAGE": "Această acțiune nu e reversibilă",
+    "CANCEL-BUTTON-MESSAGE": "Anulează",
+    "RESET-PREFERENCES-CONFIRM-MESSAGE": "Confirm"
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": {
+      "SUCCESS-HEADER": "Succes",
+      "CONNECTION-MESSAGE": "Conexiunea a fost efectuată cu succes",
+      "SCANNING-MESSAGE": "Vei fi redirecționat la noua pagină"
+    },
+    "ERROR": {
+      "ERROR-HEADER": "Eroare",
+      "CONNECTION-ERROR": "Conexiunea nu a putut fi stabilită",
+      "SCANNING-ERROR": "Eroare la scanare",
+      "CAMERA-NOT-FOUND-MESSAGE": "Camera nu a putut fi găsită",
+      "NOT-FOUND-ERROR": "Nu a putut fi găsit. Te rugăm scanează un cod QR compatibil",
+      "WRONG-CHAIN-ERROR": "Chain-ul greșit. Schimbă pe Rinkeby"
+    },
+    "CLOSE": "Închide",
+    "CHANGE-NETWORK": "Schimbă rețeaua"
   }
 }

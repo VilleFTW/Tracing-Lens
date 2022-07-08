@@ -25,12 +25,25 @@ export class NotificationsService {
   showSuccesfullQRCodeScan() {
     this.toastController
       .create({
-        header: this.translatePipe.transform('NOTIFICATIONS.SUCCESS.SUCCESS-MESSAGE'),
+        header: this.translatePipe.transform('NOTIFICATIONS.SUCCESS.SUCCESS-HEADER'),
         message: this.translatePipe.transform('NOTIFICATIONS.SUCCESS.SCANNING-MESSAGE'),
         color: 'success',
         icon: 'checkmark-circle-outline',
         position: 'bottom',
         duration: 1000,
+      })
+      .then((toast) => toast.present());
+  }
+
+  showNotFoundCamera() {
+    this.toastController
+      .create({
+        header: this.translatePipe.transform('NOTIFICATIONS.ERROR.ERROR-HEADER'),
+        message: this.translatePipe.transform('NOTIFICATIONS.ERROR.CAMERA-NOT-FOUND-MESSAGE'),
+        color: 'danger',
+        icon: 'close-circle-outline',
+        position: 'bottom',
+        duration: 3000,
       })
       .then((toast) => toast.present());
   }
