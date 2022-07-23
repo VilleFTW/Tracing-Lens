@@ -27,7 +27,8 @@
     "search-card-title": "Want to know more?",
     "enter-product-id": "Enter product ID",
     "or": "or",
-    "scan-qr-code-button": "Scan QR Code"
+    "scan-qr-code-button": "Scan QR Code",
+    "try-out-an-example": "Try out an example"
   },
   "SETTINGS": {
     "dark-mode": "Dark Mode",
@@ -38,7 +39,10 @@
     "reset-preferences-button": "Reset",
     "wallet-connection": "Wallet Connection",
     "auth-button-connect": "Connect",
-    "auth-button-disconnect": "Disconnect"
+    "auth-button-disconnect": "Disconnect",
+    "accessibility-label": "Accessibility",
+    "miscellaneous-label": "Misc",
+    "web3-label": "Web3"
   },
   "QR-SCANNER-MODAL": {
     "SUCCESS-MESSAGE": "Successfully scanned. Navigating to a new page",
@@ -74,7 +78,8 @@
     "temperature": "Temperature",
     "note": "Note",
     "date": "Date",
-    "location": "Location"
+    "location": "Location",
+    "track-journey": "Track Journey"
   },
   "LANGUAGE-SELECTOR": {
     "CHANGE": "Change",

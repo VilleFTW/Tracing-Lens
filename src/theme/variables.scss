@@ -3,6 +3,7 @@
 
 /** Ionic CSS Variables **/
 :root {
+  --ion-background-color: #ffffff;
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -133,9 +134,11 @@
     --ion-color-light-tint: #f5f6f9;
   }
 
-  .deuteranopia{}
+  .deuteranopia {
+  }
 
-  .tritonopia{}
+  .tritonopia {
+  }
 }
 
 /*

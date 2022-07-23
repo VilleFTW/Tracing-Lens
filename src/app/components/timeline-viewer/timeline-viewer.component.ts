@@ -45,21 +45,14 @@ export class TimelineViewerComponent implements OnInit {
   }
 
   changeTimeline(event: any) {
-    // if (event.cancelable) {
-    // event.preventDefault();
     if (event.target.value == this.timelineCollection.length) {
-      console.log('Should be called from change timeline');
-
       this.shouldCalculateJourney = true;
     } else {
       this.shouldCalculateJourney = false;
       this.selectedTimelineIndex = event.target.value;
       this.selectedTimeline = this.timelineCollection[this.selectedTimelineIndex];
-      console.log(event.target.value);
     }
-    // }
   }
-  // }
 }
 
 export interface TimelineInstance {

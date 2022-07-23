@@ -1,0 +1,33 @@
+ion-content.md ion-list-header {
+  padding-left: 18px;
+  padding-right: 18px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 450;
+}
+
+ion-content.md ion-item {
+  --padding-start: 18px;
+
+  margin-right: 10px;
+
+  border-radius: 0 50px 50px 0;
+
+  font-weight: 500;
+}
+
+ion-content.md ion-list-header {
+  color: var(--ion-color-step-650, #5f6368);
+}
+
+/*
+ * iOS Menu
+*/
+ion-content.ios ion-list-header {
+  padding-left: 16px;
+  padding-right: 16px;
+
+  margin-bottom: 8px;
+}
+

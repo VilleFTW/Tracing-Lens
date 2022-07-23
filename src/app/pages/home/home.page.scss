@@ -51,3 +51,16 @@ h5 {
 p {
   color: var(--ion-color-medium);
 }
+
+ngx-charts-legend {
+  display: block !important;
+}
+
+.statistics {
+  margin-bottom: 20px;
+  border-radius: 16px;
+}
+
+.card {
+  border-radius: 16px;
+}

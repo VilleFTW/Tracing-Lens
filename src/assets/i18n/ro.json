@@ -12,12 +12,23 @@
     "livestock-not-found-message": "Acest produs nu a putut fi găsit in baza noastră de date",
     "livestock-not-found-tip": "Verifică adresa și încearcă din nou"
   },
-  "HOME": {},
+  "HOME": {
+    "alimentation-events": "Evenimente de alimentație",
+    "pharmaceutical-events": "Evenimente farmaceutice",
+    "shipping-events": "Evenimente logistice",
+    "textile-events": "Evenimente textile",
+    "all-time-events": "Toate Evenimentele",
+    "24hrs-events": "Evenimente in ultimele 24 ore",
+    "statistics-message": "Statistici",
+    "distribution-of-events": "Distribuția evenimentelor",
+    "legend-title": "Legendă"
+  },
   "SEARCH": {
     "search-card-title": "Vrei să știi mai mult?",
     "enter-product-id": "Introdu ID-ul produsului",
     "or": "sau",
-    "scan-qr-code-button": "Scanează codul QR"
+    "scan-qr-code-button": "Scanează codul QR",
+    "try-out-an-example": "Vezi un exemplu"
   },
   "SETTINGS": {
     "dark-mode": "Mod întunecat",
@@ -64,7 +75,8 @@
     "temperature": "Temperatură",
     "note": "Notă",
     "date": "Dată",
-    "location": "Locație"
+    "location": "Locație",
+    "track-journey": "Vezi călătoria"
   },
   "LANGUAGE-SELECTOR": {
     "CHANGE": "Schimbă",

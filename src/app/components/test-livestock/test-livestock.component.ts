@@ -7,6 +7,7 @@ import { ModalController } from '@ionic/angular';
 import { BlockchainInfoComponent } from '../blockchain-info/blockchain-info.component';
 import { LanguageService } from '../../services/language/language.service';
 import { GoogleTranslateService } from '../../services/google-translate/google-translate.service';
+import { element } from 'protractor';
 @Component({
   selector: 'app-test-livestock',
   templateUrl: './test-livestock.component.html',
@@ -32,20 +33,28 @@ export class TestLivestockComponent implements OnInit, AfterContentInit {
 
   //TODO refactor this such that it is more modular/dynamic
   async translateAttributes() {
-    console.log(this.livestock);
     const selectedLanguage = this.languageService.getSelectedLanguage();
     if (selectedLanguage != 'en') {
-      const translationOutput = await this.googleTranslateService.translate(
-        [
-          this.livestock.product_name,
-          this.livestock.product_description,
-          this.livestock.product_provenance,
-          this.livestock.producer_name,
-          this.livestock.producer_description,
-          this.livestock.category_type,
-        ],
-        selectedLanguage,
-      );
+      var arrayOfTypes: string[] = [];
+      console.log(this.livestock.timeline);
+      this.livestock.timeline.forEach((element) => {
+        arrayOfTypes.push(element.type, element.name);
+      });
+
+      console.log(arrayOfTypes);
+
+      const toBeTranslated = [
+        this.livestock.product_name,
+        this.livestock.product_description,
+        this.livestock.product_provenance,
+        this.livestock.producer_name,
+        this.livestock.producer_description,
+        this.livestock.category_type,
+      ];
+
+      toBeTranslated.push(...arrayOfTypes);
+
+      const translationOutput = await this.googleTranslateService.translate(toBeTranslated, selectedLanguage);
 
       this.livestock.product_name = translationOutput[0].translatedText;
       this.livestock.product_description = translationOutput[1].translatedText;
@@ -53,6 +62,15 @@ export class TestLivestockComponent implements OnInit, AfterContentInit {
       this.livestock.producer_name = translationOutput[3].translatedText;
       this.livestock.producer_description = translationOutput[4].translatedText;
       this.livestock.category_type = translationOutput[5].translatedText;
+
+      const slicedTranslationOutput = translationOutput.slice(6, translationOutput.length);
+
+      console.log(slicedTranslationOutput);
+
+      for (let i = 0; i < this.livestock.timeline.length; i++) {
+        this.livestock.timeline[i].type = slicedTranslationOutput[2 * i].translatedText;
+        this.livestock.timeline[i].name = slicedTranslationOutput[2 * i + 1].translatedText;
+      }
     }
   }
 
