@@ -9,8 +9,10 @@
     [cancelText]="'LANGUAGE-SELECTOR.DISMISS' | translate"
     [value]="selectedLanguage"
   >
-    <ion-select-option *ngFor="let country of countries" value="{{ country.value }}">
-      {{ country.flag + ' ' + country.name }}</ion-select-option
-    >
+    <ion-content>
+      <ion-select-option *ngFor="let country of countries" value="{{ country.value }}">
+        {{ country.flag + ' ' + country.name }}</ion-select-option
+      >
+    </ion-content>
   </ion-select>
 </ion-item>

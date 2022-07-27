@@ -1,0 +1,117 @@
+{
+  "MENU": {
+    "home-tab": "Home",
+    "search-tab": "Zoeken",
+    "settings-tab": "Intellingen"
+  },
+  "NOT-FOUND": {
+    "not-found-message": "We kunnen de pagina die je probeerde te zoeken niet vinden",
+    "redirect-message": "Je wordt doorgestuurd in"
+  },
+  "LIVESTOCK-NOT-FOUND": {
+    "livestock-not-found-message": "Dit item konden we niet vinden in onze database",
+    "livestock-not-found-tip": "Controleer de URL en probeer het opnieuw"
+  },
+  "HOME": {
+    "alimentation-events": "Voeding Events",
+    "pharmaceutical-events": "Framaceutische Events",
+    "shipping-events": "Logistieke Events",
+    "textile-events": "Textiel Events",
+    "all-time-events": "Alle Events",
+    "24hrs-events": "Events in de afgelopen 24 uur",
+    "statistics-message": "Statistieken",
+    "distribution-of-events": "Verdeling van Events",
+    "legend-title": "Legenda"
+  },
+  "SEARCH": {
+    "search-card-title": "Wil je meer weten?",
+    "enter-product-id": "Voer product ID in",
+    "or": "of",
+    "scan-qr-code-button": "Scan QR Code",
+    "try-out-an-example": "Probeer het voorbeeld uit"
+  },
+  "SETTINGS": {
+    "dark-mode": "Donkere modus",
+    "color-blind-mode": "Kleurenblindheid modus",
+    "language": "Taal",
+    "font-size": "Lettertypegrootte",
+    "reset-preferences": "Reset voorkeuren",
+    "reset-preferences-button": "Reset",
+    "wallet-connection": "Wallet Connection",
+    "auth-button-connect": "Verbinden",
+    "auth-button-disconnect": "Verbinding verbreken",
+    "accessibility-label": "Toegankelijkheid",
+    "miscellaneous-label": "Diversen",
+    "web3-label": "Web3"
+  },
+  "QR-SCANNER-MODAL": {
+    "SUCCESS-MESSAGE": "Successvol gescand. Doorverbinden naar een nieuwe pagina",
+    "NOT-FOUND-MESSAGE": "Niet gevonden. Probeer een bijbehorende QR Code",
+    "ENABLE-CAMERA": "Camera Aanzetten",
+    "DISABLE-CAMERA": "Camera Uitzetten"
+  },
+  "QR-GENERATOR-MODAL": {
+    "DOWNLOAD-QR-CODE-IMAGE": "Download afbeelding van QR Code"
+  },
+  "BLOCKCHAIN-INFO-MODAL": {
+    "title": "Blockchain Informatie",
+    "status": "Status",
+    "transaction-hash": "Transactie Hash",
+    "date": "Datum",
+    "from": "Van",
+    "to": "Naar"
+  },
+  "LIVESTOCK-COMPONENT": {
+    "product-information": "Productie informatie",
+    "about-producer": "Over de Producent",
+    "category-type": "Categorie Type",
+    "product-id": "Product ID",
+    "weight": "Gewicht",
+    "lot": "Partij",
+    "view-blockchain-information": "Zie Blockchain Informatie",
+    "certifications": "Certificaten",
+    "vegan": "Veganistisch",
+    "vegetarian": "Vegetarisch",
+    "halal": "Halal",
+    "view-producer-certifications": "Zie Producent Certificering",
+    "humidity": "Vochtigheid",
+    "temperature": "Teperatuur",
+    "note": "Opmerking",
+    "date": "Datum",
+    "location": "Locatie",
+    "track-journey": "Reis Route"
+  },
+  "LANGUAGE-SELECTOR": {
+    "CHANGE": "Veranderen",
+    "DISMISS": "Annuleren"
+  },
+  "COLOR-BLIND-MODE-CHANGER": {
+    "CHANGE": "Veranderen",
+    "DISMISS": "Annuleren"
+  },
+  "RESET-PREFERENCES-MODAL": {
+    "HEADER": "Waarschuwing",
+    "SUBHEADER": "Je voorkeuren worden gereset",
+    "MESSAGE": "Deze actie kon niet ongedaan gemaakt worden",
+    "CANCEL-BUTTON-MESSAGE": "Annuleren",
+    "RESET-PREFERENCES-CONFIRM-MESSAGE": "Bevestigen"
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": {
+      "SUCCESS-HEADER": "Succesvol",
+      "CONNECTION-MESSAGE": "Succesvol verbonden",
+      "SCANNING-MESSAGE": "Doorverbinden naar een nieuwe pagina"
+    },
+    "ERROR": {
+      "ERROR-HEADER": "Error",
+      "CONNECTION-ERROR": "Verbinding error",
+      "SCANNING-ERROR": "Scan error",
+      "CAMERA-NOT-FOUND-MESSAGE": "Er kon geen camera gevonden worden",
+      "NOT-FOUND-ERROR": "Niet gevonden. Probeer een bijbehorende QR Code",
+      "NOT-FOUND-PRODUCT-ERROR": "Product kon niet gevonden worden. Contoleer het ID en probeer het opnieuw",
+      "WRONG-CHAIN-ERROR": "Verkeerde Keten. Probeer te verbinden met Rinkeby"
+    },
+    "CLOSE": "Sluiten",
+    "CHANGE-NETWORK": "Verander van Netwerk"
+  }
+}

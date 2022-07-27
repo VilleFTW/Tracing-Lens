@@ -17,7 +17,7 @@ export class ThemeSwitcherService {
   colorBlindModeArray = Object.values(ColorBlindMode).map((item) => String(item));
 
   fontSize: number;
-  font: Array<number> = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
+  font: Array<number> = [12, 14, 16, 18, 20];
 
   // Use matchMedia to check the user preference
   prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -81,16 +81,16 @@ export class ThemeSwitcherService {
   }
 
   setFontBySize(fontSize: number) {
-    // this.font.forEach((font) => {
-    //   this.renderer.removeClass(this.document.body, `font-size-${font}`);
-    // });
-    // this.renderer.addClass(this.document.body, `font-size-${fontSize}`);
-    // this.storageService.storeData('font-size', fontSize);
-    // //TODO: Change sizes of buttons icons
-    // // if (fontSize >= 18) {
-    // //   this.renderer.setAttribute('ion-button', 'size', 'large');
-    // // }
-    // this.fontSize = fontSize;
+    this.font.forEach((font) => {
+      this.renderer.removeClass(this.document.body, `font-size-${font}`);
+    });
+    this.renderer.addClass(this.document.body, `font-size-${fontSize}`);
+    this.storageService.storeData('font-size', fontSize);
+    //TODO: Change sizes of buttons icons
+    // if (fontSize >= 18) {
+    //   this.renderer.setAttribute('ion-button', 'size', 'large');
+    // }
+    this.fontSize = fontSize;
   }
 
   changeThemeMode(event: boolean) {

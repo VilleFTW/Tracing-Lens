@@ -1,0 +1,9 @@
+.searchButton {
+  // // display: flex;
+  // float: right;
+  flex-direction: column;
+}
+
+ion-searchbar {
+  --clear-button-color: var(--ion-color-primary);
+}

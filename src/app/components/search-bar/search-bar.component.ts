@@ -21,7 +21,7 @@ export class SearchBarComponent {
         this.notificationService.showSuccesfullQRCodeScan();
         this.router.navigate(['search', 'livestock', data.id]);
       } else {
-        this.notificationService.showNotFoundQRCodeScan();
+        this.notificationService.showNotFoundProductID();
       }
     });
   }

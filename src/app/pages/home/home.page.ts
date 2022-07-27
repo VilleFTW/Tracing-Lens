@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, Component, OnInit } from '@angular/core';
 import { Color } from '@ionic/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LegendPosition } from '@swimlane/ngx-charts';
@@ -11,7 +11,7 @@ import { FirestoreDatabaseService } from 'src/app/services/firestore/firestore-d
   styleUrls: ['home.page.scss'],
 })
 // eslint-disable-next-line @angular-eslint/component-class-suffix
-export class HomePage implements OnInit {
+export class HomePage implements AfterContentInit {
   livestocks: Livestock[];
 
   label;
@@ -32,18 +32,7 @@ export class HomePage implements OnInit {
     { name: this.translatePipe.transform('HOME.textile-events'), value: this.numberOfTextileEvents },
   ];
 
-  tertiaryColor = getComputedStyle(document.documentElement).getPropertyValue('--ion-color-tertiary');
-  warningColor = getComputedStyle(document.documentElement).getPropertyValue('--ion-color-warning');
-  successColor = getComputedStyle(document.documentElement).getPropertyValue('--ion-color-success');
-  dangerColor = getComputedStyle(document.documentElement).getPropertyValue('--ion-color-danger');
-
-  customColors = [
-    { name: this.translatePipe.transform('HOME.alimentation-events'), value: this.tertiaryColor },
-    { name: this.translatePipe.transform('HOME.pharmaceutical-events'), value: this.warningColor },
-    { name: this.translatePipe.transform('HOME.shipping-events'), value: this.successColor },
-    { name: this.translatePipe.transform('HOME.textile-events'), value: this.dangerColor },
-  ];
-  // customColors = ['#FF0000'];
+  customColors;
   view: any;
 
   showLegend: boolean = true;
@@ -56,7 +45,19 @@ export class HomePage implements OnInit {
     this.legendTitle = this.translatePipe.transform('HOME.legend-title');
   }
 
-  ngOnInit(): void {
+  ngAfterContentInit(): void {
+    const tertiaryColor = getComputedStyle(document.documentElement).getPropertyValue('--ion-color-tertiary');
+    const warningColor = getComputedStyle(document.documentElement).getPropertyValue('--ion-color-warning');
+    const successColor = getComputedStyle(document.documentElement).getPropertyValue('--ion-color-success');
+    const dangerColor = getComputedStyle(document.documentElement).getPropertyValue('--ion-color-danger');
+
+    this.customColors = [
+      { name: this.translatePipe.transform('HOME.alimentation-events'), value: tertiaryColor },
+      { name: this.translatePipe.transform('HOME.pharmaceutical-events'), value: warningColor },
+      { name: this.translatePipe.transform('HOME.shipping-events'), value: successColor },
+      { name: this.translatePipe.transform('HOME.textile-events'), value: dangerColor },
+    ];
+
     this.getLivestock();
   }
 

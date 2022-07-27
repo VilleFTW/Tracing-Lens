@@ -12,11 +12,13 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SettingsPageRoutingModule } from './settings-routing.module';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
+    ScrollingModule,
     TranslateModule,
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: SettingsPage }]),

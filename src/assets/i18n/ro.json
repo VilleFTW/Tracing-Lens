@@ -39,7 +39,10 @@
     "reset-preferences-button": "Resetează",
     "wallet-connection": "Conexiune portofel",
     "auth-button-connect": "Conectează-te",
-    "auth-button-disconnect": "Deconectează-te"
+    "auth-button-disconnect": "Deconectează-te",
+    "accessibility-label": "Accesibilitate",
+    "miscellaneous-label": "Diverse",
+    "web3-label": "Web3"
   },
   "QR-SCANNER-MODAL": {
     "SUCCESS-MESSAGE": "Scanatul a fost efectuat cu succes. Te navigăm la noua pagină",

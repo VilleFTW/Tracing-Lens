@@ -108,6 +108,7 @@
       "SCANNING-ERROR": "Scanning error",
       "CAMERA-NOT-FOUND-MESSAGE": "A camera could not be found",
       "NOT-FOUND-ERROR": "Not found. Please scan a compatible QR Code",
+      "NOT-FOUND-PRODUCT-ERROR": "Product could not be found. Check the ID and try again",
       "WRONG-CHAIN-ERROR": "Wrong Chain. Please connect to Rinkeby"
     },
     "CLOSE": "Close",

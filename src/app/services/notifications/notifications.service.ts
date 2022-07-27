@@ -22,6 +22,38 @@ export class NotificationsService {
   // private notification;
   constructor(private toastController: ToastController, private translatePipe: TranslatePipe) {}
 
+  showTestNotifications() {
+    this.toastController
+      .create({
+        header: 'Confirmation Test',
+        message: 'This is a confirmation test',
+        color: 'success',
+        icon: 'checkmark-circle-outline',
+        position: 'bottom',
+      })
+      .then((toast) => toast.present());
+
+    this.toastController
+      .create({
+        header: 'Warning Test',
+        message: 'This is a warning test',
+        color: 'warning',
+        icon: 'warning-outline',
+        position: 'middle',
+      })
+      .then((toast) => toast.present());
+
+    this.toastController
+      .create({
+        header: 'Error Test',
+        message: 'This is a error test',
+        color: 'danger',
+        icon: 'close-circle-outline',
+        position: 'top',
+      })
+      .then((toast) => toast.present());
+  }
+
   showSuccesfullQRCodeScan() {
     this.toastController
       .create({
@@ -48,6 +80,18 @@ export class NotificationsService {
       .then((toast) => toast.present());
   }
 
+  showNotFoundProductID() {
+    this.toastController
+      .create({
+        header: this.translatePipe.transform('NOTIFICATIONS.ERROR.ERROR-HEADER'),
+        message: this.translatePipe.transform('NOTIFICATIONS.ERROR.NOT-FOUND-PRODUCT-ERROR'),
+        color: 'danger',
+        icon: 'close-circle-outline',
+        position: 'bottom',
+        duration: 3000,
+      })
+      .then((toast) => toast.present());
+  }
   showNotFoundQRCodeScan() {
     this.toastController
       .create({

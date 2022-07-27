@@ -1,6 +1,10 @@
 <ion-searchbar
   (search)="this.search($event)"
+  (ionClear)="this.search($event)"
   enterkeyhint="search"
   [placeholder]="'SEARCH.enter-product-id' | translate"
-  inputmode="numeric"
+  searchIcon="keypad"
+  clearIcon="search-sharp"
+  inputmode="text"
+  slot="start"
 ></ion-searchbar>
