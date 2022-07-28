@@ -108,6 +108,7 @@
       "SCANNING-ERROR": "Eroare la scanare",
       "CAMERA-NOT-FOUND-MESSAGE": "Camera nu a putut fi găsită",
       "NOT-FOUND-ERROR": "Nu a putut fi găsit. Te rugăm scanează un cod QR compatibil",
+      "NOT-FOUND-PRODUCT-ERROR": "Produsul nu a putut fi găsit. Verifică codul și incearcă din nou",
       "WRONG-CHAIN-ERROR": "Chain-ul ales este greșit. Schimbă pe Rinkeby"
     },
     "CLOSE": "Închide",

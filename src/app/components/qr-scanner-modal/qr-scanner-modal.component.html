@@ -9,27 +9,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-grid>
-  <ion-row>
-    <ng-lottie
-      [hidden]="this.isScanActive"
-      [options]="options"
-      width="400"
-      (animationCreated)="animationCreated($event)"
-    >
-    </ng-lottie>
-    <video #video [hidden]="!this.isScanActive"></video>
-    <canvas #canvas hidden></canvas>
-  </ion-row>
-  <ion-row>
-    <ion-button (click)="startScan()" [hidden]="this.isScanActive">{{
-      'QR-SCANNER-MODAL.ENABLE-CAMERA' | translate
-    }}</ion-button>
-    <ion-button (click)="reset()" [hidden]="!this.isScanActive">{{
-      'QR-SCANNER-MODAL.DISABLE-CAMERA' | translate
-    }}</ion-button>
-  </ion-row>
-  <ion-row>
-    <ion-card *ngIf="this.scanResult"> {{ this.scanResult }} </ion-card>
-  </ion-row>
-</ion-grid>
+<ion-content fullscreen="true">
+  <ion-grid>
+    <ion-row>
+      <ng-lottie
+        [hidden]="this.isScanActive"
+        [options]="options"
+        width="400"
+        (animationCreated)="animationCreated($event)"
+      >
+      </ng-lottie>
+      <video #video [hidden]="!this.isScanActive"></video>
+      <canvas #canvas hidden></canvas>
+    </ion-row>
+    <ion-row>
+      <ion-button (click)="startScan()" [hidden]="this.isScanActive">{{
+        'QR-SCANNER-MODAL.ENABLE-CAMERA' | translate
+      }}</ion-button>
+      <ion-button (click)="reset()" [hidden]="!this.isScanActive">{{
+        'QR-SCANNER-MODAL.DISABLE-CAMERA' | translate
+      }}</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-card *ngIf="this.scanResult"> {{ this.scanResult }} </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>
