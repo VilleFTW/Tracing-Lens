@@ -1,0 +1,117 @@
+{
+  "MENU": {
+    "home-tab": "Koti",
+    "search-tab": "Haku",
+    "settings-tab": "Asetukset"
+  },
+  "NOT-FOUND": {
+    "not-found-message": "Emme löydä etsimääsi sivua",
+    "redirect-message": "Sinut ohjataan uudelleen"
+  },
+  "LIVESTOCK-NOT-FOUND": {
+    "livestock-not-found-message": "Tätä tuotetta ei ole löydetty tietokannastamme.",
+    "livestock-not-found-tip": "Tarkista URL-osoite ja yritä uudelleen"
+  },
+  "HOME": {
+    "alimentation-events": "Elintarviketapahtumat",
+    "pharmaceutical-events": "Farmaseuttiset tapahtumat",
+    "shipping-events": "Logistiset tapahtumat",
+    "textile-events": "Tekstiilitapahtumat",
+    "all-time-events": "Kaikki tapahtumat",
+    "24hrs-events": "Tapahtumat viimeisen 24 tunnin aikana",
+    "statistics-message": "Tilastotiedot",
+    "distribution-of-events": "Tapahtumien jakautuminen",
+    "legend-title": "Legenda"
+  },
+  "SEARCH": {
+    "search-card-title": "Haluatko tietää lisää?",
+    "enter-product-id": "Anna tuotteen ID",
+    "or": "tai",
+    "scan-qr-code-button": "Skannaa QR-koodi",
+    "try-out-an-example": "Kokeilkaa esimerkkiä"
+  },
+  "SETTINGS": {
+    "dark-mode": "Tumma tila",
+    "color-blind-mode": "Värisokea tila",
+    "language": "Kieli",
+    "font-size": "Fonttikoko",
+    "reset-preferences": "Asetusten nollaaminen",
+    "reset-preferences-button": "Resetoi",
+    "wallet-connection": "Lompakko yhteys",
+    "auth-button-connect": "Yhdistä",
+    "auth-button-disconnect": "Katkaise yhteys",
+    "accessibility-label": "Saavutettavuus",
+    "miscellaneous-label": "Muut",
+    "web3-label": "Web3"
+  },
+  "QR-SCANNER-MODAL": {
+    "SUCCESS-MESSAGE": "Skannattu onnistuneesti. Siirtyminen uudelle sivulle",
+    "NOT-FOUND-MESSAGE": "Ei löydy. Skannaa yhteensopiva QR-koodi",
+    "ENABLE-CAMERA": "Aktivoi kamera",
+    "DISABLE-CAMERA": "Poista kamera käytöstä"
+  },
+  "QR-GENERATOR-MODAL": {
+    "DOWNLOAD-QR-CODE-IMAGE": "Lataa QR-koodin kuva"
+  },
+  "BLOCKCHAIN-INFO-MODAL": {
+    "title": "Blockchain tiedot",
+    "status": "Tila",
+    "transaction-hash": "Transaktio Hash",
+    "date": "Päivämäärä",
+    "from": "Osoitteesta",
+    "to": "Osoitteeseen"
+  },
+  "LIVESTOCK-COMPONENT": {
+    "product-information": "Tuotannon tiedot",
+    "about-producer": "Tietoja tuottajasta",
+    "category-type": "Kategorian tyyppi",
+    "product-id": "Tuotteen ID",
+    "weight": "Paino",
+    "lot": "Erä",
+    "view-blockchain-information": "Näytä Blockchain-tiedot",
+    "certifications": "Sertifikaatit",
+    "vegan": "Vegaaniset",
+    "vegetarian": "Kasvisruoka",
+    "halal": "Halal",
+    "view-producer-certifications": "Näytä tuottajan sertifikaatit",
+    "humidity": "Kosteus",
+    "temperature": "Lämpötila",
+    "note": "Muistiinpano",
+    "date": "Päivämäärä",
+    "location": "Sijainti",
+    "track-journey": "Seuraa matkaa"
+  },
+  "LANGUAGE-SELECTOR": {
+    "CHANGE": "Muuta",
+    "DISMISS": "Peruuta"
+  },
+  "COLOR-BLIND-MODE-CHANGER": {
+    "CHANGE": "Muuta",
+    "DISMISS": "Peruuta"
+  },
+  "RESET-PREFERENCES-MODAL": {
+    "HEADER": "Varoitus",
+    "SUBHEADER": "Asetuksesi nollataan",
+    "MESSAGE": "Tätä toimenpidettä ei voi peruuttaa",
+    "CANCEL-BUTTON-MESSAGE": "Peruuta",
+    "RESET-PREFERENCES-CONFIRM-MESSAGE": "Vahvista"
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": {
+      "SUCCESS-HEADER": "Onnistuminen",
+      "CONNECTION-MESSAGE": "Yhteys onnistui",
+      "SCANNING-MESSAGE": "Navigointi uudelle sivulle"
+    },
+    "ERROR": {
+      "ERROR-HEADER": "Virhe",
+      "CONNECTION-ERROR": "Yhteysvirhe",
+      "SCANNING-ERROR": "Skannausvirhe",
+      "CAMERA-NOT-FOUND-MESSAGE": "Kameraa ei löytynyt",
+      "NOT-FOUND-ERROR": "Ei löydy. Skannaa yhteensopiva QR-koodi",
+      "NOT-FOUND-PRODUCT-ERROR": "Tuotetta ei löytynyt. Tarkista tunnus ja yritä uudelleen",
+      "WRONG-CHAIN-ERROR": "Väärä ketju. Ole hyvä ja yhdistä Rinkebyyn"
+    },
+    "CLOSE": "Sulje",
+    "CHANGE-NETWORK": "Muuta verkkoa"
+  }
+}
