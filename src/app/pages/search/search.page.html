@@ -4,32 +4,37 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" padding="true" class="vertical-center">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{ 'MENU.search-tab' | translate }} </ion-title>
     </ion-toolbar>
   </ion-header>
-  <div class="center">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-searchbar
-            (search)="this.search($event)"
-            enterkeyhint="search"
-            placeholder="Enter product ID"
-            inputmode="numeric"
-          ></ion-searchbar>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col> <ion-text class="or" color="primary">OR</ion-text> </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <app-scan-qr-button></app-scan-qr-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <div class="searchModule">
+    <ion-card>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row class="ion-justify-content-center">
+            <ng-lottie width="200px" [options]="options"> </ng-lottie>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <ion-col class="ion-align-self-center">
+              <app-search-bar></app-search-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <ion-text color="primary">{{ 'SEARCH.or' | translate }}</ion-text>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <ion-col class="ion-align-self-center">
+              <app-scan-qr-button></app-scan-qr-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <a routerLink="/search/livestock/OnXfdzNqv1NbXs6aqIgv"> {{ 'SEARCH.try-out-an-example' | translate }}</a>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

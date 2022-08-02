@@ -4,8 +4,32 @@
     "search-tab": "Search",
     "settings-tab": "Settings"
   },
-  "HOME": {},
-  "SEARCH": {},
+  "NOT-FOUND": {
+    "not-found-message": "We can't seem to find the page you are looking for",
+    "redirect-message": "You will be redirected in"
+  },
+  "LIVESTOCK-NOT-FOUND": {
+    "livestock-not-found-message": "This item hasn't been found in our database",
+    "livestock-not-found-tip": "Please check the URL and try again"
+  },
+  "HOME": {
+    "alimentation-events": "Alimentation Events",
+    "pharmaceutical-events": "Pharmaceutical Events",
+    "shipping-events": "Logistical Events",
+    "textile-events": "Textile Events",
+    "all-time-events": "All Time Events",
+    "24hrs-events": "Events in the last 24hrs",
+    "statistics-message": "Statistics",
+    "distribution-of-events": "Distribution of Events",
+    "legend-title": "Legend"
+  },
+  "SEARCH": {
+    "search-card-title": "Want to know more?",
+    "enter-product-id": "Enter product ID",
+    "or": "or",
+    "scan-qr-code-button": "Scan QR Code",
+    "try-out-an-example": "Try out an example"
+  },
   "SETTINGS": {
     "dark-mode": "Dark Mode",
     "color-blind-mode": "Color Blind Mode",
@@ -15,6 +39,79 @@
     "reset-preferences-button": "Reset",
     "wallet-connection": "Wallet Connection",
     "auth-button-connect": "Connect",
-    "auth-button-disconnect": "Disconnect"
+    "auth-button-disconnect": "Disconnect",
+    "accessibility-label": "Accessibility",
+    "miscellaneous-label": "Misc",
+    "web3-label": "Web3"
+  },
+  "QR-SCANNER-MODAL": {
+    "SUCCESS-MESSAGE": "Successfully scanned. Navigating to a new page",
+    "NOT-FOUND-MESSAGE": "Not found. Please scan a compatible QR Code",
+    "ENABLE-CAMERA": "Enable Camera",
+    "DISABLE-CAMERA": "Disable Camera"
+  },
+  "QR-GENERATOR-MODAL": {
+    "DOWNLOAD-QR-CODE-IMAGE": "Download QR Code Image"
+  },
+  "BLOCKCHAIN-INFO-MODAL": {
+    "title": "Blockchain Information",
+    "status": "Status",
+    "transaction-hash": "Transaction Hash",
+    "date": "Date",
+    "from": "From",
+    "to": "To"
+  },
+  "LIVESTOCK-COMPONENT": {
+    "product-information": "Production Information",
+    "about-producer": "About Producer",
+    "category-type": "Category Type",
+    "product-id": "Product ID",
+    "weight": "Weight",
+    "lot": "Lot",
+    "view-blockchain-information": "View Blockchain Information",
+    "certifications": "Certifications",
+    "vegan": "Vegan",
+    "vegetarian": "Vegetarian",
+    "halal": "Halal",
+    "view-producer-certifications": "View Producer Certifications",
+    "humidity": "Humidity",
+    "temperature": "Temperature",
+    "note": "Note",
+    "date": "Date",
+    "location": "Location",
+    "track-journey": "Track Journey"
+  },
+  "LANGUAGE-SELECTOR": {
+    "CHANGE": "Change",
+    "DISMISS": "Cancel"
+  },
+  "COLOR-BLIND-MODE-CHANGER": {
+    "CHANGE": "Change",
+    "DISMISS": "Cancel"
+  },
+  "RESET-PREFERENCES-MODAL": {
+    "HEADER": "Warning",
+    "SUBHEADER": "Your preferences will be reseted",
+    "MESSAGE": "This action can not be undone",
+    "CANCEL-BUTTON-MESSAGE": "Cancel",
+    "RESET-PREFERENCES-CONFIRM-MESSAGE": "Confirm"
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": {
+      "SUCCESS-HEADER": "Success",
+      "CONNECTION-MESSAGE": "Connection succesful",
+      "SCANNING-MESSAGE": "Navigating you to a new page"
+    },
+    "ERROR": {
+      "ERROR-HEADER": "Error",
+      "CONNECTION-ERROR": "Connection error",
+      "SCANNING-ERROR": "Scanning error",
+      "CAMERA-NOT-FOUND-MESSAGE": "A camera could not be found",
+      "NOT-FOUND-ERROR": "Not found. Please scan a compatible QR Code",
+      "NOT-FOUND-PRODUCT-ERROR": "Product could not be found. Check the ID and try again",
+      "WRONG-CHAIN-ERROR": "Wrong Chain. Please connect to Rinkeby"
+    },
+    "CLOSE": "Close",
+    "CHANGE-NETWORK": "Change network"
   }
 }

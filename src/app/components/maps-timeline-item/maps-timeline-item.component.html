@@ -1,0 +1,27 @@
+<div>
+  <google-map
+    #googleMap
+    [zoom]="14"
+    [options]="options"
+    [center]="timelineInstance.production_location"
+    [height]="this.currentHeight"
+    [width]="this.currentWidth"
+  >
+    <map-traffic-layer [autoRefresh]="false"></map-traffic-layer>
+    <map-directions-renderer
+      *ngIf="this.directionsResults$ | async as directionsResults"
+      [directions]="directionsResults"
+    ></map-directions-renderer>
+    <!-- <map-marker *ngFor="let marker of timelineCollection" [position]="marker.production_location"></map-marker> -->
+    <map-marker
+      #marker="mapMarker"
+      [position]="timelineInstance.production_location"
+      [options]="markerOptions"
+      (mapClick)="openInfoWindow(marker, infoWindow)"
+    >
+      <map-info-window #infoWindow="mapInfoWindow">
+        {{ timelineInstance.name }}
+      </map-info-window>
+    </map-marker>
+  </google-map>
+</div>

@@ -1,7 +1,11 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import jsQR from 'jsqr';
-import { Stream } from 'stream';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
+import { FirestoreDatabaseService } from 'src/app/services/firestore/firestore-database.service';
+import { NotificationsService } from 'src/app/services/notifications/notifications.service';
 
 @Component({
   selector: 'app-qr-scanner-modal',
@@ -18,12 +22,25 @@ export class QrScannerModalComponent implements AfterViewInit {
 
   @ViewChild('video') video: ElementRef;
   @ViewChild('canvas') canvas: ElementRef;
-  constructor(public modalController: ModalController) {}
+  constructor(
+    public modalController: ModalController,
+    private firestore: FirestoreDatabaseService,
+    private router: Router,
+    private notificationService: NotificationsService,
+  ) {}
 
   ngAfterViewInit() {
     this.videoElement = this.video.nativeElement;
     this.canvasElement = this.canvas.nativeElement;
     this.canvasContext = this.canvasElement.getContext('2d');
+  }
+
+  options: AnimationOptions = {
+    path: '/assets/animations/qr.json',
+  };
+
+  animationCreated(animationItem: AnimationItem): void {
+    console.log(animationItem);
   }
 
   async startScan() {
@@ -38,6 +55,7 @@ export class QrScannerModalComponent implements AfterViewInit {
         this.scan();
       })
       .catch((error) => {
+        this.notificationService.showNotFoundCamera();
         console.error(error);
       });
   }
@@ -54,8 +72,25 @@ export class QrScannerModalComponent implements AfterViewInit {
       const code = jsQR(imageData.data, imageData.width, imageData.height);
 
       if (code) {
-        //TODO Refactor this so it first checks whether the value is contained
-        // within Firebase
+        //Manipulating the code a bit such that we get rid of the current path
+        const codeManipulated = code.data.replace(window.location.href + '/livestock/', '');
+        console.log(codeManipulated);
+
+        try {
+          this.firestore.getLivestockById(codeManipulated).subscribe((data) => {
+            if (data) {
+              this.dismiss();
+              this.notificationService.showSuccesfullQRCodeScan();
+              this.router.navigate(['search', 'livestock', data.id]);
+            } else {
+              this.notificationService.showNotFoundQRCodeScan();
+            }
+          });
+        } catch (error) {
+          this.notificationService.showNotFoundQRCodeScan();
+          this.reset();
+        }
+
         this.isScanActive = false;
         this.scanResult = code.data;
         console.log(this.scanResult);
@@ -74,8 +109,6 @@ export class QrScannerModalComponent implements AfterViewInit {
   }
 
   async stopScan() {
-    console.log(this.isScanActive);
-
     this.isScanActive = false;
 
     const stream = this.videoElement.srcObject;

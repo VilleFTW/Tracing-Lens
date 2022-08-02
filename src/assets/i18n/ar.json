@@ -1,0 +1,59 @@
+{
+  "MENU": {
+    "home-tab": "Home",
+    "search-tab": "Search",
+    "settings-tab": "Settings"
+  },
+  "NOT-FOUND": {
+    "not-found-message": "We can't seem to find the page you are looking for",
+    "redirect-message": "You will be redirected in"
+  },
+  "LIVESTOCK-NOT-FOUND": {
+    "livestock-not-found-message": "This item hasn't been found in our database",
+    "livestock-not-found-tip": "Please check the URL and try again"
+  },
+  "HOME": {},
+  "SEARCH": {
+    "search-card-title": "Want to know more?"
+  },
+  "SETTINGS": {
+    "dark-mode": "Dark Mode",
+    "color-blind-mode": "Color Blind Mode",
+    "language": "Language",
+    "font-size": "Font Size",
+    "reset-preferences": "Reset Preferences",
+    "reset-preferences-button": "Reset",
+    "wallet-connection": "Wallet Connection",
+    "auth-button-connect": "Connect",
+    "auth-button-disconnect": "Disconnect"
+  },
+  "QR-SCANNER-MODAL": {
+    "SUCCESS-MESSAGE": "Successfully scanned. Navigating to a new page",
+    "NOT-FOUND-MESSAGE": "Not found. Please scan a compatible QR Code"
+  },
+  "QR-GENERATOR-MODAL": {
+    "DOWNLOAD-QR-CODE-IMAGE": "Download QR Code Image"
+  },
+  "BLOCKCHAIN-INFO-MODAL": {
+    "title": "Blockchain Information",
+    "status": "Status",
+    "transaction-hash": "Transaction Hash",
+    "date": "Date",
+    "from": "From",
+    "to": "To"
+  },
+  "LIVESTOCK-COMPONENT": {
+    "product-information": "Production Information",
+    "about-producer": "About Producer",
+    "category-type": "Category Type",
+    "product-id": "Product ID",
+    "weight": "Weight",
+    "lot": "Lot",
+    "view-blockchain-information": "View Blockchain Information",
+    "certifications": "Certifications",
+    "vegan": "Vegan",
+    "vegetarian": "Vegetarian",
+    "halal": "Halal",
+    "view-producer-certifications": "View Producer Certifications"
+  }
+}

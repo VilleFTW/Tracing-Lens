@@ -1,5 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { Component, OnInit } from '@angular/core';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
 import { LanguageService } from './services/language/language.service';
 // import { NotificationsService } from './services/notifications/notifications.service';
 import { StorageService } from './services/storage/storage.service';

@@ -3,18 +3,21 @@ import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { StorageService } from '../storage/storage.service';
 import { ColorBlindMode } from '../../../assets/config/ThemeSwitcherConfig';
+import { countries } from '../../../assets/config/ThemeSwitcherConfig';
+
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeSwitcherService {
   renderer: Renderer2;
   isDarkMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
+  directionOfText: string;
   colorBlindMode: ColorBlindMode;
   //Getting the values of our ColorBlindEnum as string
   colorBlindModeArray = Object.values(ColorBlindMode).map((item) => String(item));
 
   fontSize: number;
-  font: Array<number> = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
+  font: Array<number> = [12, 14, 16, 18, 20];
 
   // Use matchMedia to check the user preference
   prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -83,7 +86,6 @@ export class ThemeSwitcherService {
     });
     this.renderer.addClass(this.document.body, `font-size-${fontSize}`);
     this.storageService.storeData('font-size', fontSize);
-
     //TODO: Change sizes of buttons icons
     // if (fontSize >= 18) {
     //   this.renderer.setAttribute('ion-button', 'size', 'large');
@@ -100,6 +102,10 @@ export class ThemeSwitcherService {
       this.storageService.storeData('dark-theme', event);
       this.renderer.removeClass(this.document.body, 'dark');
     }
+  }
+
+  changeDirectionOfText(direction: string) {
+    this.renderer.setAttribute(this.document.body, 'dir', direction);
   }
 
   changeColorBlindMode(newColorBlindMode: ColorBlindMode) {

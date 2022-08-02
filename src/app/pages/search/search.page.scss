@@ -1,28 +1,26 @@
-#canvas {
-  width: 100%;
+// .or {
+//   justify-content: center;
+//   align-items: center;
+//   display: flex;
+// }
+@media (min-width: 768px) {
+  .searchModule {
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    margin: auto;
+    width: 40%;
+  }
 }
 
-#video {
-  width: 100%;
-}
-
-.or{
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.center {
-  height: 100%;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+@media (max-width: 768px) {
+  .searchModule {
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    margin: auto;
+    width: 90%;
+  }
 }

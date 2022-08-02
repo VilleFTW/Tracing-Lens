@@ -1,0 +1,66 @@
+::ng-deep ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
+  .tooltip-caret.position-top {
+    border-top-color: var(--ion-background-color);
+    border-bottom-color: var(--ion-background-color);
+    box-shadow: 0 6px 20px 0 var(--ion-color-dark-tint);
+  }
+
+  background-color: var(--ion-background-color);
+  color: black;
+  box-shadow: 0 6px 20px 0 var(--ion-color-dark-tint);
+}
+
+::ng-deep ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip::after {
+  .tooltip-caret.position-top {
+    border-top-color: var(--ion-background-color);
+    border-bottom-color: var(--ion-background-color);
+    box-shadow: 0 6px 20px 0 var(--ion-background-color-rgb);
+  }
+
+  background-color: var(--ion-background-color);
+  color: black;
+  box-shadow: 0 6px 20px 0 var(--ion-background-color-rgb);
+}
+
+::ng-deep ngx-tooltip-content.tooltip-arrow::before {
+  .tooltip-caret.position-top {
+    border-top-color: var(--ion-background-color);
+    border-bottom-color: var(--ion-background-color);
+    box-shadow: 0 6px 20px 0 var(--ion-background-color-rgb);
+  }
+
+  background-color: var(--ion-background-color);
+  color: black;
+  box-shadow: 0 6px 20px 0 var(--ion-background-color-rgb);
+}
+
+.tooltip {
+  // background-color: red !important;
+  box-shadow: 0 0 0 0;
+  border-right-color: aqua;
+}
+
+.tooltip.arrow:before {
+  border-right-color: aqua;
+}
+
+h5 {
+  color: var(--ion-color-primary);
+}
+
+p {
+  color: var(--ion-color-medium);
+}
+
+ngx-charts-legend {
+  display: block !important;
+}
+
+.statistics {
+  margin-bottom: 20px;
+  border-radius: 16px;
+}
+
+.card {
+  border-radius: 16px;
+}

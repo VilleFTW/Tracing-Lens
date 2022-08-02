@@ -1,12 +1,138 @@
-<div *ngIf="livestock; else noLivestock">
-  <p>
-    {{ livestock.id }}
-  </p>
-  <p>
-    {{ livestock.category_type }}
-  </p>
-  <p>
-    {{ livestock.weight }}
-  </p>
-</div>
-<ng-template #noLivestock>No livestock found, please return to <a>homepage</a></ng-template>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="livestock; else noLivestock">
+    <ion-grid>
+      <ion-segment mode="md" value="productInformation" (ionChange)="this.segmentedChanged($event)">
+        <ion-segment-button value="productInformation"
+          ><ion-label>{{ 'LIVESTOCK-COMPONENT.product-information' | translate }}</ion-label></ion-segment-button
+        >
+        <ion-segment-button value="aboutProducer"
+          ><ion-label>{{ 'LIVESTOCK-COMPONENT.about-producer' | translate }}</ion-label></ion-segment-button
+        >
+      </ion-segment>
+
+      <ion-card *ngIf="this.selectedSegment === 'productInformation'; else aboutProducer">
+        <ion-row>
+          <ion-col size="12" size-sm="12" size-md="6"
+            ><ion-img src="../../../assets/images/cow.jpg"> </ion-img>
+            <ion-fab vertical="bottom" horizontal="center">
+              <ion-fab-button closeIcon="close-outline">
+                <ion-icon name="share-social-outline"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-list side="bottom">
+                <ion-fab-button cdkCopyToClipboard="{{ this.copyLinkValue }}" (click)="copyToClipboard()"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></ion-fab-button>
+              </ion-fab-list>
+              <ion-fab-list side="start">
+                <ion-fab-button (click)="openGenerateQRModal()"
+                  ><ion-icon name="qr-code-outline"></ion-icon
+                ></ion-fab-button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-col>
+          <ion-col>
+            <ion-card-header>
+              <ion-row>
+                <ion-card-title>{{ livestock.product_name }}</ion-card-title>
+                <ion-card-subtitle>
+                  {{ livestock.product_description }}
+                </ion-card-subtitle>
+              </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-chip color="primary">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <ion-label
+                    >{{ 'LIVESTOCK-COMPONENT.category-type' | translate }}: {{ livestock.category_type }}</ion-label
+                  >
+                </ion-chip>
+                <ion-chip color="danger">
+                  <ion-icon name="pin"></ion-icon>
+                  <ion-label>{{ 'LIVESTOCK-COMPONENT.product-id' | translate }}: {{ livestock.id }}</ion-label>
+                </ion-chip>
+                <ion-chip color="success">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <ion-label>{{ 'LIVESTOCK-COMPONENT.weight' | translate }}: {{ livestock.weight }}</ion-label>
+                </ion-chip>
+                <ion-chip color="secondary">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                  <ion-label>{{ 'LIVESTOCK-COMPONENT.lot' | translate }}: {{ livestock.lot_number }}</ion-label>
+                </ion-chip>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-button fill="clear" expand="full" (click)="openBlockchainInfoModal()">
+                    <ion-icon slot="start" name="open-outline"></ion-icon
+                    >{{ 'LIVESTOCK-COMPONENT.view-blockchain-information' | translate }}</ion-button
+                  >
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-col>
+        </ion-row>
+        <ion-row size="12" size-sm="12" size-md="12">
+          <ion-col>
+            <app-timeline-viewer [timelineCollection]="livestock.timeline"></app-timeline-viewer>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<ng-template #aboutProducer>
+  <ion-card>
+    <ion-row>
+      <ion-col size="12" size-sm="12" size-md="6"><ion-img src="../../../assets/images/farm.jpg"></ion-img></ion-col>
+      <ion-col>
+        <ion-card-header>
+          <ion-card-title>{{ livestock.producer_name }}</ion-card-title>
+          <ion-card-subtitle>
+            {{ livestock.producer_description }}
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-text color="primary"
+            ><h1>{{ 'LIVESTOCK-COMPONENT.certifications' | translate }}</h1></ion-text
+          >
+
+          <ion-chip color="success">
+            <ion-avatar>
+              <img src="../../../assets/certifications/vegeterian.svg" />
+            </ion-avatar>
+            <ion-label>{{ 'LIVESTOCK-COMPONENT.vegetarian' | translate }}</ion-label>
+          </ion-chip>
+          <ion-chip color="warning">
+            <ion-avatar>
+              <img src="../../../assets/certifications/halal.svg" />
+            </ion-avatar>
+            <ion-label>{{ 'LIVESTOCK-COMPONENT.halal' | translate }}</ion-label>
+          </ion-chip>
+          <ion-chip color="success">
+            <ion-avatar>
+              <img src="../../../assets/certifications/vegan.svg" />
+            </ion-avatar>
+            <ion-label>{{ 'LIVESTOCK-COMPONENT.vegan' | translate }}</ion-label>
+          </ion-chip>
+          <ion-button fill="clear" expand="full" (click)="openProducerCertificationsModal()">
+            <ion-icon slot="start" name="open-outline"></ion-icon>
+            {{ 'LIVESTOCK-COMPONENT.view-producer-certifications' | translate }}
+          </ion-button>
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ng-template>
+
+<ng-template #noLivestock>
+  <app-livestock-not-found></app-livestock-not-found>
+</ng-template>

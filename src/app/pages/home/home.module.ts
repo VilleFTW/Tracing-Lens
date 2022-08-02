@@ -7,10 +7,12 @@ import { ExploreContainerComponentModule } from '../../components/explore-contai
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   imports: [
     IonicModule,
+    NgxChartsModule,
     CommonModule,
     FormsModule,
     TranslateModule,

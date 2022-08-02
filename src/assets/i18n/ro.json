@@ -1,0 +1,117 @@
+{
+  "MENU": {
+    "home-tab": "Acasă",
+    "search-tab": "Caută",
+    "settings-tab": "Setări"
+  },
+  "NOT-FOUND": {
+    "not-found-message": "Nu putem găsi pagina căutată",
+    "redirect-message": "Vei fi redirecționat"
+  },
+  "LIVESTOCK-NOT-FOUND": {
+    "livestock-not-found-message": "Acest produs nu a putut fi găsit in baza noastră de date",
+    "livestock-not-found-tip": "Verifică adresa și încearcă din nou"
+  },
+  "HOME": {
+    "alimentation-events": "Evenimente de alimentație",
+    "pharmaceutical-events": "Evenimente farmaceutice",
+    "shipping-events": "Evenimente logistice",
+    "textile-events": "Evenimente textile",
+    "all-time-events": "Toate Evenimentele",
+    "24hrs-events": "Evenimente in ultimele 24 ore",
+    "statistics-message": "Statistici",
+    "distribution-of-events": "Distribuția evenimentelor",
+    "legend-title": "Legendă"
+  },
+  "SEARCH": {
+    "search-card-title": "Vrei să știi mai mult?",
+    "enter-product-id": "Introdu ID-ul produsului",
+    "or": "sau",
+    "scan-qr-code-button": "Scanează codul QR",
+    "try-out-an-example": "Vezi un exemplu"
+  },
+  "SETTINGS": {
+    "dark-mode": "Mod întunecat",
+    "color-blind-mode": "Mod daltonism",
+    "language": "Limba aplicației",
+    "font-size": "Mărimea textului",
+    "reset-preferences": "Resetează preferințele",
+    "reset-preferences-button": "Resetează",
+    "wallet-connection": "Conexiune portofel",
+    "auth-button-connect": "Conectează-te",
+    "auth-button-disconnect": "Deconectează-te",
+    "accessibility-label": "Accesibilitate",
+    "miscellaneous-label": "Diverse",
+    "web3-label": "Web3"
+  },
+  "QR-SCANNER-MODAL": {
+    "SUCCESS-MESSAGE": "Scanatul a fost efectuat cu succes. Te navigăm la noua pagină",
+    "NOT-FOUND-MESSAGE": "Nu a putut fi găsit. Te rugăm scanează un QR compatibil",
+    "ENABLE-CAMERA": "Deschide Camera",
+    "DISABLE-CAMERA": "Închide Camera"
+  },
+  "QR-GENERATOR-MODAL": {
+    "DOWNLOAD-QR-CODE-IMAGE": "Descarcă imagine QR"
+  },
+  "BLOCKCHAIN-INFO-MODAL": {
+    "title": "Informații Blockchain",
+    "status": "Status",
+    "transaction-hash": "Hash-ul tranzacției",
+    "date": "Dată",
+    "from": "De la",
+    "to": "Către"
+  },
+  "LIVESTOCK-COMPONENT": {
+    "product-information": "Informații produs",
+    "about-producer": "Despre producător",
+    "category-type": "Categoria",
+    "product-id": "ID-ul produsului",
+    "weight": "Greutate",
+    "lot": "Lot",
+    "view-blockchain-information": "Vezi informații de pe Blockchain",
+    "certifications": "Certificări",
+    "vegan": "Vegan",
+    "vegetarian": "Vegetarian",
+    "halal": "Halal",
+    "view-producer-certifications": "Vezi certificările producătorului",
+    "humidity": "Umiditate",
+    "temperature": "Temperatură",
+    "note": "Notă",
+    "date": "Dată",
+    "location": "Locație",
+    "track-journey": "Vezi călătoria"
+  },
+  "LANGUAGE-SELECTOR": {
+    "CHANGE": "Schimbă",
+    "DISMISS": "Anulează"
+  },
+  "COLOR-BLIND-MODE-CHANGER": {
+    "CHANGE": "Schimbă",
+    "DISMISS": "Anulează"
+  },
+  "RESET-PREFERENCES-MODAL": {
+    "HEADER": "Avertisment",
+    "SUBHEADER": "Preferințele tale vor fi resetate",
+    "MESSAGE": "Această acțiune nu e reversibilă",
+    "CANCEL-BUTTON-MESSAGE": "Anulează",
+    "RESET-PREFERENCES-CONFIRM-MESSAGE": "Confirm"
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": {
+      "SUCCESS-HEADER": "Succes",
+      "CONNECTION-MESSAGE": "Conexiunea a fost efectuată cu succes",
+      "SCANNING-MESSAGE": "Vei fi redirecționat către noua pagină"
+    },
+    "ERROR": {
+      "ERROR-HEADER": "Eroare",
+      "CONNECTION-ERROR": "Conexiunea nu a putut fi stabilită",
+      "SCANNING-ERROR": "Eroare la scanare",
+      "CAMERA-NOT-FOUND-MESSAGE": "Camera nu a putut fi găsită",
+      "NOT-FOUND-ERROR": "Nu a putut fi găsit. Te rugăm scanează un cod QR compatibil",
+      "NOT-FOUND-PRODUCT-ERROR": "Produsul nu a putut fi găsit. Verifică codul și incearcă din nou",
+      "WRONG-CHAIN-ERROR": "Chain-ul ales este greșit. Schimbă pe Rinkeby"
+    },
+    "CLOSE": "Închide",
+    "CHANGE-NETWORK": "Schimbă rețeaua"
+  }
+}

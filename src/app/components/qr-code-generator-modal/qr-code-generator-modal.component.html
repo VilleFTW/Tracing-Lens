@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> {{ 'QR-GENERATOR-MODAL.DOWNLOAD-QR-CODE-IMAGE' | translate }} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="this.dismiss()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <!-- This is part of the attributes of qr-code, so that a logo appears in the middle [imageSrc]="'./assets/angular-logo.png'" -->
+        <qrcode
+          #parent
+          [qrdata]="this.qrCodeData"
+          [allowEmptyString]="true"
+          [ariaLabel]="'QR Code image with the following content...'"
+          [cssClass]="'center'"
+          [colorDark]="'#000000'"
+          [colorLight]="'#ffffff'"
+          [elementType]="'canvas'"
+          [errorCorrectionLevel]="'M'"
+          [imageHeight]="75"
+          [imageWidth]="75"
+          [scale]="1"
+          [title]="'A custom title attribute'"
+          [width]="300"
+        ></qrcode>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-button (click)="saveAsImage(parent)"
+          >{{ 'QR-GENERATOR-MODAL.DOWNLOAD-QR-CODE-IMAGE' | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

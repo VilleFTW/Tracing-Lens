@@ -10,5 +10,102 @@
       <ion-title size="large">{{ 'MENU.home-tab' | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
-  <app-explore-container name="Tab 1dad123 page"></app-explore-container>
+  <ion-grid>
+    <ion-row class="ion-align-items-center"
+      ><ion-col size="12" size-sm="4">
+        <ion-card color="primary" class="card">
+          <ion-card-header>
+            <ion-card-subtitle>{{ 'HOME.all-time-events' | translate }}</ion-card-subtitle>
+            <ion-card-title>{{ numberOfAllTimeEvents }}</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+            Wisconsin Territory in 1836.
+          </ion-card-content> -->
+        </ion-card></ion-col
+      >
+      <ion-col size="12" size-sm="4">
+        <ion-card color="secondary" class="card">
+          <ion-card-header>
+            <ion-card-subtitle>{{ 'HOME.24hrs-events' | translate }}</ion-card-subtitle>
+            <ion-card-title> {{ numberOfEventsLast24Hrs }}</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+            Wisconsin Territory in 1836.
+          </ion-card-content> -->
+        </ion-card></ion-col
+      ><ion-col size="12" size-sm="4">
+        <ion-card color="tertiary" class="card">
+          <ion-card-header>
+            <ion-card-subtitle>{{ 'HOME.alimentation-events' | translate }}</ion-card-subtitle>
+            <ion-card-title>{{ numberOfAlimentationEvents }}</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+            Wisconsin Territory in 1836.
+          </ion-card-content> -->
+        </ion-card></ion-col
+      ></ion-row
+    >
+    <ion-row class="ion-align-items-center"
+      ><ion-col size="12" size-sm="4">
+        <ion-card color="warning" class="card">
+          <ion-card-header>
+            <ion-card-subtitle>{{ 'HOME.pharmaceutical-events' | translate }}</ion-card-subtitle>
+            <ion-card-title>{{ numberOfPharmaceuticalEvents }}</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+            Wisconsin Territory in 1836.
+          </ion-card-content> -->
+        </ion-card></ion-col
+      ><ion-col size="12" size-sm="4">
+        <ion-card color="success" class="card">
+          <ion-card-header>
+            <ion-card-subtitle>{{ 'HOME.shipping-events' | translate }}</ion-card-subtitle>
+            <ion-card-title>{{ numberOfShippingEvents }}</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+            Wisconsin Territory in 1836.
+          </ion-card-content> -->
+        </ion-card></ion-col
+      ><ion-col size="12" size-sm="4">
+        <ion-card color="danger" class="card">
+          <ion-card-header>
+            <ion-card-subtitle>{{ 'HOME.textile-events' | translate }}</ion-card-subtitle>
+            <ion-card-title>{{ numberOfTextileEvents }}</ion-card-title>
+          </ion-card-header>
+        </ion-card></ion-col
+      ></ion-row
+    >
+    <ion-row class="ion-align-items-center"
+      ><ion-col size="12">
+        <ion-card class="statistics">
+          <ion-card-header>
+            <ion-card-subtitle>{{ 'HOME.statistics-message' | translate }}</ion-card-subtitle>
+            <ion-card-title>{{ 'HOME.distribution-of-events' | translate }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ngx-charts-pie-chart
+              [results]="data"
+              [customColors]="customColors"
+              [labels]="showLabels"
+              [legend]="showLegend"
+              [legendTitle]="legendTitle"
+              [legendPosition]="legendPosition"
+              [view]="view"
+            >
+              <ng-template #tooltipTemplate let-model="model">
+                <p>{{ model.name }}</p>
+                <h5>{{ model.value }}</h5>
+                <!-- <h5 color="primary"></h5> -->
+              </ng-template>
+            </ngx-charts-pie-chart>
+          </ion-card-content>
+        </ion-card></ion-col
+      ></ion-row
+    >
+  </ion-grid>
 </ion-content>

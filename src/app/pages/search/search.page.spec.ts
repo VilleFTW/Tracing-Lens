@@ -11,7 +11,7 @@ describe('SearchPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [SearchPage],
-      imports: [ExploreContainerComponentModule, TranslateModule.forRoot()],
+      imports: [TranslateModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SearchPage);

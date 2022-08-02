@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ThemeSwitcherService } from 'src/app/services/theme-switcher/theme-switcher.service';
+import { Component, OnInit } from '@angular/core';
+import { ThemeSwitcherService } from '../../services/theme-switcher/theme-switcher.service';
 
 @Component({
   selector: 'app-font-size-changer',
@@ -13,7 +13,7 @@ export class FontSizeChangerComponent implements OnInit {
 
   ngOnInit(): void {
     this.fontSize = this.themeSwitcher.getCurrentFontSize();
-    // this.themeSwitcher.setFontBySize(this.fontSize);
+    this.themeSwitcher.setFontBySize(this.fontSize);
   }
 
   increment() {

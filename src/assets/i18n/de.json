@@ -1,0 +1,117 @@
+{
+  "MENU": {
+    "home-tab": "Home",
+    "search-tab": "Suche",
+    "settings-tab": "Einstellungen"
+  },
+  "NOT-FOUND": {
+    "not-found-message": "Wir können deine gesuchte Seite anscheinend nicht finden",
+    "redirect-message": "Du wirst weitergeleitet zu"
+  },
+  "LIVESTOCK-NOT-FOUND": {
+    "livestock-not-found-message": "Der Artikel konnte in unserer Datenbank nicht gefunden werden",
+    "livestock-not-found-tip": "Bitte überprüfe die URL und versuch es nochmal"
+  },
+  "HOME": {
+    "alimentation-events": "Ernährungsereignisse",
+    "pharmaceutical-events": "Pharmazeutische Ereignisse",
+    "shipping-events": "Logistische Ereignisse",
+    "textile-events": "Textile Ereignisse",
+    "all-time-events": "Allzeit Ereignisse",
+    "24hrs-events": "Ereignisse in den letzten 24 h",
+    "statistics-message": "Statistiken",
+    "distribution-of-events": "Distribution von Ereignissen",
+    "legend-title": "Legende"
+  },
+  "SEARCH": {
+    "search-card-title": "Willst du mehr wissen?",
+    "enter-product-id": "Gib die Produkt ID ein",
+    "or": "oder",
+    "scan-qr-code-button": "Scan QR Code",
+    "try-out-an-example": "Probier ein Beispiel aus"
+  },
+  "SETTINGS": {
+    "dark-mode": "Dunkel Modus",
+    "color-blind-mode": "Farbenblinder Modus",
+    "language": "Sprache",
+    "font-size": "Schriftgröße",
+    "reset-preferences": "Setze Auswahl zurück",
+    "reset-preferences-button": "Zurücksetzen",
+    "wallet-connection": "Wallet Verbindung",
+    "auth-button-connect": "Verbinden",
+    "auth-button-disconnect": "Trennen",
+    "accessibility-label": "Zugänglichkeit",
+    "miscellaneous-label": "Divers",
+    "web3-label": "Web3"
+  },
+  "QR-SCANNER-MODAL": {
+    "SUCCESS-MESSAGE": "Erfolgreich gescannt. Weiterleitung zu neuer Seite",
+    "NOT-FOUND-MESSAGE": "Nicht gefunden. Bitte scanne einen kompartiblen QR Code",
+    "ENABLE-CAMERA": "Kamera einschalten",
+    "DISABLE-CAMERA": "Kamera ausschalten"
+  },
+  "QR-GENERATOR-MODAL": {
+    "DOWNLOAD-QR-CODE-IMAGE": "Lade QR Code Bild runter"
+  },
+  "BLOCKCHAIN-INFO-MODAL": {
+    "title": "Blockchain Information",
+    "status": "Status",
+    "transaction-hash": "Transaktions-Hash",
+    "date": "Datum",
+    "from": "Von",
+    "to": "Nach"
+  },
+  "LIVESTOCK-COMPONENT": {
+    "product-information": "Produktionsinformation",
+    "about-producer": "Über den Erzeuger",
+    "category-type": "Categorie Typ",
+    "product-id": "Produkt ID",
+    "weight": "Gewicht",
+    "lot": "Lot",
+    "view-blockchain-information": "Sieh Blockchain Information an",
+    "certifications": "Zertifizierungen",
+    "vegan": "Vegan",
+    "vegetarian": "Vegetarisch",
+    "halal": "Halal",
+    "view-producer-certifications": "Sieh Erzeuger Zertifizierungen an",
+    "humidity": "Luftfeuchtigkeit",
+    "temperature": "Temperatur",
+    "note": "Notiz",
+    "date": "Datum",
+    "location": "Standort",
+    "track-journey": "Vefolge Transport nach"
+  },
+  "LANGUAGE-SELECTOR": {
+    "CHANGE": "Ändern",
+    "DISMISS": "Abbrechen"
+  },
+  "COLOR-BLIND-MODE-CHANGER": {
+    "CHANGE": "Ändern",
+    "DISMISS": "Abbrechen"
+  },
+  "RESET-PREFERENCES-MODAL": {
+    "HEADER": "Warnung",
+    "SUBHEADER": "Deine Auswahl wird zurückgesetzt",
+    "MESSAGE": "Diese Aktion kann nicht rückgängig gemacht werden",
+    "CANCEL-BUTTON-MESSAGE": "Abbrechen",
+    "RESET-PREFERENCES-CONFIRM-MESSAGE": "Bestätigen"
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": {
+      "SUCCESS-HEADER": "Erfolg",
+      "CONNECTION-MESSAGE": "Verbindung erfolgreich",
+      "SCANNING-MESSAGE": "Wir leiten dich weiter zu einer neuen Seite"
+    },
+    "ERROR": {
+      "ERROR-HEADER": "Fehler",
+      "CONNECTION-ERROR": "Verbindungsfehler",
+      "SCANNING-ERROR": "Scanfehler",
+      "CAMERA-NOT-FOUND-MESSAGE": "Eine Kamera konnte nicht gefunden werden",
+      "NOT-FOUND-ERROR": "Nicht gefunden. Bitte scan einen kompartiblen QR Code",
+      "NOT-FOUND-PRODUCT-ERROR": "Produkt konnte nicht gefunden werden. Überprüfe die ID und versuch es nochmal",
+      "WRONG-CHAIN-ERROR": "Falsche Chain. Bitte verbinde mit Rinkeby"
+    },
+    "CLOSE": "Schließen",
+    "CHANGE-NETWORK": "Wechsel Netzwerk"
+  }
+}

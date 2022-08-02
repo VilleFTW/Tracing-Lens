@@ -1,6 +1,7 @@
 import { StorageService } from 'src/app/services/storage/storage.service';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-reset-preferences',
@@ -14,21 +15,25 @@ import { AlertController } from '@ionic/angular';
   styles: [],
 })
 export class ResetPreferencesComponent {
-  constructor(private storageService: StorageService, private allertController: AlertController) {}
+  constructor(
+    private storageService: StorageService,
+    private allertController: AlertController,
+    private translatePipe: TranslatePipe,
+  ) {}
 
   action() {
     this.allertController
       .create({
-        header: 'Warning',
-        subHeader: 'Are you sure you want to reset preferences?',
-        message: 'This action can not be undone.',
+        header: this.translatePipe.transform('RESET-PREFERENCES-MODAL.HEADER'),
+        subHeader: this.translatePipe.transform('RESET-PREFERENCES-MODAL.SUBHEADER'),
+        message: this.translatePipe.transform('RESET-PREFERENCES-MODAL.MESSAGE'),
         buttons: [
           {
-            text: 'No',
+            text: this.translatePipe.transform('RESET-PREFERENCES-MODAL.CANCEL-BUTTON-MESSAGE'),
             handler: () => {},
           },
           {
-            text: 'Yes',
+            text: this.translatePipe.transform('RESET-PREFERENCES-MODAL.RESET-PREFERENCES-CONFIRM-MESSAGE'),
             handler: () => {
               this.storageService.reset();
             },
