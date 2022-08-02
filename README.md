@@ -1,7 +1,6 @@
 <div align="center">
-![My Image](resources/repository-logo.png)
 
-# Tracing Lens <br>
+![Repository Logo](resources/repository-logo.png)
 
 > Bachelor project at University of Groningen
 
