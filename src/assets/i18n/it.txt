@@ -1,0 +1,117 @@
+{
+  "MENU": {
+    "home-tab": "Pagina Principale",
+    "search-tab": "Ricerca",
+    "settings-tab": "Impostazioni"
+  },
+  "NOT-FOUND": {
+    "not-found-message": "Siamo spiacenti, l'elemento di ricerca non é stato trovato",
+    "redirect-message": "Reindirizzamento in corso"
+  },
+  "LIVESTOCK-NOT-FOUND": {
+    "livestock-not-found-message": "Questo elemento non é stato trovato nel database",
+    "livestock-not-found-tip": "Per favore, controllare URL e provare nuovamente"
+  },
+  "HOME": {
+    "alimentation-events": "Eventi dell'Alimentazione",
+    "pharmaceutical-events": "Eventi Farmacologici",
+    "shipping-events": "Eventi Logistici",
+    "textile-events": "Eeventi Tessili",
+    "all-time-events": "Eventi Generali",
+    "24hrs-events": "Eventi nelle ultime 24h",
+    "statistics-message": "Statistiche",
+    "distribution-of-events": "Eventi di Distribuzione",
+    "legend-title": "Leggenda"
+  },
+  "SEARCH": {
+    "search-card-title": "Vuoi Saperne di Piú?",
+    "enter-product-id": "Inserire l'ID del prodotto",
+    "or": "o",
+    "scan-qr-code-button": "Scannerizzare il codice QR ",
+    "try-out-an-example": "Prova un Esempio"
+  },
+  "SETTINGS": {
+    "dark-mode": "Modalitá Scuro",
+    "color-blind-mode": "Modalitá Daltonismo",
+    "language": "Lingua",
+    "font-size": "Dimensione Carattere",
+    "reset-preferences": "Ripristina Preference",
+    "reset-preferences-button": "Ripristina",
+    "wallet-connection": "Connessione Portafoglio",
+    "auth-button-connect": "Connetti",
+    "auth-button-disconnect": "Disconnetti",
+    "accessibility-label": "Accessibilitá",
+    "miscellaneous-label": "Varie",
+    "web3-label": "Web3"
+  },
+  "QR-SCANNER-MODAL": {
+    "SUCCESS-MESSAGE": "Scannerizzazione Riuscita. Reindirizzamento verso nuova pagina",
+    "NOT-FOUND-MESSAGE": "Non trovato. Per favore, scannerizzare un codice QR valido",
+    "ENABLE-CAMERA": "Abilitare Fotocamera",
+    "DISABLE-CAMERA": "Disabilitare Fotocamera"
+  },
+  "QR-GENERATOR-MODAL": {
+    "DOWNLOAD-QR-CODE-IMAGE": "Scaricare immagine del codice QR"
+  },
+  "BLOCKCHAIN-INFO-MODAL": {
+    "title": "Informazioni sul Blockchain",
+    "status": "Stato",
+    "transaction-hash": "Hash della transazione",
+    "date": "Data",
+    "from": "Da",
+    "to": "A"
+  },
+  "LIVESTOCK-COMPONENT": {
+    "product-information": "Informazione sulla Produzione",
+    "about-producer": "Produttore",
+    "category-type": "Categoria",
+    "product-id": "ID del prodotto",
+    "weight": "Peso",
+    "lot": "Lotto",
+    "view-blockchain-information": "Visualizza Informazioni sul Blockchain",
+    "certifications": "Certificazioni",
+    "vegan": "Vegano",
+    "vegetarian": "Vegetariano",
+    "halal": "Halal",
+    "view-producer-certifications": "Visualizza Certificazioni del Produttore",
+    "humidity": "Umiditá",
+    "temperature": "Temperatura",
+    "note": "Note",
+    "date": "Data",
+    "location": "Localitá",
+    "track-journey": "Traccia il Percorso di Viaggio"
+  },
+  "LANGUAGE-SELECTOR": {
+    "CHANGE": "Modifica",
+    "DISMISS": "Cancella"
+  },
+  "COLOR-BLIND-MODE-CHANGER": {
+    "CHANGE": "Modifica",
+    "DISMISS": "Cancella"
+  },
+  "RESET-PREFERENCES-MODAL": {
+    "HEADER": "Attenzione",
+    "SUBHEADER": "Le tue impostazioni verrano resettate",
+    "MESSAGE": "La seguente azione non puó essere modificata",
+    "CANCEL-BUTTON-MESSAGE": "Cancella",
+    "RESET-PREFERENCES-CONFIRM-MESSAGE": "Conferma"
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": {
+      "SUCCESS-HEADER": "Operazione Riuscita",
+      "CONNECTION-MESSAGE": "Connessione Riuscita",
+      "SCANNING-MESSAGE": "Reindirizzamento verso una nuova pagina"
+    },
+    "ERROR": {
+      "ERROR-HEADER": "Errore",
+      "CONNECTION-ERROR": "Errore di Connessione",
+      "SCANNING-ERROR": "Errore di Scannerizzazione",
+      "CAMERA-NOT-FOUND-MESSAGE": "Nessuna Fotocamera trovata",
+      "NOT-FOUND-ERROR": "Non trovato. Per favore inserire un codice QR valido",
+      "NOT-FOUND-PRODUCT-ERROR": "Il prodotto non é stato trovato. Controlla l'ID e riprova",
+      "WRONG-CHAIN-ERROR": "Catena Errata. Per favore connettersi a Rinkeby"
+    },
+    "CLOSE": "Chiudi",
+    "CHANGE-NETWORK": "Cambia network"
+  }
+}
